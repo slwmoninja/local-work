@@ -1,4 +1,8 @@
-const APP_VERSION = '1.0.0';
+// Bump on every future code change to this file so a reload can be visually
+// confirmed against what was actually deployed (Settings > About shows this).
+// Distinct from STORE_KEY's "_v1" suffix, which is the localStorage data-shape
+// version -- don't conflate the two.
+const APP_VERSION = '1.1.0';
 const STORE_KEY = 'localwork_v1';
 
 let RESUME = null;
@@ -16,6 +20,12 @@ const els = {
   jobModal: document.getElementById('jobModal'),
   infoModalBackdrop: document.getElementById('infoModalBackdrop'),
   btnInfo: document.getElementById('btnInfo'),
+  btnSettings: document.getElementById('btnSettings'),
+  settingsModalBackdrop: document.getElementById('settingsModalBackdrop'),
+  settingsModal: document.getElementById('settingsModal'),
+  restoreFileInput: document.getElementById('restoreFileInput'),
+  installPillSlot: document.getElementById('installPillSlot'),
+  pullRefresh: document.getElementById('pullRefresh'),
 };
 
 // ---------- persistence ----------
@@ -193,7 +203,7 @@ function renderTabs(){
     return `<button class="tab ${t.id===activeTab?'active':''}" data-tab="${t.id}">${t.label}<span class="count">${count}</span></button>`;
   }).join('');
   els.tabs.querySelectorAll('.tab').forEach(btn => {
-    btn.addEventListener('click', () => { activeTab = btn.dataset.tab; render(); });
+    btn.addEventListener('click', () => goToTab(btn.dataset.tab));
   });
 }
 
@@ -390,22 +400,633 @@ function wireTracker(job){
 function closeModal(id){
   document.getElementById(id).classList.remove('open');
 }
+function closeAllModals(){
+  document.querySelectorAll('.modal-backdrop.open').forEach(m => m.classList.remove('open'));
+  document.querySelectorAll('.popup-backdrop').forEach(m => m.remove());
+}
+
+// ---------- misc small helpers ----------
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+// Non-blocking, self-dismissing feedback for backup/restore events -- unlike
+// alert(), it never freezes the page waiting for a tap.
+let toastTimer = null;
+function showToast(message, tone){
+  let el = document.getElementById('toast');
+  if(!el){ el = document.createElement('div'); el.id = 'toast'; document.body.appendChild(el); }
+  el.textContent = message;
+  el.className = 'toast show' + (tone==='bad' ? ' toast-bad' : '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.classList.remove('show'); }, 3200);
+}
+// Generic centered popup, reused for the install prompt, the restore-detected
+// prompt, and platform install/uninstall step lists -- same visual language as
+// the app's existing bottom-sheet modals rather than a position-anchored
+// tooltip (a tooltip pinned to the top-right install pill would run off-screen).
+function openPopup(title, bodyHtml){
+  const wrap = document.createElement('div');
+  wrap.className = 'modal-backdrop popup-backdrop open center';
+  wrap.innerHTML = `
+    <div class="modal">
+      <button class="close-x" data-popup-close>✕</button>
+      <h2>${title}</h2>
+      <div style="font-size:13.5px;color:#c6d8d0;line-height:1.5">${bodyHtml}</div>
+    </div>`;
+  document.body.appendChild(wrap);
+  const close = () => wrap.remove();
+  wrap.querySelector('[data-popup-close]').addEventListener('click', close);
+  wrap.addEventListener('click', (e) => { if(e.target === wrap) close(); });
+  return wrap;
+}
+
+// ---------- diagnostics (storage-persistence denials, etc.) ----------
+// There's no way to test real storage-eviction behavior on someone else's
+// actual phone from here, so a denial gets logged (not just swallowed) --
+// visible in Settings later if data loss is ever reported.
+const DIAG_LOG_KEY = 'localwork_diag_log';
+function loadDiagLog(){
+  try{ return JSON.parse(localStorage.getItem(DIAG_LOG_KEY)) || []; }catch(e){ return []; }
+}
+function logDiag(message){
+  const log = loadDiagLog();
+  log.unshift({ ts: Date.now(), message });
+  try{ localStorage.setItem(DIAG_LOG_KEY, JSON.stringify(log.slice(0,5))); }catch(e){}
+}
+function diagLogHtml(){
+  const log = loadDiagLog();
+  if(!log.length) return '';
+  return `<div class="section-label">Diagnostics</div>
+    <div class="track-box" style="font-size:11.5px;color:var(--muted);line-height:1.5">
+      ${log.map(e => `<div style="margin-bottom:6px">${new Date(e.ts).toLocaleString()} — ${escapeHtml(e.message)}</div>`).join('')}
+    </div>`;
+}
+
+/* =========================================================
+   BACKUP / RESTORE
+   Manual-only, never automatic -- gated entirely behind explicit taps in
+   Settings, so it never piles up files from background activity. Only
+   TRACK (saved/eliminated/applied/tracking status, keyed by job id) is
+   backed up -- job listings themselves are a static snapshot re-fetched
+   from data/jobs.json and don't need protecting.
+   ========================================================= */
+const BACKUP_HANDLE_DB = 'localworkBackupHandles';
+const BACKUP_HANDLE_STORE = 'handles';
+const BACKUP_HANDLE_KEY = 'backupFile';
+function openHandleDb(){
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(BACKUP_HANDLE_DB, 1);
+    req.onupgradeneeded = () => { req.result.createObjectStore(BACKUP_HANDLE_STORE); };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+async function loadSavedBackupHandle(){
+  try{
+    const db = await openHandleDb();
+    return await new Promise((resolve, reject) => {
+      const req = db.transaction(BACKUP_HANDLE_STORE, 'readonly').objectStore(BACKUP_HANDLE_STORE).get(BACKUP_HANDLE_KEY);
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => reject(req.error);
+    });
+  }catch(e){ return null; }
+}
+async function saveBackupHandle(handle){
+  try{
+    const db = await openHandleDb();
+    await new Promise((resolve, reject) => {
+      const tx = db.transaction(BACKUP_HANDLE_STORE, 'readwrite');
+      tx.objectStore(BACKUP_HANDLE_STORE).put(handle, BACKUP_HANDLE_KEY);
+      tx.oncomplete = resolve; tx.onerror = () => reject(tx.error);
+    });
+  }catch(e){ /* best-effort */ }
+}
+// Desktop Chrome/Edge only (feature-detected) -- lets repeat backups overwrite
+// the same on-disk file instead of prompting every time. A saved, already-
+// granted handle is reused silently; only the very first backup (or a revoked
+// permission) pops the picker.
+async function getWritableBackupHandle(){
+  if(!window.showSaveFilePicker) return null;
+  try{
+    let handle = await loadSavedBackupHandle();
+    if(handle){
+      const perm = await handle.queryPermission({ mode:'readwrite' });
+      if(perm === 'granted') return handle;
+      const req = await handle.requestPermission({ mode:'readwrite' });
+      if(req === 'granted') return handle;
+      return null;
+    }
+    handle = await window.showSaveFilePicker({
+      suggestedName: 'localwork-data.json',
+      types: [{ description:'LocalWork backup', accept: {'application/json':['.json']} }]
+    });
+    await saveBackupHandle(handle);
+    return handle;
+  }catch(e){
+    return null; // user cancelled the picker, or any other failure -- caller falls back
+  }
+}
+// TRACK has no auto-churning bookkeeping fields (unlike e.g. a background
+// sync's lastSyncAt), so the whole object is fair game for the fingerprint.
+function backupFingerprint(){
+  return JSON.stringify(TRACK);
+}
+const BACKUP_LAST_FINGERPRINT_KEY = 'localwork_last_backup_fingerprint';
+function buildBackupPayload(){
+  return { app:'LocalWork', schemaVersion:1, exportedAt: new Date().toISOString(), track: TRACK };
+}
+// Manual/on-demand only -- never called from saveTrack() or on backgrounding.
+// Skips writing/downloading anything when nothing has changed since the last
+// backup: on browsers without the File System Access API (iOS Safari, most
+// Android Chrome) every tap would otherwise create a brand-new timestamped
+// file whether or not the data actually changed. Returns whether it actually
+// wrote a backup so the caller's toast can say "saved" vs "already up to date"
+// instead of always claiming success.
+async function runBackup(){
+  const fp = backupFingerprint();
+  if(fp === localStorage.getItem(BACKUP_LAST_FINGERPRINT_KEY)) return false;
+  const json = JSON.stringify(buildBackupPayload(), null, 2);
+
+  const handle = await getWritableBackupHandle();
+  if(handle){
+    try{
+      const writable = await handle.createWritable();
+      await writable.write(json);
+      await writable.close();
+      localStorage.setItem(BACKUP_LAST_FINGERPRINT_KEY, fp);
+      return true;
+    }catch(e){ /* fall through to the timestamped-download fallback below */ }
+  }
+  try{
+    const blob = new Blob([json], { type:'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    // Timestamped, not fixed -- a fixed name hits a hard "file already exists"
+    // failure on-device rather than silently renaming, on the browsers that
+    // land here (no File System Access API, or no granted handle yet).
+    const stamp = new Date().toISOString().replace(/[:.]/g,'-');
+    a.download = `localwork-data-${stamp}.json`;
+    a.click();
+    localStorage.setItem(BACKUP_LAST_FINGERPRINT_KEY, fp);
+    return true;
+  }catch(e){ return false; }
+}
+async function handleBackupNowClick(){
+  try{
+    const wrote = await runBackup();
+    showToast(wrote ? 'Backup saved.' : 'Already up to date — no changes since last backup.');
+  }catch(e){
+    showToast('Backup failed: ' + e.message, 'bad');
+  }
+}
+
+function validateBackupShape(parsed){
+  return !!(parsed && typeof parsed === 'object' && parsed.track && typeof parsed.track === 'object');
+}
+// Shared by the manual Restore button and the startup auto-detect prompt --
+// validates, confirms, then merges onto an empty default (TRACK's own default
+// shape is just {}, and each job's tracker is read with sensible per-field
+// defaults via getTrack() anyway) rather than a raw replace, so a backup from
+// an older schema version doesn't leave anything half-applied.
+async function importBackupFromFile(file, opts){
+  opts = opts || {};
+  if(!file) return false;
+  try{
+    const text = await file.text();
+    const parsed = JSON.parse(text);
+    if(!validateBackupShape(parsed)) throw new Error('This file does not look like a LocalWork backup.');
+    if(!opts.skipConfirm && !confirm('This will replace all current saved/eliminated/applied status on this device with the contents of this backup. Continue?')) return false;
+    TRACK = Object.assign({}, parsed.track);
+    saveTrack();
+    closeAllModals();
+    activeTab = 'matches';
+    render();
+    showToast('Backup restored.');
+    return true;
+  }catch(e){
+    showToast('Could not restore that file: ' + e.message, 'bad');
+    return false;
+  }
+}
+// Auto-selects the newest file out of whatever got picked, so restoring never
+// requires eyeballing filenames -- matches this app's own timestamped naming
+// (localwork-data-<ISO stamp>.json) first since the stamp sorts correctly as a
+// string; anything else (e.g. a renamed file) falls back to File.lastModified.
+function pickLatestBackupFile(files){
+  const list = Array.from(files || []).filter(f => /\.(json|js)$/i.test(f.name));
+  if(!list.length) return null;
+  const stampOf = f => { const m = f.name.match(/localwork-data-(.+)\.(?:json|js)$/i); return m ? m[1] : null; };
+  list.sort((a,b) => {
+    const sa = stampOf(a), sb = stampOf(b);
+    if(sa && sb) return sa < sb ? 1 : sa > sb ? -1 : 0;
+    if(sa && !sb) return -1;
+    if(sb && !sa) return 1;
+    return b.lastModified - a.lastModified;
+  });
+  return list[0];
+}
+function importLatestBackupFromFiles(files){
+  const latest = pickLatestBackupFile(files);
+  if(!latest){ if(files && files.length) showToast('No .json backup file found in what you selected.', 'bad'); return; }
+  importBackupFromFile(latest);
+}
+async function openRestorePicker(){
+  if(window.showOpenFilePicker){
+    try{
+      const handles = await window.showOpenFilePicker({
+        multiple: true, startIn: 'downloads',
+        types: [{ description:'LocalWork backup', accept: {
+          'application/json':['.json'], 'text/javascript':['.js'], 'application/javascript':['.js']
+        }}]
+      });
+      const files = await Promise.all(handles.map(h => h.getFile()));
+      importLatestBackupFromFiles(files);
+      return;
+    }catch(e){
+      if(e.name === 'AbortError') return; // user backed out -- don't chain into a second picker
+    }
+  }
+  els.restoreFileInput.click();
+}
+
+/* =========================================================
+   RESTORE PROMPT AT STARTUP (Step 7a) -- only meaningful on browsers with the
+   File System Access API, since only a saved+already-granted handle can be
+   silently re-read without a user gesture. Only fires when TRACK looks
+   freshly wiped (fresh profile, "Erase All Data", silent storage eviction)
+   AND permission on a previously-saved handle is already 'granted' --
+   queryPermission only, never requestPermission this early (no user gesture
+   yet, and forcing that would throw a blocking native prompt on every load).
+   ========================================================= */
+async function maybeOfferStartupRestore(){
+  if(!window.showSaveFilePicker) return false;
+  if(Object.keys(TRACK).length) return false; // real data present -- never prompt
+  const handle = await loadSavedBackupHandle();
+  if(!handle) return false;
+  try{
+    const perm = await handle.queryPermission({ mode:'read' });
+    if(perm !== 'granted') return false;
+    const file = await handle.getFile();
+    const text = await file.text();
+    const parsed = JSON.parse(text);
+    if(!validateBackupShape(parsed)) return false;
+    const count = Object.keys(parsed.track).length;
+    if(!count) return false;
+    return await new Promise(resolve => {
+      const dateStr = parsed.exportedAt ? new Date(parsed.exportedAt).toLocaleDateString() : 'an earlier session';
+      const wrap = openPopup('Load latest backup?', `
+        <div style="margin-bottom:14px">Found ${count} saved job status${count===1?'':'es'} from a backup saved on ${dateStr}, but this device's data looks empty right now. Load it?</div>
+        <button class="btn btn-primary" id="restore-prompt-yes" style="width:100%;display:block;margin-bottom:8px">Yes, load it</button>
+        <button class="btn btn-ghost" id="restore-prompt-no" style="width:100%;display:block">No</button>
+      `);
+      wrap.querySelector('#restore-prompt-yes').addEventListener('click', async () => {
+        wrap.remove();
+        await importBackupFromFile(file, { skipConfirm:true });
+        resolve(true);
+      });
+      wrap.querySelector('#restore-prompt-no').addEventListener('click', () => { wrap.remove(); resolve(true); });
+    });
+  }catch(e){ return false; }
+}
+
+/* =========================================================
+   INSTALL / HOME SCREEN
+   ========================================================= */
+function isStandaloneApp(){
+  return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+}
+const INSTALL_ACCEPTED_KEY = 'localworkInstallAccepted';
+function isInstalled(){
+  return isStandaloneApp() || localStorage.getItem(INSTALL_ACCEPTED_KEY) === '1';
+}
+const STEPS_LIST_STYLE = 'margin:4px 0 0;padding-left:18px;';
+const INSTALL_STEPS_HTML = `
+  <strong>iPhone/iPad (Safari):</strong>
+  <ol style="${STEPS_LIST_STYLE}">
+    <li>Tap the Share icon (square with an arrow) in the toolbar.</li>
+    <li>Scroll down and tap "Add to Home Screen".</li>
+    <li>Tap "Add" in the top right.</li>
+  </ol><br>
+  <strong>Android (Chrome):</strong>
+  <ol style="${STEPS_LIST_STYLE}">
+    <li>Tap the ⋮ menu in the top right.</li>
+    <li>Tap "Add to Home screen" or "Install app".</li>
+    <li>Tap "Install" (or "Add") to confirm.</li>
+  </ol><br>
+  <strong>Desktop Chrome/Edge:</strong>
+  <ol style="${STEPS_LIST_STYLE}">
+    <li>Click the install icon at the right edge of the address bar (or the ⋮ menu → "Install LocalWork...").</li>
+    <li>Click "Install" to confirm.</li>
+  </ol>`;
+const UNINSTALL_STEPS_HTML = `
+  <strong>iPhone/iPad:</strong>
+  <ol style="${STEPS_LIST_STYLE}">
+    <li>Touch and hold the LocalWork icon on the Home Screen.</li>
+    <li>Tap "Remove App".</li>
+    <li>Tap "Delete App" to confirm.</li>
+  </ol><br>
+  <strong>Android:</strong>
+  <ol style="${STEPS_LIST_STYLE}">
+    <li>Touch and hold the LocalWork icon on the Home screen.</li>
+    <li>Tap "Uninstall" (or drag it to "Uninstall" at the top of the screen).</li>
+    <li>Confirm when prompted.</li>
+  </ol><br>
+  <strong>Desktop Chrome/Edge:</strong>
+  <ol style="${STEPS_LIST_STYLE}">
+    <li>Right-click the LocalWork icon (Start Menu/Taskbar/Dock).</li>
+    <li>Click "Uninstall".</li>
+    <li>Confirm when prompted.</li>
+  </ol>`;
+let deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  renderInstallUI();
+});
+window.addEventListener('appinstalled', () => {
+  deferredInstallPrompt = null;
+  localStorage.setItem(INSTALL_ACCEPTED_KEY, '1');
+  renderInstallUI();
+});
+// Shared by the topbar pill's tap and the proactive install-prompt popup's
+// "Install" button -- one native-vs-manual branch, not two.
+async function triggerInstall(){
+  if(deferredInstallPrompt){
+    const promptEvent = deferredInstallPrompt;
+    deferredInstallPrompt = null; // one-shot -- the browser invalidates it after a single use either way
+    promptEvent.prompt();
+    const choice = await promptEvent.userChoice;
+    if(choice.outcome === 'accepted'){
+      localStorage.setItem(INSTALL_ACCEPTED_KEY, '1');
+      showToast('Installed — look for it on your Home Screen.');
+    }
+    renderInstallUI();
+  } else {
+    openPopup('Install on Home Screen', INSTALL_STEPS_HTML);
+  }
+}
+// Shown top-right on the header (present on every tab -- the header is
+// persistent chrome shared by Matches/Saved/Tracking/Not a Fit) plus, with
+// keepAfterInstall=true, inside Settings as an inert "Installed" status line
+// once installed rather than disappearing there too.
+function installTopbarBtnHtml(keepAfterInstall){
+  const installed = isInstalled();
+  if(installed && !keepAfterInstall) return '';
+  return `<button class="topbar-install-btn${installed?' installed':''}" id="btnInstallPill">${installed?'Installed':'Install'}</button>`;
+}
+function wireInstallBtn(btn){
+  if(!btn) return;
+  btn.addEventListener('click', () => {
+    if(isInstalled()){ openPopup('Uninstall LocalWork', UNINSTALL_STEPS_HTML); return; }
+    triggerInstall();
+  });
+}
+// Persistent chrome (the header) is never rebuilt by render() -- only #tabs/
+// #jobList are -- so this replaces the slot's whole innerHTML (a fresh button
+// node each call) rather than being called from inside render() itself, which
+// keeps this from ever accumulating duplicate listeners on a node that's
+// never discarded.
+function renderInstallUI(){
+  els.installPillSlot.innerHTML = installTopbarBtnHtml(false);
+  wireInstallBtn(document.getElementById('btnInstallPill'));
+  if(els.settingsModalBackdrop.classList.contains('open')) renderSettingsModal();
+}
+const INSTALL_PROMPT_ASKED_KEY = 'localworkInstallPromptAsked';
+function maybeShowInstallPrompt(){
+  if(isInstalled()) return;
+  try{ if(localStorage.getItem(INSTALL_PROMPT_ASKED_KEY)) return; }catch(e){}
+  if(isInstalled()) return; // could have installed (or been asked elsewhere) since this was scheduled
+  try{ localStorage.setItem(INSTALL_PROMPT_ASKED_KEY, '1'); }catch(e){}
+  const wrap = openPopup('Install LocalWork?', `
+    <div style="margin-bottom:14px">Installing adds LocalWork to your Home Screen and gives it the strongest protection against your browser silently clearing its saved/eliminated/applied job status.</div>
+    <button class="btn btn-primary" id="install-prompt-yes" style="width:100%;display:block;margin-bottom:8px">Install</button>
+    <button class="btn btn-ghost" id="install-prompt-no" style="width:100%;display:block">Not now</button>
+  `);
+  wrap.querySelector('#install-prompt-yes').addEventListener('click', () => { wrap.remove(); triggerInstall(); });
+  wrap.querySelector('#install-prompt-no').addEventListener('click', () => {
+    wrap.remove();
+    showToast('No problem — look for the Install button in Settings whenever you\'re ready.');
+  });
+}
+// Restore-detected takes priority over the install ask when both would apply
+// on the same fresh load -- resolved first since it's about not losing data.
+// The 1.5s delay lets beforeinstallprompt (which can arrive a moment after
+// load) populate deferredInstallPrompt first, so "Install" gets the same shot
+// at the one-tap native flow the topbar pill has.
+window.addEventListener('load', () => {
+  setTimeout(async () => {
+    await maybeOfferStartupRestore();
+    maybeShowInstallPrompt();
+  }, 1500);
+});
+
+/* =========================================================
+   SETTINGS MODAL
+   ========================================================= */
+function settingsModalHtml(){
+  return `
+    <button class="close-x" data-close="settingsModalBackdrop">✕</button>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 0 2px">
+      <h2 style="margin:0">Settings</h2>
+      ${installTopbarBtnHtml(true)}
+    </div>
+    <div class="section-label" style="margin-top:16px">About</div>
+    <div class="track-box">
+      <div style="display:flex;justify-content:space-between;font-size:13px">
+        <span style="color:var(--muted)">Version</span><span>${APP_VERSION}</span>
+      </div>
+    </div>
+    <div class="section-label">Backup your job status</div>
+    <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px">
+      Your Saved / Eliminated / Applied &amp; Track status lives only in this browser's storage. Back it up to a file so you can restore it if this device's data is ever lost — job listings themselves aren't included since they're re-fetched from the live snapshot.
+    </p>
+    <div class="card-actions" style="margin-bottom:14px">
+      <button class="btn btn-primary small" id="btnBackupNow">Back up now</button>
+      <button class="btn btn-ghost small" id="btnRestoreBackup">Restore from backup</button>
+    </div>
+    ${diagLogHtml()}
+  `;
+}
+function renderSettingsModal(){
+  els.settingsModal.innerHTML = settingsModalHtml();
+  els.settingsModal.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => closeModal(b.dataset.close)));
+  wireInstallBtn(document.getElementById('btnInstallPill'));
+  document.getElementById('btnBackupNow').addEventListener('click', handleBackupNowClick);
+  document.getElementById('btnRestoreBackup').addEventListener('click', () => openRestorePicker());
+}
+
+/* =========================================================
+   UPDATE CHECKING -- two independent signals run together, since a CSS/JS-
+   only edit that never touches index.html's own bytes would otherwise go
+   undetected by the etag signal alone.
+   ========================================================= */
+function isUserTyping(){
+  const el = document.activeElement;
+  if(!el) return false;
+  if(el.tagName === 'TEXTAREA') return true;
+  if(el.tagName === 'INPUT') return /^(text|search|number|date)$/i.test(el.type || 'text');
+  return false;
+}
+const DEPLOYED_TAG_KEY = 'localworkDeployedTag';
+let deployedVersionTag = (function(){ try{ return localStorage.getItem(DEPLOYED_TAG_KEY); }catch(e){ return null; } })();
+let swReloadPending = false;
+let swReloadTriggered = false;
+function reloadForNewServiceWorker(){
+  if(swReloadTriggered) return; // controllerchange can fire more than once per page life
+  if(isUserTyping()){ swReloadPending = true; return; } // retried from checkForUpdate's next call
+  swReloadTriggered = true;
+  location.reload();
+}
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.addEventListener('controllerchange', reloadForNewServiceWorker);
+}
+// Returns a status string so callers wanting feedback (pull-to-refresh) can
+// react -- the load/visibilitychange callers below just ignore it.
+async function checkForUpdate(){
+  if(swReloadPending && !isUserTyping()){ reloadForNewServiceWorker(); return 'reloading'; }
+  if('serviceWorker' in navigator && navigator.serviceWorker.getRegistration){
+    try{
+      const reg = await navigator.serviceWorker.getRegistration();
+      if(reg) reg.update().catch(()=>{});
+    }catch(e){}
+  }
+  try{
+    const res = await fetch(location.pathname + '?_=' + Date.now(), { cache:'no-store', method:'HEAD' });
+    const tag = res.headers.get('etag') || res.headers.get('last-modified');
+    if(!tag) return 'unknown';
+    if(deployedVersionTag === null){
+      deployedVersionTag = tag;
+      try{ localStorage.setItem(DEPLOYED_TAG_KEY, tag); }catch(e){}
+      return 'up-to-date';
+    }
+    if(tag === deployedVersionTag) return 'up-to-date';
+    if(isUserTyping()) return 'deferred'; // try again next check instead of interrupting active input
+    deployedVersionTag = tag;
+    try{ localStorage.setItem(DEPLOYED_TAG_KEY, tag); }catch(e){}
+    location.reload();
+    return 'reloading';
+  }catch(e){ return 'offline'; }
+}
+
+/* =========================================================
+   PULL-TO-REFRESH -- forces checkForUpdate() on demand instead of waiting for
+   the next visibilitychange. Only activates from the very top of the page and
+   not while a modal/popup is open. All listeners are {passive:true} -- this
+   gesture only reads finger position and moves its own indicator, so it never
+   needs preventDefault() and normal scrolling is untouched.
+   ========================================================= */
+(function(){
+  const indicator = els.pullRefresh;
+  const THRESHOLD = 70;
+  let startY = null, dragging = false, ready = false;
+  document.addEventListener('touchstart', e => {
+    if(window.scrollY === 0 && !document.querySelector('.modal-backdrop.open')){
+      startY = e.touches[0].clientY;
+      dragging = true; ready = false;
+      indicator.classList.remove('hidden');
+      indicator.classList.add('dragging');
+    }
+  }, { passive:true });
+  document.addEventListener('touchmove', e => {
+    if(!dragging || startY === null) return;
+    const dy = e.touches[0].clientY - startY;
+    if(dy > 0 && window.scrollY === 0){
+      const dist = Math.min(dy, THRESHOLD * 1.6);
+      ready = dy > THRESHOLD;
+      indicator.style.transform = `translate(-50%, ${dist-60}px)`;
+      indicator.classList.toggle('ready', ready);
+    }
+  }, { passive:true });
+  document.addEventListener('touchend', async () => {
+    if(!dragging) return;
+    dragging = false;
+    indicator.classList.remove('dragging');
+    if(!ready){
+      indicator.classList.remove('ready');
+      indicator.style.transform = '';
+      indicator.classList.add('hidden');
+      startY = null;
+      return;
+    }
+    indicator.classList.remove('ready');
+    indicator.classList.add('spinning');
+    indicator.style.transform = 'translate(-50%, 10px)';
+    const status = await checkForUpdate();
+    if(status !== 'reloading'){ // otherwise the page is already navigating away
+      indicator.classList.remove('spinning');
+      indicator.style.transform = '';
+      indicator.classList.add('hidden');
+    }
+    startY = null;
+  }, { passive:true });
+})();
+
+/* =========================================================
+   STORAGE PERSISTENCE -- best-effort ask not to auto-evict this site's
+   storage under low-disk pressure. Chrome auto-grants/denies based on its own
+   heuristics with no user-visible prompt; a denial is logged (with a rough
+   usage/quota estimate) since there's no way to test real eviction behavior
+   remotely.
+   ========================================================= */
+(async function checkStoragePersistence(){
+  if(!(navigator.storage && navigator.storage.persist)) return;
+  try{
+    let persisted = await (navigator.storage.persisted ? navigator.storage.persisted() : Promise.resolve(false));
+    if(!persisted) persisted = await navigator.storage.persist();
+    if(!persisted){
+      let detail = '';
+      try{
+        const est = await navigator.storage.estimate();
+        if(est && est.quota) detail = ` (using ~${Math.round((est.usage||0)/1048576)}MB of ~${Math.round(est.quota/1048576)}MB available to this browser)`;
+      }catch(e){}
+      logDiag(`Storage is NOT persisted${detail} — this browser may silently evict LocalWork's saved job status under storage pressure, even without clearing history. Install to Home Screen for the strongest protection.`);
+    }
+  }catch(e){ /* best effort */ }
+})();
+
+/* =========================================================
+   BACK-GESTURE NAVIGATION (Step 9b) -- one pushState per tab switch so
+   hardware back / Android gesture-nav / iOS edge-swipe (all of which already
+   fire native 'popstate') walk one tab backward at a time instead of exiting
+   straight past the app. Modals layer on top without their own history entry
+   -- popstate closes any that are open as part of moving to the target tab.
+   ========================================================= */
+function goToTab(tab){
+  if(tab === activeTab && !document.querySelector('.modal-backdrop.open')) return;
+  activeTab = tab;
+  history.pushState({ tab }, '');
+  closeAllModals();
+  render();
+}
+window.addEventListener('popstate', e => {
+  activeTab = (e.state && e.state.tab) || 'matches';
+  closeAllModals();
+  render();
+});
+history.replaceState({ tab: activeTab }, ''); // baseline entry so the first tab switch has something to push atop
 
 // ---------- global wiring ----------
 els.strongOnly.addEventListener('change', () => { strongOnly = els.strongOnly.checked; render(); });
 els.btnInfo.addEventListener('click', () => els.infoModalBackdrop.classList.add('open'));
+els.btnSettings.addEventListener('click', () => { renderSettingsModal(); els.settingsModalBackdrop.classList.add('open'); });
+els.restoreFileInput.addEventListener('change', (e) => { importLatestBackupFromFiles(e.target.files); e.target.value = ''; });
 document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => closeModal(b.dataset.close)));
 els.jobModalBackdrop.addEventListener('click', (e) => { if(e.target === els.jobModalBackdrop) closeModal('jobModalBackdrop'); });
 els.infoModalBackdrop.addEventListener('click', (e) => { if(e.target === els.infoModalBackdrop) closeModal('infoModalBackdrop'); });
+els.settingsModalBackdrop.addEventListener('click', (e) => { if(e.target === els.settingsModalBackdrop) closeModal('settingsModalBackdrop'); });
+renderInstallUI();
 
 // ---------- service worker ----------
 if('serviceWorker' in navigator){
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').then(reg => {
-      reg.update();
-      document.addEventListener('visibilitychange', () => { if(document.visibilityState==='visible') reg.update(); });
+    navigator.serviceWorker.register('./sw.js').then(() => {
+      checkForUpdate();
+      document.addEventListener('visibilitychange', () => { if(document.visibilityState==='visible') checkForUpdate(); });
     }).catch(()=>{});
   });
+} else {
+  checkForUpdate();
+  document.addEventListener('visibilitychange', () => { if(document.visibilityState==='visible') checkForUpdate(); });
 }
 
 loadData();

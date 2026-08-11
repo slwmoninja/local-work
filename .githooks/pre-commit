@@ -1,0 +1,7 @@
+#!/bin/sh
+# Keeps manifest.json/index.html's icon URLs and sw.js's CACHE_NAME in sync
+# with the actual content of the icon files and precached shell files on
+# every commit, so an installed PWA never gets stuck on a stale icon or a
+# stale cached copy after a push. See scripts/sync_pwa_version.py.
+
+python3 "$(git rev-parse --show-toplevel)/scripts/sync_pwa_version.py" || exit 1

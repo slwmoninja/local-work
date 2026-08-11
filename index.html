@@ -7,7 +7,7 @@
 <title>LocalWork</title>
 <link rel="manifest" href="./manifest.json">
 <link rel="icon" href="./icon-192.png">
-<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./icon-192.png?v=afd430da">
 <style>
   :root{
     --bg:#0c1210; --panel:#141c19; --panel2:#1a2420; --border:#243530;
@@ -84,9 +84,38 @@
   .track-box select, .track-box textarea, .track-box input{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:8px;font-size:13px;font-family:inherit}
   .track-box textarea{min-height:70px;resize:vertical}
   .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin:16px 0 4px}
+
+  /* ---- topbar Install pill — deliberately loud (accent green) so it reads as
+     a call to action next to the heading on every screen until installed;
+     Settings alone keeps rendering it (keepAfterInstall) as an inert "Installed"
+     status line instead of disappearing. ---- */
+  .topbar-install-btn{flex-shrink:0;border:none;border-radius:20px;padding:7px 12px;font-size:12.5px;font-weight:700;color:#04120c;background:var(--accent);cursor:pointer}
+  .topbar-install-btn:active{transform:translateY(1px)}
+  .topbar-install-btn.installed{background:var(--panel2);color:var(--muted);border:1px solid var(--border);font-weight:600}
+  .topbar-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+
+  /* ---- pull-to-refresh (forces an update check on demand) ---- */
+  .pull-refresh{position:fixed;top:10px;left:50%;transform:translate(-50%,-60px);width:34px;height:34px;border-radius:50%;background:var(--panel);border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--muted);z-index:80}
+  .pull-refresh.hidden{display:none}
+  .pull-refresh.dragging{transition:none}
+  .pull-refresh:not(.dragging){transition:transform .2s ease, opacity .2s ease}
+  .pull-refresh .arrow{transition:transform .15s ease;line-height:1}
+  .pull-refresh.ready .arrow{transform:rotate(180deg)}
+  .pull-refresh.spinning .arrow{display:none}
+  .pull-refresh.spinning::after{content:'';width:16px;height:16px;border-radius:50%;border:2px solid var(--border);border-top-color:var(--accent);animation:pr-spin .7s linear infinite}
+  @keyframes pr-spin{to{transform:rotate(360deg)}}
+
+  /* ---- toast (non-blocking backup/restore feedback) ---- */
+  #toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:var(--panel2);border:1px solid var(--border);color:var(--text);font-size:13px;padding:10px 16px;border-radius:12px;max-width:88vw;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;z-index:90}
+  #toast.show{opacity:1;transform:translate(-50%,0)}
+  #toast.toast-bad{border-color:var(--bad);color:#ef8296}
+
+  .modal-backdrop.center{align-items:center}
 </style>
 </head>
 <body>
+
+<div class="pull-refresh hidden" id="pullRefresh"><span class="arrow">↓</span></div>
 
 <header class="topbar">
   <div class="topbar-row">
@@ -94,7 +123,11 @@
       <h1>LocalWork</h1>
       <div class="sub">Roles within ~20 min of 23185, scored against your resume</div>
     </div>
-    <button class="icon-btn" id="btnInfo" title="About / how scoring works" aria-label="About">ⓘ</button>
+    <div class="topbar-actions">
+      <span id="installPillSlot"></span>
+      <button class="icon-btn" id="btnSettings" title="Settings" aria-label="Settings">⚙</button>
+      <button class="icon-btn" id="btnInfo" title="About / how scoring works" aria-label="About">ⓘ</button>
+    </div>
   </div>
   <div class="tabs" id="tabs"></div>
 </header>
@@ -142,6 +175,12 @@
     </p>
   </div>
 </div>
+
+<div class="modal-backdrop" id="settingsModalBackdrop">
+  <div class="modal" id="settingsModal"></div>
+</div>
+
+<input type="file" id="restoreFileInput" accept=".json,.js" multiple style="display:none">
 
 <script src="./app.js"></script>
 </body>
