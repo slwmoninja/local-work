@@ -1,6 +1,6 @@
 # LocalWork
 
-A PWA that finds desk-job openings within about a 20-minute drive of ZIP 23185 (Williamsburg, VA), scores each one against your resume, and helps you save / eliminate / apply-and-track roles.
+A PWA that finds desk-job openings within about a 20-minute drive of ZIP 23185 (Williamsburg, VA) plus fully-remote roles tied to Virginia, scores each one against your resume, and helps you save / eliminate / apply-and-track roles.
 
 ## How it works
 
@@ -9,7 +9,9 @@ A PWA that finds desk-job openings within about a 20-minute drive of ZIP 23185 (
 - **Scoring** happens two ways, and the app tells you which one produced a given score:
   - **Claude-reasoned** (`job.ai` present): produced offline by `scripts/refresh-jobs.ps1`, which runs headless Claude Code (your existing subscription login, not a metered API key) to actually read each posting, separate real qualifications from job duties/perks, and judge fit. This is the accurate path and avoids any free-NLP-API rate limit entirely, since it's not calling a public API at all.
   - **On-device keyword match** (no `job.ai`): an instant, zero-cost fallback built into `app.js` — plain keyword/synonym/regex matching against `resume-profile.json`. Used automatically for any job that hasn't been through a Claude refresh pass yet.
-- **Save / Eliminate / Apply & Track** state is stored in `localStorage` only, per browser/device.
+- **Save / Eliminate / Apply & Track** state is stored in `localStorage` only, per browser/device. An explicit Save always wins over automatic elimination — if a saved job later goes stale or fails a rescore on refresh, it stays in Saved rather than silently moving to Not a Fit.
+- **Freshness**: postings older than 7 days are auto-moved to Not a Fit (`freshness.windowDays` in `resume-profile.json`); postings from the last business day get a score bonus (`freshness.bonusWithinDays` / `bonusPoints`). Postings with no visible posted date are treated as neutral, not stale.
+- **Local vs remote**: `job.remote: true` entries show a "Remote (VA)" badge instead of a drive time. The two checkboxes above the list filter either category out independently.
 
 ## Refreshing job data
 

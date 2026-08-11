@@ -121,7 +121,7 @@
   <div class="topbar-row">
     <div class="brand">
       <h1>LocalWork</h1>
-      <div class="sub">Roles within ~20 min of 23185, scored against your resume</div>
+      <div class="sub">Roles within ~20 min of 23185, plus remote (VA) roles, scored against your resume</div>
     </div>
     <div class="topbar-actions">
       <span id="installPillSlot"></span>
@@ -135,6 +135,10 @@
 <main>
   <div class="filter-row">
     <label><input type="checkbox" id="strongOnly"> Strong matches only (score ≥ 60)</label>
+  </div>
+  <div class="filter-row">
+    <label><input type="checkbox" id="showLocal" checked> Local (20 min of 23185)</label>
+    <label><input type="checkbox" id="showRemote" checked> Remote (VA)</label>
   </div>
   <div id="jobList"></div>
   <div id="emptyState" class="empty" style="display:none"></div>
@@ -154,13 +158,17 @@
     <h2>How this works</h2>
     <p style="font-size:13.5px;color:#c6d8d0;line-height:1.5">
       LocalWork pulls job postings from employers within about a 20-minute drive of ZIP 23185 (Williamsburg, VA),
-      then compares each posting's stated requirements against your resume's skills and tools.
+      plus fully-remote roles explicitly tied to Virginia (not nationwide "Remote, US" postings), then compares
+      each posting's stated requirements against your resume's skills and tools. Use the Local/Remote checkboxes
+      above the list to filter either category out.
     </p>
     <p style="font-size:13.5px;color:#c6d8d0;line-height:1.5">
       <strong>Score</strong> = the percentage of a job's listed requirements that match something on your resume.
       Roles are automatically moved to <strong>Not a Fit</strong> when a requirement clearly isn't on your resume at all
       (a clinical license, a commercial driver's license, a physical-labor demand, a required unrelated technical skill, etc.)
-      or when fewer than 40% of requirements match.
+      or when fewer than 40% of requirements match — or when the posting is more than 7 days old. Postings from the
+      last business day get a small score boost (🔥 in the list, noted in the detail view) since a fresher posting
+      is worth applying to sooner.
     </p>
     <p style="font-size:13.5px;color:#c6d8d0;line-height:1.5">
       Most postings are scored by Claude actually reading the full listing and separating real qualifications from

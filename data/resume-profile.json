@@ -52,5 +52,10 @@
     { "id": "coding_required", "label": "Hands-on software engineering / coding as core duty", "patterns": ["write production code", "\\d\\+ years of software development experience", "proficiency in (Python|Java|C\\+\\+|JavaScript) required", "hands-on coding required"] },
     { "id": "security_clearance", "label": "Active security clearance required", "patterns": ["active (secret|top secret|ts/sci) clearance required", "must (currently )?hold.{0,20}security clearance"] }
   ],
-  "matchThresholdPercent": 40
+  "matchThresholdPercent": 40,
+  "freshness": {
+    "windowDays": 7,
+    "bonusWithinDays": 1,
+    "bonusPoints": 8
+  }
 }

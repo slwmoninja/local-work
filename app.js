@@ -10,12 +10,16 @@ let JOBS = [];        // raw jobs from data/jobs.json, scored + id'd
 let TRACK = loadTrack();
 let activeTab = 'matches';
 let strongOnly = false;
+let showLocal = true;
+let showRemote = true;
 
 const els = {
   tabs: document.getElementById('tabs'),
   jobList: document.getElementById('jobList'),
   emptyState: document.getElementById('emptyState'),
   strongOnly: document.getElementById('strongOnly'),
+  showLocal: document.getElementById('showLocal'),
+  showRemote: document.getElementById('showRemote'),
   jobModalBackdrop: document.getElementById('jobModalBackdrop'),
   jobModal: document.getElementById('jobModal'),
   infoModalBackdrop: document.getElementById('infoModalBackdrop'),
@@ -127,11 +131,33 @@ function scoreJobAi(job, resume){
   };
 }
 
+// Freshness window/bonus is configured in resume-profile.json (`freshness`)
+// so it's tunable without touching code. Unknown postedDate is treated as
+// neutral (neither stale nor fresh) -- several real postings never show a
+// date on the page, and that's not evidence the listing is old.
+function freshnessInfo(job, resume){
+  const cfg = (resume && resume.freshness) || { windowDays:7, bonusWithinDays:1, bonusPoints:8 };
+  if(!job.postedDate) return { known:false, days:null, stale:false, fresh:false, cfg };
+  const posted = new Date(job.postedDate + 'T00:00:00');
+  if(isNaN(posted.getTime())) return { known:false, days:null, stale:false, fresh:false, cfg };
+  const days = Math.floor((Date.now() - posted.getTime()) / 86400000);
+  return { known:true, days, stale: days > cfg.windowDays, fresh: days >= 0 && days <= cfg.bonusWithinDays, cfg };
+}
+
 function scoreJob(job, resume){
-  if(job.ai && Array.isArray(job.ai.requirements) && job.ai.requirements.length){
-    return scoreJobAi(job, resume);
+  const base = (job.ai && Array.isArray(job.ai.requirements) && job.ai.requirements.length)
+    ? scoreJobAi(job, resume)
+    : scoreJobLocal(job, resume);
+  const freshness = freshnessInfo(job, resume);
+  let score = base.score;
+  if(freshness.fresh) score = Math.min(100, score + freshness.cfg.bonusPoints);
+  let eliminated = base.eliminated;
+  let eliminatedReason = base.eliminatedReason;
+  if(!eliminated && freshness.stale){
+    eliminated = true;
+    eliminatedReason = `Posted ${freshness.days} days ago — older than the ${freshness.cfg.windowDays}-day freshness window.`;
   }
-  return scoreJobLocal(job, resume);
+  return Object.assign({}, base, { score, eliminated, eliminatedReason, freshness });
 }
 
 function uniqueMatchedSkills(scoreResult){
@@ -165,8 +191,8 @@ function classify(job){
   const t = getTrack(job.id);
   if(t.status === 'applied' || t.status === 'interviewing' || t.status === 'offer' || t.status === 'rejected') return 'tracking';
   if(t.status === 'dismissed') return 'notfit';
-  if(job._score.eliminated) return 'notfit';
   if(t.status === 'saved') return 'saved';
+  if(job._score.eliminated) return 'notfit';
   return 'matches';
 }
 
@@ -174,6 +200,7 @@ function jobsForTab(tab){
   let list = JOBS.filter(j => classify(j) === tab);
   if(tab === 'matches' || tab === 'saved'){
     if(strongOnly) list = list.filter(j => j._score.score >= 60);
+    list = list.filter(j => (j.remote ? showRemote : showLocal));
     list.sort((a,b) => b._score.score - a._score.score);
   } else if(tab === 'notfit'){
     list.sort((a,b) => b._score.score - a._score.score);
@@ -220,8 +247,9 @@ function cardHtml(job){
   const matched = uniqueMatchedSkills(s);
   const chipsHtml = matched.slice(0,5).map(m => `<span class="chip">${m.label}</span>`).join('')
     + (matched.length > 5 ? `<span class="chip more">+${matched.length-5} more</span>` : '');
-  const drive = (job.estDriveMinutesFrom23185 != null) ? `${job.estDriveMinutesFrom23185} min drive` : null;
-  const metaBits = [job.location || job.employerLocation, drive, job.salary || null, job.postedDate ? `Posted ${job.postedDate}` : null].filter(Boolean);
+  const workType = job.remote ? `Remote (${job.remoteTiedTo || 'VA'})` : (job.estDriveMinutesFrom23185 != null ? `${job.estDriveMinutesFrom23185} min drive` : null);
+  const postedBit = job.postedDate ? `Posted ${job.postedDate}${s.freshness.fresh ? ' 🔥' : ''}` : null;
+  const metaBits = [job.location || job.employerLocation, workType, job.salary || null, postedBit].filter(Boolean);
   const reasonHtml = s.eliminated ? `<div class="reason">${s.eliminatedReason}</div>` : '';
   return `
   <div class="card" data-id="${job.id}">
@@ -332,15 +360,17 @@ function openJobModal(job){
     || `<li style="color:var(--muted)">No structured requirements were captured for this posting — check the full listing.</li>`;
   const trackingCls = ['applied','interviewing','offer','rejected'];
   const showTracker = trackingCls.includes(t.status);
-  const scoreSourceLabel = s.source === 'ai'
+  const scoreSourceLabel = (s.source === 'ai'
     ? 'Scored by Claude reading the full posting'
-    : 'Scored by on-device keyword match (no Claude read-through yet for this posting)';
+    : 'Scored by on-device keyword match (no Claude read-through yet for this posting)')
+    + (s.freshness.fresh ? ` · 🔥 +${s.freshness.cfg.bonusPoints} freshness bonus (posted ${s.freshness.days === 0 ? 'today' : s.freshness.days + ' day(s) ago'})` : '');
   els.jobModal.innerHTML = `
     <button class="close-x" data-close="jobModalBackdrop">✕</button>
     <div class="score-badge ${scoreClass(s.score)}" style="float:right;margin-top:2px">${s.score}<span class="lbl">MATCH</span></div>
     <h2>${job.title}</h2>
     <div class="card-employer">${job.employer} — ${job.location || job.employerLocation || ''}</div>
-    ${job.estDriveMinutesFrom23185!=null ? `<div style="font-size:12px;color:var(--muted);margin-top:4px">${job.estDriveMinutesFrom23185} min drive from 23185${job.salary?` · ${job.salary}`:''}</div>`:''}
+    ${job.remote ? `<div style="font-size:12px;color:var(--muted);margin-top:4px">Remote (tied to ${job.remoteTiedTo || 'VA'})${job.salary?` · ${job.salary}`:''}</div>`
+      : job.estDriveMinutesFrom23185!=null ? `<div style="font-size:12px;color:var(--muted);margin-top:4px">${job.estDriveMinutesFrom23185} min drive from 23185${job.salary?` · ${job.salary}`:''}</div>`:''}
     ${job.description ? `<p style="font-size:13.5px;color:#c6d8d0;line-height:1.5">${job.description}</p>` : ''}
     ${s.eliminated ? `<div class="reason">${s.eliminatedReason}</div>` : ''}
     <div class="section-label">Requirements match (${s.matchedCount}/${s.total})</div>
@@ -1007,6 +1037,8 @@ history.replaceState({ tab: activeTab }, ''); // baseline entry so the first tab
 
 // ---------- global wiring ----------
 els.strongOnly.addEventListener('change', () => { strongOnly = els.strongOnly.checked; render(); });
+els.showLocal.addEventListener('change', () => { showLocal = els.showLocal.checked; render(); });
+els.showRemote.addEventListener('change', () => { showRemote = els.showRemote.checked; render(); });
 els.btnInfo.addEventListener('click', () => els.infoModalBackdrop.classList.add('open'));
 els.btnSettings.addEventListener('click', () => { renderSettingsModal(); els.settingsModalBackdrop.classList.add('open'); });
 els.restoreFileInput.addEventListener('change', (e) => { importLatestBackupFromFiles(e.target.files); e.target.value = ''; });
