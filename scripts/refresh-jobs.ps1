@@ -21,7 +21,11 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
    drive of ZIP 23185 (Williamsburg, VA) -- desk/office professional roles
    only (program/project/product management, partner/alliance management,
    business development, GTM/sales enablement, marketing, operations,
-   consulting) -- using WebSearch/WebFetch and, if needed, the
+   consulting). In addition to searching/filtering by ZIP 23185, also search
+   using "Williamsburg, VA" and "James City County, VA" as location terms --
+   some job boards (state/county sites, ATS platforms) filter by city/county
+   name rather than ZIP radius, and postings there can be missed by a
+   ZIP-only search. Use WebSearch/WebFetch and, if needed, the
    claude-in-chrome browser tools for JS-heavy career sites (open Chrome
    first if it isn't running).
 3. For each posting, extract the verbatim Requirements/Qualifications
@@ -37,7 +41,15 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
 5. Assign a 0-100 score per job (holistic judgment of overall fit, not just
    percent-matched) and set eliminated:true when a hard requirement is
    missing or the fit is clearly poor, with a one-sentence eliminatedReason.
-6. Write the full result as data/jobs.json, a JSON array of job objects
+6. Each job's "url" must be a direct link to that specific posting, not a
+   general search/results page. Verify this by actually opening the URL:
+   for Workday boards (myworkdayjobs.com), use the "/job/" path, not
+   "/details/" -- "/details/" opens the job in a side panel on top of the
+   full search-results list, which reads as a generic job board rather than
+   a direct link to the role. If a site's URL scheme is unclear, open it and
+   confirm the page it lands on (or auto-scrolls to) actually shows the
+   specific job, not a list.
+7. Write the full result as data/jobs.json, a JSON array of job objects
    with this shape:
    { "title": "", "employer": "", "location": "", "employerLocation": "",
      "estDriveMinutesFrom23185": 0, "url": "", "description": "",
@@ -49,7 +61,7 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
    listing and you don't have time to re-verify it this run, you may carry
    it forward unchanged; drop entries whose postings are gone (filled or
    expired) instead of guessing they're still open.
-7. Only include postings you actually found on a real page. Never invent a
+8. Only include postings you actually found on a real page. Never invent a
    job, employer, or requirement -- if you can't access a site, skip it and
    say so in your final summary rather than fabricating rows.
 '@
