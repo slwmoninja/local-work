@@ -440,5 +440,125 @@
         { "text": "Experience with a fundraising database preferred", "matched": false, "hard": false, "note": "Only \"preferred,\" not required." }
       ]
     }
+  },
+  {
+    "title": "Principal Solutions Consultant",
+    "employer": "Genesys",
+    "location": "Virginia, United States",
+    "employerLocation": "Remote (VA)",
+    "remote": true,
+    "remoteTiedTo": "VA",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://www.linkedin.com/jobs/view/principal-solutions-consultant-at-genesys-4448577810",
+    "description": "Enterprise pre-sales/solutions consulting role partnering with large customers on discovery workshops, AI proof-of-concept engagements, and solution demos for Genesys Cloud, acting as a trusted advisor throughout the sales cycle.",
+    "postedDate": "2026-08-07",
+    "salary": "$123.1K-$216.5K",
+    "requirements": [
+      "Passion for technology, innovation, and helping customers solve complex business problems",
+      "Strong interpersonal, presentation, verbal, and written communication skills, with the ability to engage audiences ranging from technical practitioners to executive leadership",
+      "Experience facilitating workshops, discovery sessions, design-thinking engagements, or customer strategy discussions",
+      "Familiarity with AI, automation, conversational technologies, or customer experience platforms, with the ability to guide customers through evaluations, trials, and proof-of-concept initiatives",
+      "Ability to work effectively in a fast-paced, cross-functional environment while managing multiple priorities and deadlines",
+      "Strong problem-solving skills and an ability to think creatively when addressing customer challenges",
+      "Understanding of enterprise IT concepts, cloud technologies, networking, security, databases, and software architecture",
+      "Experience maintaining accurate CRM records, opportunity updates, and customer engagement documentation",
+      "Must be based in the Eastern US Region"
+    ],
+    "ai": {
+      "score": 67,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        { "text": "Passion for technology, innovation, and helping customers solve complex business problems", "matched": true, "hard": false, "note": "Subjective/cultural fit, not resume-verifiable but consistent with 14 years at Microsoft." },
+        { "text": "Strong interpersonal, presentation, verbal, and written communication skills, with the ability to engage audiences ranging from technical practitioners to executive leadership", "matched": true, "hard": false, "note": "Executive presentation training and cross-functional Microsoft/SAP engagement experience." },
+        { "text": "Experience facilitating workshops, discovery sessions, design-thinking engagements, or customer strategy discussions", "matched": true, "hard": false, "note": "GTM design/launch and partner engagement work." },
+        { "text": "Familiarity with AI, automation, conversational technologies, or customer experience platforms, with the ability to guide customers through evaluations, trials, and proof-of-concept initiatives", "matched": false, "hard": false, "note": "No AI/automation/CX-platform (Genesys Cloud is contact-center software) experience on resume — this is the core product category of the role." },
+        { "text": "Ability to work effectively in a fast-paced, cross-functional environment while managing multiple priorities and deadlines", "matched": true, "hard": false, "note": null },
+        { "text": "Strong problem-solving skills and an ability to think creatively when addressing customer challenges", "matched": true, "hard": false, "note": null },
+        { "text": "Understanding of enterprise IT concepts, cloud technologies, networking, security, databases, and software architecture", "matched": true, "hard": false, "note": "Azure Fundamentals certification plus SAP/Salesforce integration experience; likely lighter on networking/security depth than a career technical consultant." },
+        { "text": "Experience maintaining accurate CRM records, opportunity updates, and customer engagement documentation", "matched": true, "hard": false, "note": "Dynamics CRM experience." },
+        { "text": "Must be based in the Eastern US Region", "matched": true, "hard": false, "note": "Virginia is Eastern US." }
+      ]
+    }
+  },
+  {
+    "title": "Customer Success Manager",
+    "employer": "EasyLlama",
+    "location": "Virginia, United States",
+    "employerLocation": "Remote (VA)",
+    "remote": true,
+    "remoteTiedTo": "VA",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://www.linkedin.com/jobs/view/customer-success-manager-at-easyllama-4452463155",
+    "description": "Owns a portfolio of larger compliance-training SaaS accounts, driving renewals, upgrade/expansion opportunities, and product adoption for this bootstrapped, profitable HR-tech company; fully remote with VA on the approved-states hiring list. Posted salary is below your $170K comp target.",
+    "postedDate": "2026-08-10",
+    "salary": "$75K-$85K base / $110K-$120K OTE",
+    "requirements": [
+      "4-6 years in Customer Success, Account Management, or another customer-facing role",
+      "Strong written and verbal communication skills",
+      "A proactive mindset, someone who thinks beyond the playbook and brings fresh ideas and strategies to their book of business",
+      "Comfortable managing renewal, upsell and forecasting processes",
+      "Consultative approach, able to understand customer goals and connect them to product value",
+      "Highly organized with strong attention to detail",
+      "Resourceful and proactive, looking for opportunities and solving problems before they're asked of you"
+    ],
+    "ai": {
+      "score": 90,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        { "text": "4-6 years in Customer Success, Account Management, or another customer-facing role", "matched": true, "hard": false, "note": "Extensive partner/customer-facing roles: Pre-Sales Manager, Partner Alliance Manager, consulting." },
+        { "text": "Strong written and verbal communication skills", "matched": true, "hard": false, "note": null },
+        { "text": "A proactive mindset, someone who thinks beyond the playbook and brings fresh ideas and strategies to their book of business", "matched": true, "hard": false, "note": null },
+        { "text": "Comfortable managing renewal, upsell and forecasting processes", "matched": true, "hard": false, "note": "Rebate/incentive program and revenue-attainment management is directly adjacent." },
+        { "text": "Consultative approach, able to understand customer goals and connect them to product value", "matched": true, "hard": false, "note": "Engagement Manager / consulting background." },
+        { "text": "Highly organized with strong attention to detail", "matched": true, "hard": false, "note": null },
+        { "text": "Resourceful and proactive, looking for opportunities and solving problems before they're asked of you", "matched": true, "hard": false, "note": null }
+      ]
+    }
+  },
+  {
+    "title": "Project Solutions Manager (Remote/Field Based)",
+    "employer": "Stanley Black & Decker, Inc.",
+    "location": "Virginia, United States",
+    "employerLocation": "Remote (VA)",
+    "remote": true,
+    "remoteTiedTo": "VA",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://www.linkedin.com/jobs/view/project-solutions-manager-at-stanley-black-decker-inc-4424737970",
+    "description": "Owns SBD's engagement strategy and stakeholder relationships (owners, contractors, subcontractors) across major North American construction projects, coordinating internal teams and managing a regional budget; field-based with heavy travel to job sites.",
+    "postedDate": "2026-08-10",
+    "salary": "$105K-$169.1K",
+    "requirements": [
+      "Bachelor's Degree preferred (Business Management or Engineering preferred)",
+      "10+ years of in sales, marketing or related field.",
+      "OSHA10 & OSHA30 certifications preferred.",
+      "Proven Construction project management experience preferred.",
+      "Must have the ability to build relationships and work effectively with all levels of an organization to drive strategy, influence owners and create procedures and protocols.",
+      "Skilled at building and aligning a team to the overall strategic plan of the group and holding yourself accountable for the failures while giving credit to your team for the successes.",
+      "Ability to collaborate with the appropriate internal team members to resolve problems that arise with the end users in your region",
+      "Ideal candidate is experienced in planning and executing meetings and events of varying sizes and scope.",
+      "Exhibit a thorough knowledge of managing and executing a budget for your region to stay within the developed forecast and allocation.",
+      "Travel 60% of the time to construction job sites",
+      "Proficient computer skills including MS Office Suite, SAP and use of a smartphone"
+    ],
+    "ai": {
+      "score": 58,
+      "eliminated": true,
+      "eliminatedReason": "This is a field-based role requiring 60% travel to active construction job sites — despite strong sales/leadership skill overlap, that conflicts with your desk/office-only physical constraint, not just a resume-skills gap.",
+      "requirements": [
+        { "text": "Bachelor's Degree preferred (Business Management or Engineering preferred)", "matched": true, "hard": false, "note": "MBA; only \"preferred,\" not required." },
+        { "text": "10+ years of in sales, marketing or related field.", "matched": true, "hard": false, "note": "20+ years in sales enablement, GTM, and marketing." },
+        { "text": "OSHA10 & OSHA30 certifications preferred.", "matched": false, "hard": false, "note": "Not on resume, but only \"preferred.\"" },
+        { "text": "Proven Construction project management experience preferred.", "matched": false, "hard": false, "note": "General PM experience, not construction-specific; only \"preferred.\"" },
+        { "text": "Must have the ability to build relationships and work effectively with all levels of an organization to drive strategy, influence owners and create procedures and protocols.", "matched": true, "hard": false, "note": "Core partner/alliance strength." },
+        { "text": "Skilled at building and aligning a team to the overall strategic plan of the group and holding yourself accountable for the failures while giving credit to your team for the successes.", "matched": true, "hard": false, "note": null },
+        { "text": "Ability to collaborate with the appropriate internal team members to resolve problems that arise with the end users in your region", "matched": true, "hard": false, "note": null },
+        { "text": "Ideal candidate is experienced in planning and executing meetings and events of varying sizes and scope.", "matched": true, "hard": false, "note": "GTM launch and sales-enablement event experience." },
+        { "text": "Exhibit a thorough knowledge of managing and executing a budget for your region to stay within the developed forecast and allocation.", "matched": false, "hard": false, "note": "No explicit budget-ownership evidence on resume." },
+        { "text": "Travel 60% of the time to construction job sites", "matched": false, "hard": true, "note": "Field-based construction-site travel conflicts with your documented desk/office-only physical constraint (no standing for long periods, no repetitive lifting/bending)." },
+        { "text": "Proficient computer skills including MS Office Suite, SAP and use of a smartphone", "matched": true, "hard": false, "note": "Office and SAP integration experience." }
+      ]
+    }
   }
 ]
