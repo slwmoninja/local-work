@@ -1,0 +1,7 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Source resume file has personal contact info (phone/email) -- kept local only.
+# data/resume-profile.json (the derived skills summary used for scoring) has no PII and is committed.
+RussFreeman_2026.pdf
