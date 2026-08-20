@@ -65,6 +65,11 @@
   .empty{text-align:center;color:var(--muted);padding:60px 20px;font-size:14px;line-height:1.6}
   .empty .big{font-size:34px;display:block;margin-bottom:10px}
   footer.hint{max-width:760px;margin:0 auto;padding:0 14px 24px;color:var(--muted);font-size:11.5px;line-height:1.6;text-align:center}
+  .bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;gap:6px;background:linear-gradient(0deg,#0c1210,#0f1815 90%);border-top:1px solid var(--border);padding:8px 14px calc(8px + env(safe-area-inset-bottom))}
+  .bottom-nav-btn{flex:0 0 auto;min-width:96px;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:12px;padding:7px 16px;cursor:pointer}
+  .bottom-nav-btn:hover{border-color:var(--accent-dim)}
+  .bottom-nav-btn .bn-icon{font-size:17px;line-height:1}
+  .bottom-nav-btn .bn-label{font-size:10.5px;color:var(--muted)}
 
   .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:50}
   .modal-backdrop.open{display:flex}
@@ -147,6 +152,15 @@
 <footer class="hint">
   Data is a static snapshot, not a live feed — see the ⓘ button above or README.md for how to refresh it.
 </footer>
+
+<nav class="bottom-nav">
+  <button class="bottom-nav-btn" id="navSettings" title="Settings" aria-label="Settings">
+    <span class="bn-icon">⚙</span><span class="bn-label">Settings</span>
+  </button>
+  <button class="bottom-nav-btn" id="navBackup" title="Back up now" aria-label="Back up now">
+    <span class="bn-icon">💾</span><span class="bn-label">Backup</span>
+  </button>
+</nav>
 
 <div class="modal-backdrop" id="jobModalBackdrop">
   <div class="modal" id="jobModal"></div>

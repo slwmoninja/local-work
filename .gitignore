@@ -2,6 +2,14 @@
 .DS_Store
 Thumbs.db
 
+# Python bytecode cache from running scripts/local_server.py
+__pycache__/
+
 # Source resume file has personal contact info (phone/email) -- kept local only.
 # data/resume-profile.json (the derived skills summary used for scoring) has no PII and is committed.
 RussFreeman_2026.pdf
+
+# Transient state written by scripts/local_server.py's /api/refresh endpoint --
+# regenerated every run, no reason to commit it.
+data/refresh-status.json
+data/refresh-log.txt

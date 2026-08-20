@@ -2,7 +2,7 @@
 // confirmed against what was actually deployed (Settings > About shows this).
 // Distinct from STORE_KEY's "_v1" suffix, which is the localStorage data-shape
 // version -- don't conflate the two.
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.2.0';
 const STORE_KEY = 'localwork_v1';
 
 let RESUME = null;
@@ -51,8 +51,24 @@ function setTrack(jobId, patch){
 function slugify(s){
   return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 }
+// URL only (not title+employer) -- refresh-jobs.ps1 regenerates postings
+// through an LLM each run, so wording can drift slightly even when it's the
+// same posting carried forward. Keying on the URL (normalized so a trailing
+// slash or stray query param doesn't count as "different") keeps a job's id
+// stable across refreshes, which is what makes an Eliminate/Save survive a
+// refresh instead of the job silently reappearing as "new".
+function normalizeUrl(u){
+  if(!u) return '';
+  try{
+    const url = new URL(u);
+    return (url.host + url.pathname.replace(/\/+$/,'')).toLowerCase();
+  }catch(e){
+    return String(u).trim().toLowerCase().replace(/[?#].*$/,'').replace(/\/+$/,'');
+  }
+}
 function jobId(job){
-  return job.id || slugify(`${job.employer}|${job.title}|${job.url||''}`);
+  if(job.id) return job.id;
+  return slugify(job.url ? normalizeUrl(job.url) : `${job.employer}|${job.title}`);
 }
 
 // ---------- matching engine ----------
@@ -171,19 +187,115 @@ function uniqueMatchedSkills(scoreResult){
 }
 
 // ---------- data load ----------
-async function loadData(){
-  const [resumeRes, jobsRes] = await Promise.all([
-    fetch('./data/resume-profile.json', {cache:'no-store'}),
-    fetch('./data/jobs.json', {cache:'no-store'})
-  ]);
-  RESUME = await resumeRes.json();
-  const rawJobs = await jobsRes.json();
-  JOBS = rawJobs.map(job => {
-    const id = jobId(job);
-    const sr = scoreJob(job, RESUME);
-    return Object.assign({}, job, { id, _score: sr });
-  });
-  render();
+// Shared by startup load and the Refresh button -- re-fetches whatever is
+// currently published in data/jobs.json (cache-busted) and re-scores it.
+// Doesn't itself produce new postings; see startLocalRefresh() for that.
+async function pullLatestSnapshot(announce){
+  try{
+    const [resumeRes, jobsRes] = await Promise.all([
+      fetch('./data/resume-profile.json', {cache:'no-store'}),
+      fetch('./data/jobs.json', {cache:'no-store'})
+    ]);
+    RESUME = await resumeRes.json();
+    const rawJobs = await jobsRes.json();
+    const prevCount = JOBS.length;
+    JOBS = rawJobs.map(job => {
+      const id = jobId(job);
+      const sr = scoreJob(job, RESUME);
+      return Object.assign({}, job, { id, _score: sr });
+    });
+    render();
+    if(announce) showToast(`Pulled latest job data — ${JOBS.length} posting${JOBS.length===1?'':'s'} (was ${prevCount}).`);
+    return true;
+  }catch(e){
+    if(announce) showToast('Could not load job data: ' + e.message, 'bad');
+    return false;
+  }
+}
+function loadData(){
+  return pullLatestSnapshot(false);
+}
+
+/* =========================================================
+   REFRESH JOBS -- "Refresh job data" (Settings + the empty Matches state,
+   for when today's list has all been eliminated). Two tiers:
+     1. Local trigger: when the app is being served by scripts/serve.ps1's
+        local_server.py (desktop only), POST /api/refresh kicks off a real
+        headless-Claude re-scrape (refresh-jobs.ps1) in the background and
+        this polls /api/refresh/status until it's done, then pulls the new
+        snapshot.
+     2. Fallback: on GitHub Pages (or any plain static host) there's no
+        /api/refresh route to hit -- the fetch itself fails or 404s -- so
+        this just pulls whatever snapshot is already published and tells
+        the user how to run a real refresh from their desktop.
+   ========================================================= */
+let refreshPolling = false;
+async function startLocalRefresh(){
+  let res;
+  try{
+    res = await fetch('./api/refresh', { method:'POST' });
+  }catch(e){
+    return { reachable:false };
+  }
+  if(res.status === 202) return { reachable:true, started:true };
+  if(res.status === 409) return { reachable:true, busy:true };
+  return { reachable:false };
+}
+async function pollRefreshStatus(){
+  try{
+    const res = await fetch('./api/refresh/status', { cache:'no-store' });
+    if(!res.ok) return null;
+    return await res.json();
+  }catch(e){ return null; }
+}
+function watchLocalRefresh(){
+  if(refreshPolling) return;
+  refreshPolling = true;
+  const tick = async () => {
+    const status = await pollRefreshStatus();
+    if(!status || status.status === 'running'){
+      setTimeout(tick, 4000);
+      return;
+    }
+    refreshPolling = false;
+    if(status.status === 'done') await pullLatestSnapshot(true);
+    else if(status.status === 'error') showToast('Refresh failed: ' + (status.error || 'see data/refresh-log.txt'), 'bad');
+  };
+  tick();
+}
+async function handleRefreshJobsClick(){
+  const start = await startLocalRefresh();
+  if(!start.reachable){
+    await pullLatestSnapshot(true);
+    openPopup('Get more roles', `
+      <div style="margin-bottom:10px">Pulled the latest published snapshot. To have Claude go find brand-new postings, run this on your desktop:</div>
+      <pre style="white-space:pre-wrap;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:12px">powershell -File scripts\\refresh-jobs.ps1</pre>
+      <div style="font-size:12px;color:var(--muted)">Or serve the app locally with <code>scripts\\serve.ps1</code> instead of a plain static server -- then this same button runs the scrape for you.</div>
+    `);
+    return;
+  }
+  if(start.busy){ showToast('A refresh is already running — check back in a few minutes.'); watchLocalRefresh(); return; }
+  if(!start.started){ showToast('Could not start a refresh.', 'bad'); return; }
+  showToast('Refreshing job data — this can take a few minutes. Keep using the app; it\'ll update automatically.');
+  watchLocalRefresh();
+}
+async function showSourcesPopup(){
+  try{
+    const res = await fetch('./data/sources.json', { cache:'no-store' });
+    if(!res.ok) throw new Error('No sources file yet — run a refresh first.');
+    const data = await res.json();
+    const sites = Array.isArray(data.sites) ? data.sites : [];
+    const when = data.refreshedAt ? new Date(data.refreshedAt).toLocaleString() : 'unknown time';
+    const rows = sites.length
+      ? sites.map(s => `<li style="margin-bottom:8px"><a href="${s.url}" target="_blank" rel="noopener">${escapeHtml(s.employer || s.label || s.url)}</a>${s.type ? ` <span style="color:var(--muted)">(${escapeHtml(s.type)})</span>` : ''}</li>`).join('')
+      : '<li style="color:var(--muted)">No sites recorded.</li>';
+    openPopup('Sites checked last refresh', `
+      <div style="font-size:12px;color:var(--muted);margin-bottom:10px">Refreshed ${when}</div>
+      <ul style="list-style:none;padding:0;margin:0">${rows}</ul>
+    `);
+  }catch(e){
+    showToast(e.message, 'bad');
+  }
 }
 
 // ---------- derived lists ----------
@@ -289,7 +401,7 @@ function cardActionButtons(job){
 
 function emptyMessage(tab){
   const msgs = {
-    matches: { big:'🔎', text:'No matching roles right now. Refresh the job data snapshot (see README.md) to pull a new batch.' },
+    matches: { big:'🔎', text:'No matching roles right now — eliminated ones stay out for good. Tap below to pull a new batch.' },
     saved: { big:'⭐', text:'Nothing saved yet. Tap Save on a role in Matches to keep it here.' },
     tracking: { big:'📌', text:'No applications tracked yet. Tap "Apply & Track" on a role to start tracking it here.' },
     notfit: { big:'🚫', text:'Nothing eliminated yet. Roles land here automatically when a requirement clearly isn\'t on your resume, or when you tap Eliminate.' },
@@ -303,8 +415,13 @@ function render(){
   if(!list.length){
     els.jobList.innerHTML = '';
     const m = emptyMessage(activeTab);
+    const refreshBtnHtml = activeTab === 'matches'
+      ? `<button class="btn btn-primary small" id="btnEmptyRefresh" style="margin-top:14px">Refresh job data</button>`
+      : '';
     els.emptyState.style.display = 'block';
-    els.emptyState.innerHTML = `<span class="big">${m.big}</span>${m.text}`;
+    els.emptyState.innerHTML = `<span class="big">${m.big}</span>${m.text}${refreshBtnHtml}`;
+    const emptyRefreshBtn = document.getElementById('btnEmptyRefresh');
+    if(emptyRefreshBtn) emptyRefreshBtn.addEventListener('click', handleRefreshJobsClick);
   } else {
     els.emptyState.style.display = 'none';
     els.jobList.innerHTML = list.map(cardHtml).join('');
@@ -610,6 +727,72 @@ async function handleBackupNowClick(){
   }
 }
 
+/* =========================================================
+   EXIT APP BACKUP (Step 6b) -- a silent, app-owned safety net, entirely
+   separate from the manual "Back up now" above. Overwrites ONE fixed
+   IndexedDB record on every backgrounding (visibilitychange -> hidden, plus
+   pagehide as a redundant second trigger) -- never a new record per exit,
+   and no UI/toast at all. Exists to survive an app-level bug or storage
+   corruption between real manual backups; the user never sees it directly
+   except as a candidate source for the restore-on-empty-state flow (Path A0
+   in maybeOfferStartupRestore() below) -- no settings row, no button, no
+   filename.
+   ========================================================= */
+const EXIT_BACKUP_DB = 'localworkExitBackup';
+const EXIT_BACKUP_STORE = 'snapshot';
+const EXIT_BACKUP_KEY = 'latest';
+const EXIT_BACKUP_LAST_FINGERPRINT_KEY = 'localwork_last_exit_backup_fingerprint';
+function openExitBackupDb(){
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(EXIT_BACKUP_DB, 1);
+    req.onupgradeneeded = () => { req.result.createObjectStore(EXIT_BACKUP_STORE); };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+// Skips the write when nothing's changed since the last exit backup (same
+// fingerprint technique as runBackup() above) -- not required for
+// correctness (the fixed key already prevents pile-up regardless), just
+// avoids a pointless IndexedDB write on every tab-switch/background cycle.
+async function writeExitBackup(){
+  const fp = backupFingerprint();
+  if(fp === localStorage.getItem(EXIT_BACKUP_LAST_FINGERPRINT_KEY)) return false;
+  try{
+    const db = await openExitBackupDb();
+    await new Promise((resolve, reject) => {
+      const tx = db.transaction(EXIT_BACKUP_STORE, 'readwrite');
+      tx.objectStore(EXIT_BACKUP_STORE).put(buildBackupPayload(), EXIT_BACKUP_KEY);
+      tx.oncomplete = resolve; tx.onerror = () => reject(tx.error);
+    });
+    localStorage.setItem(EXIT_BACKUP_LAST_FINGERPRINT_KEY, fp);
+    return true;
+  }catch(e){ return false; } // best-effort/silent -- nothing to surface a failure to at exit time
+}
+async function readExitBackup(){
+  try{
+    const db = await openExitBackupDb();
+    return await new Promise((resolve, reject) => {
+      const req = db.transaction(EXIT_BACKUP_STORE, 'readonly').objectStore(EXIT_BACKUP_STORE).get(EXIT_BACKUP_KEY);
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => reject(req.error);
+    });
+  }catch(e){ return null; }
+}
+// Wired exactly once at bootstrap (see the global wiring section near the
+// bottom of this file) -- these listeners live on document/window, never
+// rebuilt by render(), so rewiring them from anywhere that re-runs would
+// accumulate duplicate listeners the same way Step 6's backup-button bug
+// once did. visibilitychange->hidden is the primary trigger (the page is
+// still fully alive when it fires, giving the async IndexedDB write a real
+// chance to finish); pagehide is a redundant second trigger since coverage
+// of what actually fires differs across mobile OSes. Deliberately no
+// beforeunload: unreliable on mobile Safari and disqualifies the page from
+// the back-forward cache in Chromium/Firefox for every normal tab-switch.
+function initExitBackup(){
+  document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'hidden') writeExitBackup(); });
+  window.addEventListener('pagehide', () => { writeExitBackup(); });
+}
+
 function validateBackupShape(parsed){
   return !!(parsed && typeof parsed === 'object' && parsed.track && typeof parsed.track === 'object');
 }
@@ -680,43 +863,106 @@ async function openRestorePicker(){
 }
 
 /* =========================================================
-   RESTORE PROMPT AT STARTUP (Step 7a) -- only meaningful on browsers with the
-   File System Access API, since only a saved+already-granted handle can be
-   silently re-read without a user gesture. Only fires when TRACK looks
-   freshly wiped (fresh profile, "Erase All Data", silent storage eviction)
-   AND permission on a previously-saved handle is already 'granted' --
-   queryPermission only, never requestPermission this early (no user gesture
-   yet, and forcing that would throw a blocking native prompt on every load).
+   RESTORE PROMPT AT STARTUP (Step 7a). Only fires when TRACK looks freshly
+   wiped (fresh profile, "Erase All Data", a browser "Clear browsing data"
+   pass, silent storage eviction). Three paths, tried in order:
+     Path A0 -- Step 6b's silent Exit App Backup (IndexedDB), checked first,
+       every platform. A plain IndexedDB read needs no permission and no
+       user gesture anywhere (unlike Path A below), so this is what actually
+       makes silent restore possible on mobile, where the File System Access
+       API doesn't exist at all. Also the freshest silent source, since it's
+       kept current on every backgrounding rather than only whenever the
+       user last tapped "Back up now".
+     Path A -- File System Access browsers only (desktop Chrome/Edge): a
+       saved+already-granted handle can be silently re-read with no user
+       gesture, so this can go straight to a Yes/No "found your backup" ask.
+     Path B -- every other browser, which is most phones (iOS Safari, Android
+       Chrome included): nothing can be silently re-read without a user
+       gesture, so the prompt itself has to be the ask -- a button straight
+       into the Step 7 open-file-picker flow. A prior version of this function
+       returned false immediately whenever `showSaveFilePicker` was missing,
+       which meant phone users -- the ones most likely to actually hit a
+       browser data clear day-to-day -- got zero prompt on an empty load and
+       no nudge toward the buried manual Restore button. Fixed 2026-08-14.
    ========================================================= */
 async function maybeOfferStartupRestore(){
-  if(!window.showSaveFilePicker) return false;
   if(Object.keys(TRACK).length) return false; // real data present -- never prompt
-  const handle = await loadSavedBackupHandle();
-  if(!handle) return false;
+
   try{
-    const perm = await handle.queryPermission({ mode:'read' });
-    if(perm !== 'granted') return false;
-    const file = await handle.getFile();
-    const text = await file.text();
-    const parsed = JSON.parse(text);
-    if(!validateBackupShape(parsed)) return false;
-    const count = Object.keys(parsed.track).length;
-    if(!count) return false;
-    return await new Promise(resolve => {
-      const dateStr = parsed.exportedAt ? new Date(parsed.exportedAt).toLocaleDateString() : 'an earlier session';
-      const wrap = openPopup('Load latest backup?', `
-        <div style="margin-bottom:14px">Found ${count} saved job status${count===1?'':'es'} from a backup saved on ${dateStr}, but this device's data looks empty right now. Load it?</div>
-        <button class="btn btn-primary" id="restore-prompt-yes" style="width:100%;display:block;margin-bottom:8px">Yes, load it</button>
-        <button class="btn btn-ghost" id="restore-prompt-no" style="width:100%;display:block">No</button>
-      `);
-      wrap.querySelector('#restore-prompt-yes').addEventListener('click', async () => {
-        wrap.remove();
-        await importBackupFromFile(file, { skipConfirm:true });
-        resolve(true);
-      });
-      wrap.querySelector('#restore-prompt-no').addEventListener('click', () => { wrap.remove(); resolve(true); });
+    const parsed = await readExitBackup();
+    if(parsed && validateBackupShape(parsed)){
+      const count = Object.keys(parsed.track).length;
+      if(count){
+        const applied = await new Promise(resolve => {
+          const dateStr = parsed.exportedAt ? new Date(parsed.exportedAt).toLocaleDateString() : 'an earlier session';
+          const wrap = openPopup('Load latest backup?', `
+            <div style="margin-bottom:14px">Found ${count} saved job status${count===1?'':'es'} from an automatic safety-net backup saved on ${dateStr}, but this device's data looks empty right now. Load it?</div>
+            <button class="btn btn-primary" id="restore-prompt-a0-yes" style="width:100%;display:block;margin-bottom:8px">Yes, load it</button>
+            <button class="btn btn-ghost" id="restore-prompt-a0-no" style="width:100%;display:block">No</button>
+          `);
+          wrap.querySelector('#restore-prompt-a0-yes').addEventListener('click', async () => {
+            wrap.remove();
+            // Route through the same file-based import as every other
+            // restore path (via a synthetic File) rather than duplicating
+            // its validate/merge/render/toast logic a second time here.
+            const file = new File([JSON.stringify(parsed)], 'exit-backup.json', { type:'application/json' });
+            await importBackupFromFile(file, { skipConfirm:true });
+            resolve(true);
+          });
+          wrap.querySelector('#restore-prompt-a0-no').addEventListener('click', () => { wrap.remove(); resolve(true); });
+        });
+        if(applied) return true;
+      }
+    }
+  }catch(e){ /* fall through to Path A */ }
+
+  if(window.showSaveFilePicker){
+    try{
+      const handle = await loadSavedBackupHandle();
+      if(handle){
+        const perm = await handle.queryPermission({ mode:'read' });
+        if(perm === 'granted'){
+          const file = await handle.getFile();
+          const text = await file.text();
+          const parsed = JSON.parse(text);
+          if(validateBackupShape(parsed)){
+            const count = Object.keys(parsed.track).length;
+            if(count){
+              return await new Promise(resolve => {
+                const dateStr = parsed.exportedAt ? new Date(parsed.exportedAt).toLocaleDateString() : 'an earlier session';
+                const wrap = openPopup('Load latest backup?', `
+                  <div style="margin-bottom:14px">Found ${count} saved job status${count===1?'':'es'} from a backup saved on ${dateStr}, but this device's data looks empty right now. Load it?</div>
+                  <button class="btn btn-primary" id="restore-prompt-yes" style="width:100%;display:block;margin-bottom:8px">Yes, load it</button>
+                  <button class="btn btn-ghost" id="restore-prompt-no" style="width:100%;display:block">No</button>
+                `);
+                wrap.querySelector('#restore-prompt-yes').addEventListener('click', async () => {
+                  wrap.remove();
+                  await importBackupFromFile(file, { skipConfirm:true });
+                  resolve(true);
+                });
+                wrap.querySelector('#restore-prompt-no').addEventListener('click', () => { wrap.remove(); resolve(true); });
+              });
+            }
+          }
+        }
+      }
+    }catch(e){ /* fall through to Path B */ }
+  }
+
+  // Path B: can't silently read anything here, so the prompt IS the ask.
+  return await new Promise(resolve => {
+    const wrap = openPopup('Restore your job data?', `
+      <div style="margin-bottom:14px">This device's saved/eliminated/applied job status looks empty — that can happen after a browser history or site-data clear. If you have a LocalWork backup file, you can load it now.</div>
+      <button class="btn btn-primary" id="restore-prompt-b-yes" style="width:100%;display:block;margin-bottom:8px">Restore from a backup file</button>
+      <button class="btn btn-ghost" id="restore-prompt-b-no" style="width:100%;display:block">Start fresh</button>
+    `);
+    wrap.querySelector('#restore-prompt-b-yes').addEventListener('click', async () => {
+      wrap.remove();
+      await openRestorePicker();
+      resolve(true);
     });
-  }catch(e){ return false; }
+    wrap.querySelector('#restore-prompt-b-no').addEventListener('click', () => { wrap.remove(); resolve(false); });
+  });
 }
 
 /* =========================================================
@@ -866,6 +1112,14 @@ function settingsModalHtml(){
         <span style="color:var(--muted)">Version</span><span>${APP_VERSION}</span>
       </div>
     </div>
+    <div class="section-label" style="margin-top:16px">Job data refresh</div>
+    <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px">
+      Pull a fresh batch of postings. When you're running the app locally via <code>scripts\\serve.ps1</code>, this kicks off a real re-scrape (a few minutes, runs in the background); otherwise it just pulls whatever snapshot is already published.
+    </p>
+    <div class="card-actions" style="margin-bottom:14px">
+      <button class="btn btn-primary small" id="btnRefreshJobs">Refresh job data</button>
+      <button class="btn btn-ghost small" id="btnShowSources">Sites checked last refresh</button>
+    </div>
     <div class="section-label">Backup your job status</div>
     <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px">
       Your Saved / Eliminated / Applied &amp; Track status lives only in this browser's storage. Back it up to a file so you can restore it if this device's data is ever lost — job listings themselves aren't included since they're re-fetched from the live snapshot.
@@ -883,6 +1137,8 @@ function renderSettingsModal(){
   wireInstallBtn(document.getElementById('btnInstallPill'));
   document.getElementById('btnBackupNow').addEventListener('click', handleBackupNowClick);
   document.getElementById('btnRestoreBackup').addEventListener('click', () => openRestorePicker());
+  document.getElementById('btnRefreshJobs').addEventListener('click', handleRefreshJobsClick);
+  document.getElementById('btnShowSources').addEventListener('click', showSourcesPopup);
 }
 
 /* =========================================================
@@ -1041,12 +1297,18 @@ els.showLocal.addEventListener('change', () => { showLocal = els.showLocal.check
 els.showRemote.addEventListener('change', () => { showRemote = els.showRemote.checked; render(); });
 els.btnInfo.addEventListener('click', () => els.infoModalBackdrop.classList.add('open'));
 els.btnSettings.addEventListener('click', () => { renderSettingsModal(); els.settingsModalBackdrop.classList.add('open'); });
+// Bottom nav lives in the static page shell (not inside a subtree render() rebuilds),
+// so it's wired once here at bootstrap, same as btnSettings above -- not from inside
+// any per-render rebind function.
+document.getElementById('navSettings').addEventListener('click', () => { renderSettingsModal(); els.settingsModalBackdrop.classList.add('open'); });
+document.getElementById('navBackup').addEventListener('click', handleBackupNowClick);
 els.restoreFileInput.addEventListener('change', (e) => { importLatestBackupFromFiles(e.target.files); e.target.value = ''; });
 document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => closeModal(b.dataset.close)));
 els.jobModalBackdrop.addEventListener('click', (e) => { if(e.target === els.jobModalBackdrop) closeModal('jobModalBackdrop'); });
 els.infoModalBackdrop.addEventListener('click', (e) => { if(e.target === els.infoModalBackdrop) closeModal('infoModalBackdrop'); });
 els.settingsModalBackdrop.addEventListener('click', (e) => { if(e.target === els.settingsModalBackdrop) closeModal('settingsModalBackdrop'); });
 renderInstallUI();
+initExitBackup(); // Step 6b -- wired exactly once here, never from inside render()
 
 // ---------- service worker ----------
 if('serviceWorker' in navigator){

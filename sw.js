@@ -4,7 +4,7 @@
 // a stale cached manifest. data/*.json is ALSO network-first (not precached) —
 // job data changes independently of app-shell deploys and must never be served
 // stale from a months-old cache.
-const CACHE_NAME = 'localwork-shell-ddfe95003c96';
+const CACHE_NAME = 'localwork-shell-749cdbdadb3b';
 const PRECACHE_URLS = [
   './index.html', './app.js', './manifest.json',
   './icon-192.png', './icon-512.png'
@@ -27,6 +27,14 @@ self.addEventListener('fetch', (e) => {
   const req = e.request;
   const url = new URL(req.url);
   if(req.method !== 'GET' || url.origin !== location.origin){
+    e.respondWith(fetch(req));
+    return;
+  }
+  // /api/refresh/status is polled every few seconds while a refresh runs --
+  // never let the cache-first app-shell handler below serve a stale answer
+  // for it (or, worse, cache a 404 from a plain static host and keep serving
+  // that once local_server.py starts answering it for real).
+  if(/\/api\//.test(url.pathname)){
     e.respondWith(fetch(req));
     return;
   }

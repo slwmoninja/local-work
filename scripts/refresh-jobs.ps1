@@ -76,7 +76,19 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
    confirm the page it lands on (or auto-scrolls to) actually shows the
    specific job, not a list.
 
-8. Write the full result as data/jobs.json, a JSON array of job objects
+8. Before writing anything, read the existing data/jobs.json in this folder
+   if it exists. The app tracks each user's Save/Eliminate/Apply status by a
+   slug it derives from a job's "url" field -- if a posting you find this
+   run is the same one already in data/jobs.json (same posting, possibly
+   found again via a different search), you MUST reuse that exact same
+   "url" string byte-for-byte (don't add tracking parameters, resolve it to
+   a different redirect target, change trailing slashes, or alter
+   capitalization). Silently changing a carried-forward posting's URL makes
+   the app treat it as a brand-new job and lose whatever the user already
+   did with it, which defeats the point of a refresh. Title/employer text
+   may be re-tightened, but only the "url" stability is load-bearing.
+
+9. Write the full result as data/jobs.json, a JSON array of job objects
    with this shape:
    { "title": "", "employer": "", "location": "", "employerLocation": "",
      "remote": false, "remoteTiedTo": null,
@@ -95,9 +107,20 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
    whose postings are gone (filled, expired, or now outside the freshness
    window) instead of guessing they're still open.
 
-9. Only include postings you actually found on a real page. Never invent a
-   job, employer, or requirement -- if you can't access a site, skip it and
-   say so in your final summary rather than fabricating rows.
+10. Also write data/sources.json -- a record of every employer career page
+    and job board you actually queried or fetched this run, regardless of
+    whether it produced a posting (so a page that returned zero current
+    matches still shows up as "checked"). Shape:
+    { "refreshedAt": "<ISO 8601 timestamp for right now>",
+      "sites": [ { "employer": "", "url": "", "type": "career-page" } ] }
+    "type" is one of "career-page" (a specific employer's jobs page) or
+    "job-board" (Indeed, LinkedIn, USAJobs, ZipRecruiter, Built In, etc).
+    "url" should be the page you actually queried (a search-results URL is
+    fine here, unlike rule 7 which is about each job's own posting link).
+
+11. Only include postings you actually found on a real page. Never invent a
+    job, employer, or requirement -- if you can't access a site, skip it and
+    say so in your final summary rather than fabricating rows.
 '@
 
 claude -p $prompt
