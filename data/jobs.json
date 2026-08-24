@@ -1,192 +1,11 @@
 [
   {
-    "title": "Chief Marketing & Communications Officer",
-    "employer": "William & Mary (Raymond A. Mason School of Business)",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "estDriveMinutesFrom23185": 5,
-    "url": "https://williammary.wd12.myworkdayjobs.com/en-US/WM/job/Chief-Marketing---Communications-Officer_JR101837",
-    "description": "Leads global brand, marketing, communications and enrollment-growth strategy for W&M's Mason School of Business, managing a marketing team, agency relationships, and budget, reporting to the Vice Dean.",
-    "postedDate": "2026-07-13",
-    "requirements": [
-      "Bachelor's degree in marketing, communications, business, or related field or equivalent combination of education, experience, and training.",
-      "Extensive progressive marketing leadership experience (typically 7+ years).",
-      "Demonstrated success leading integrated marketing strategies.",
-      "Experience managing teams, budgets, and agencies.",
-      "Strong communication and executive presentation skills.",
-      "Proven ability to work cross-functionally in complex organizations."
-    ],
-    "ai": {
-      "score": 66,
-      "eliminated": false,
-      "eliminatedReason": null,
-      "requirements": [
-        { "text": "Bachelor's degree in marketing, communications, business, or related field or equivalent combination of education, experience, and training.", "matched": true, "hard": false, "note": "MBA in International Marketing exceeds this." },
-        { "text": "Extensive progressive marketing leadership experience (typically 7+ years).", "matched": true, "hard": false, "note": "8 years as Global Marketing Manager at Microsoft, plus GTM leadership since." },
-        { "text": "Demonstrated success leading integrated marketing strategies.", "matched": true, "hard": false, "note": "GTM design/launch and global marketing strategy work throughout resume." },
-        { "text": "Experience managing teams, budgets, and agencies.", "matched": false, "hard": false, "note": "Resume shows cross-functional coordination and engagement management, not direct people-management, budget ownership, or agency management." },
-        { "text": "Strong communication and executive presentation skills.", "matched": true, "hard": false, "note": "Presentation-skills coaching and Microsoft press-relations training on resume." },
-        { "text": "Proven ability to work cross-functionally in complex organizations.", "matched": true, "hard": false, "note": "Core theme across 14 years at Microsoft plus consulting roles." }
-      ]
-    }
-  },
-  {
-    "title": "Director of Employer Development & Engagement",
-    "employer": "William & Mary (Career Development & Professional Engagement)",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "estDriveMinutesFrom23185": 5,
-    "url": "https://williammary.wd12.myworkdayjobs.com/en-US/WM/job/Director-of-Employer-Development---Engagement_JR100855",
-    "description": "Leads a team of three, builds and manages relationships with 150-200 employers annually, and runs career fairs and recruitment programming for W&M's Office of Career Development & Professional Engagement.",
-    "postedDate": null,
-    "requirements": [
-      "Master's degree in Higher Education, Student Personnel, Counseling, or higher education related field.",
-      "Significant experience in career services and/or employer relations in higher education. (Typically 7+ years).",
-      "High level of customer service; collaboration, exceptional work ethic; attention to detail; organizational, problem-solving, and follow-through ability.",
-      "Effective oral, written, and interpersonal communication skills and a proven ability to establish rapport with students, faculty, alumni, employers and staff colleagues.",
-      "Effective organizational and management skills.",
-      "Demonstrated public relations/marketing abilities to be used on behalf of the University as a whole and career services specifically. Strong computer skills including managing databases and familiarity with career development platforms and software packages.",
-      "Proven track record of employer development, recruitment practices and EEOC policies.",
-      "Experience with project and event management. (Typically, 5+ years)",
-      "Experience with career services management platforms and tools, e.g., Symplicity, 12Twenty, Purple Briefcase, etc."
-    ],
-    "ai": {
-      "score": 31,
-      "eliminated": true,
-      "eliminatedReason": "Core function is higher-education career-services/employer-relations — a specific field not on your resume — plus named platforms (Symplicity, 12Twenty) you haven't used, despite strong transferable communication and project-management skills.",
-      "requirements": [
-        { "text": "Master's degree in Higher Education, Student Personnel, Counseling, or higher education related field.", "matched": false, "hard": false, "note": "MBA is a master's degree but not in this specific field." },
-        { "text": "Significant experience in career services and/or employer relations in higher education. (Typically 7+ years).", "matched": false, "hard": false, "note": "No higher-ed career-services experience on resume." },
-        { "text": "High level of customer service; collaboration, exceptional work ethic; attention to detail; organizational, problem-solving, and follow-through ability.", "matched": true, "hard": false, "note": null },
-        { "text": "Effective oral, written, and interpersonal communication skills and a proven ability to establish rapport with students, faculty, alumni, employers and staff colleagues.", "matched": true, "hard": false, "note": "Communication skills matched; the student/faculty/alumni audience is new territory." },
-        { "text": "Effective organizational and management skills.", "matched": true, "hard": false, "note": null },
-        { "text": "Demonstrated public relations/marketing abilities to be used on behalf of the University as a whole and career services specifically. Strong computer skills including managing databases and familiarity with career development platforms and software packages.", "matched": false, "hard": false, "note": "PR/marketing and general CRM familiarity (Salesforce/Dynamics) present, but not the named career-services platforms." },
-        { "text": "Proven track record of employer development, recruitment practices and EEOC policies.", "matched": false, "hard": false, "note": "No recruitment or EEOC-specific track record on resume." },
-        { "text": "Experience with project and event management. (Typically, 5+ years)", "matched": true, "hard": false, "note": "Extensive PM background." },
-        { "text": "Experience with career services management platforms and tools, e.g., Symplicity, 12Twenty, Purple Briefcase, etc.", "matched": false, "hard": false, "note": "Niche higher-ed-specific software, not on resume." }
-      ]
-    }
-  },
-  {
-    "title": "Assistant Director, Direct Marketing",
-    "employer": "William & Mary (University Advancement / Annual Giving)",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "estDriveMinutesFrom23185": 5,
-    "url": "https://williammary.wd12.myworkdayjobs.com/en-US/WM/job/Assistant-Director--Direct-Marketing_JR101991",
-    "description": "Leads data analysis, reporting and strategy for W&M's Annual Giving direct-marketing/fundraising campaigns across 15+ schools and units; hybrid role based in Williamsburg.",
-    "postedDate": "2026-08-10",
-    "requirements": [
-      "Bachelor's degree or equivalent education, experience, and training.",
-      "Experience in MS Word, Excel, Outlook, and PowerPoint and donor/constituent database systems.",
-      "Demonstrated planning and organizational skills to include follow-through and managing multiple projects in a deadline driven environment.",
-      "Strong analytical skills, with the ability to analyze data, extract meaningful conclusions and report findings.",
-      "Excellent interpersonal, written, and oral communication skills including proofreading and editing documents."
-    ],
-    "ai": {
-      "score": 72,
-      "eliminated": false,
-      "eliminatedReason": null,
-      "requirements": [
-        { "text": "Bachelor's degree or equivalent education, experience, and training.", "matched": true, "hard": false, "note": "MBA exceeds this." },
-        { "text": "Experience in MS Word, Excel, Outlook, and PowerPoint and donor/constituent database systems.", "matched": true, "hard": false, "note": "Office tools matched directly; donor-database specifics are new but adjacent to CRM experience." },
-        { "text": "Demonstrated planning and organizational skills to include follow-through and managing multiple projects in a deadline driven environment.", "matched": true, "hard": false, "note": null },
-        { "text": "Strong analytical skills, with the ability to analyze data, extract meaningful conclusions and report findings.", "matched": true, "hard": false, "note": "PowerBI and GTM/revenue-attainment reporting experience." },
-        { "text": "Excellent interpersonal, written, and oral communication skills including proofreading and editing documents.", "matched": true, "hard": false, "note": null }
-      ]
-    }
-  },
-  {
-    "title": "Director, Contracts",
-    "employer": "The Colonial Williamsburg Foundation",
-    "location": "Bruton Heights School, 301 First St., Williamsburg, VA 23185",
-    "employerLocation": "Williamsburg, VA",
-    "estDriveMinutesFrom23185": 5,
-    "url": "https://recruiting.ultipro.com/COL1030CWF/JobBoard/eef382f7-dc1f-4659-bfe6-b0f29178799a/OpportunityDetail?opportunityId=4f59a9ac-53ed-4d54-96e9-7a14fd642132",
-    "description": "Leads strategy, policy and a team responsible for contract lifecycle management (drafting, negotiation, compliance, closeout) across the Colonial Williamsburg Foundation and its for-profit subsidiary.",
-    "postedDate": "2026-05-21",
-    "requirements": [
-      "Four-year or graduate degree in business administration or closely related field.",
-      "8 years' experience in a high-volume environment and with increasing responsibility in contracts or closely related field.",
-      "In-depth knowledge and interpretation of contact language at a level necessary to fulfill the responsibilities of the position.",
-      "In-depth knowledge of the contracting process; thorough working knowledge of generally accepted business techniques and practices; and an understanding of business and contract law and legal terminology all at a level necessary to fulfill the responsibilities of the position.",
-      "Excellent interpersonal skills.",
-      "Excellent organizational skills.",
-      "Very strong written and verbal communication skills.",
-      "Ability to prioritize and manage multiple responsibilities and deadlines simultaneously.",
-      "Ability to interact effectively and intelligently with individuals at all levels of Foundation organization.",
-      "Ability to interact effectively and intelligently with individuals at all levels of suppliers' organization.",
-      "Knowledge of Conga or similar Contract Lifecycle Management System.",
-      "Knowledge of Microsoft Office 365 and general computer competency."
-    ],
-    "ai": {
-      "score": 58,
-      "eliminated": false,
-      "eliminatedReason": null,
-      "requirements": [
-        { "text": "Four-year or graduate degree in business administration or closely related field.", "matched": true, "hard": false, "note": "MBA." },
-        { "text": "8 years' experience in a high-volume environment and with increasing responsibility in contracts or closely related field.", "matched": false, "hard": false, "note": "No dedicated contracts-function experience; M&A playbook work at Wolters Kluwer is adjacent but not the same field." },
-        { "text": "In-depth knowledge and interpretation of contact language at a level necessary to fulfill the responsibilities of the position.", "matched": false, "hard": false, "note": "Not on resume." },
-        { "text": "In-depth knowledge of the contracting process; thorough working knowledge of generally accepted business techniques and practices; and an understanding of business and contract law and legal terminology all at a level necessary to fulfill the responsibilities of the position.", "matched": false, "hard": false, "note": "Core legal/contracts domain knowledge not on resume." },
-        { "text": "Excellent interpersonal skills.", "matched": true, "hard": false, "note": null },
-        { "text": "Excellent organizational skills.", "matched": true, "hard": false, "note": null },
-        { "text": "Very strong written and verbal communication skills.", "matched": true, "hard": false, "note": null },
-        { "text": "Ability to prioritize and manage multiple responsibilities and deadlines simultaneously.", "matched": true, "hard": false, "note": null },
-        { "text": "Ability to interact effectively and intelligently with individuals at all levels of Foundation organization.", "matched": true, "hard": false, "note": null },
-        { "text": "Ability to interact effectively and intelligently with individuals at all levels of suppliers' organization.", "matched": true, "hard": false, "note": "Partner/alliance and SI-partner leadership experience is directly relevant here." },
-        { "text": "Knowledge of Conga or similar Contract Lifecycle Management System.", "matched": false, "hard": false, "note": "No CLM tool experience on resume." },
-        { "text": "Knowledge of Microsoft Office 365 and general computer competency.", "matched": true, "hard": false, "note": null }
-      ]
-    }
-  },
-  {
-    "title": "Director, HRIS",
-    "employer": "The Colonial Williamsburg Foundation",
-    "location": "Bruton Heights School, 301 First St., Williamsburg, VA 23185",
-    "employerLocation": "Williamsburg, VA",
-    "estDriveMinutesFrom23185": 5,
-    "url": "https://recruiting.ultipro.com/COL1030CWF/JobBoard/eef382f7-dc1f-4659-bfe6-b0f29178799a/OpportunityDetail?opportunityId=f62540fc-a8f7-42a5-ab59-d47b610177e7",
-    "description": "Owns strategy and delivery of an enterprise Workday HCM implementation and ongoing HR-technology roadmap for Colonial Williamsburg, leading a small HRIS team; remote-flexible with Williamsburg base.",
-    "postedDate": "2026-06-08",
-    "requirements": [
-      "Bachelor's degree in Human Resources, Information Systems, Business Administration, or related field.",
-      "8+ years of progressive HRIS experience, including significant experience leading enterprise HR technology initiatives.",
-      "Demonstrated success leading at least one full-cycle Workday implementation, including planning, configuration, testing, deployment, and stabilization.",
-      "5+ years of Workday configuration experience, including Business Processes, Security, and core HCM functionality.",
-      "Experience implementing and/or supporting multiple Workday modules such as HCM, Recruiting, Talent, Compensation, Benefits, Time Tracking, Absence, Payroll, and/or Learning.",
-      "3+ years of people leadership experience managing HRIS, systems, or project teams.",
-      "Strong program and project management skills with the ability to lead complex, cross-functional initiatives.",
-      "Experience managing implementation partners, consultants, vendor relationships, budgets, and project resources.",
-      "Strong understanding of HR operations, data governance, compliance requirements, and process improvement methodologies.",
-      "Excellent communication and stakeholder management skills, with the ability to influence at all organizational levels.",
-      "Demonstrated ability to balance strategic planning with hands-on execution in a fast-paced environment.",
-      "Strong analytical, problem-solving, and change management capabilities"
-    ],
-    "ai": {
-      "score": 46,
-      "eliminated": true,
-      "eliminatedReason": "Requires proven full-cycle Workday HCM implementation experience — a specific enterprise HR platform not on your resume (your systems background is SAP/Salesforce integration, not Workday/HRIS).",
-      "requirements": [
-        { "text": "Bachelor's degree in Human Resources, Information Systems, Business Administration, or related field.", "matched": true, "hard": false, "note": "MBA." },
-        { "text": "8+ years of progressive HRIS experience, including significant experience leading enterprise HR technology initiatives.", "matched": false, "hard": false, "note": "No HRIS-specific background." },
-        { "text": "Demonstrated success leading at least one full-cycle Workday implementation, including planning, configuration, testing, deployment, and stabilization.", "matched": false, "hard": true, "note": "Named platform (Workday) not on resume; this is the central, non-negotiable requirement of the role." },
-        { "text": "5+ years of Workday configuration experience, including Business Processes, Security, and core HCM functionality.", "matched": false, "hard": true, "note": "Same Workday gap." },
-        { "text": "Experience implementing and/or supporting multiple Workday modules such as HCM, Recruiting, Talent, Compensation, Benefits, Time Tracking, Absence, Payroll, and/or Learning.", "matched": false, "hard": false, "note": "Same Workday gap." },
-        { "text": "3+ years of people leadership experience managing HRIS, systems, or project teams.", "matched": true, "hard": false, "note": "Leadership yes; HRIS-specific team leadership no." },
-        { "text": "Strong program and project management skills with the ability to lead complex, cross-functional initiatives.", "matched": true, "hard": false, "note": null },
-        { "text": "Experience managing implementation partners, consultants, vendor relationships, budgets, and project resources.", "matched": true, "hard": false, "note": "Partner/vendor management is a core strength." },
-        { "text": "Strong understanding of HR operations, data governance, compliance requirements, and process improvement methodologies.", "matched": false, "hard": false, "note": "Support-policy/governance experience exists but not in an HR-ops context." },
-        { "text": "Excellent communication and stakeholder management skills, with the ability to influence at all organizational levels.", "matched": true, "hard": false, "note": null },
-        { "text": "Demonstrated ability to balance strategic planning with hands-on execution in a fast-paced environment.", "matched": true, "hard": false, "note": null },
-        { "text": "Strong analytical, problem-solving, and change management capabilities", "matched": true, "hard": false, "note": null }
-      ]
-    }
-  },
-  {
     "title": "Director Real Estate Assessments Division",
     "employer": "James City County, Virginia (Financial and Management Services Department)",
     "location": "Williamsburg, VA",
     "employerLocation": "Williamsburg, VA",
+    "remote": false,
+    "remoteTiedTo": null,
     "estDriveMinutesFrom23185": 7,
     "url": "https://careers.jamescitycountyva.gov/jobs/director-real-estate-assessments-division-williamsburg-virginia-united-states",
     "description": "Directs and supervises the County's real property appraisal and mapping operations, leading Real Estate Appraisers and support staff through the biennial reassessment cycle.",
@@ -203,11 +22,36 @@
       "eliminated": true,
       "eliminatedReason": "Requires IAAO assessor coursework/certification and property-appraisal/GIS experience — a specific licensed profession not on your resume.",
       "requirements": [
-        { "text": "Any combination of education and experience equivalent to a Bachelor's degree in real estate, business management, public administration, or related field, supplemented by International Association of Assessing Officers (IAAO) courses 101, 102, 112, 300, 311, 400; extensive experience in property appraisal, Geographic Information System (GIS), and mapping, including considerable supervisory or lead experience; designation as an assessor from a recognized organization.", "matched": false, "hard": true, "note": "IAAO assessor certification/designation is a licensed-profession requirement, not on resume." },
-        { "text": "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.", "matched": true, "hard": false, "note": "Standard driver's license, not commercial — assumed held." },
-        { "text": "Knowledge of leadership techniques, principles and procedures to assign work, schedule, supervise, train, and evaluate the work of assigned staff; purchasing practices.", "matched": true, "hard": false, "note": null },
-        { "text": "Skill in use of computer software including Microsoft Office Suite.", "matched": true, "hard": false, "note": null },
-        { "text": "Ability to communicate effectively both orally and in writing; establish and maintain effective working relationships.", "matched": true, "hard": false, "note": null }
+        {
+          "text": "Any combination of education and experience equivalent to a Bachelor's degree in real estate, business management, public administration, or related field, supplemented by International Association of Assessing Officers (IAAO) courses 101, 102, 112, 300, 311, 400; extensive experience in property appraisal, Geographic Information System (GIS), and mapping, including considerable supervisory or lead experience; designation as an assessor from a recognized organization.",
+          "matched": false,
+          "hard": true,
+          "note": "IAAO assessor certification/designation is a licensed-profession requirement, not on resume."
+        },
+        {
+          "text": "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.",
+          "matched": true,
+          "hard": false,
+          "note": "Standard driver's license, not commercial — assumed held."
+        },
+        {
+          "text": "Knowledge of leadership techniques, principles and procedures to assign work, schedule, supervise, train, and evaluate the work of assigned staff; purchasing practices.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Skill in use of computer software including Microsoft Office Suite.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Ability to communicate effectively both orally and in writing; establish and maintain effective working relationships.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        }
       ]
     }
   },
@@ -216,6 +60,8 @@
     "employer": "James City County, Virginia (Community Development Department)",
     "location": "Williamsburg, VA",
     "employerLocation": "Williamsburg, VA",
+    "remote": false,
+    "remoteTiedTo": null,
     "estDriveMinutesFrom23185": 7,
     "url": "https://careers.jamescitycountyva.gov/jobs/neighborhood-development-planner-williamsburg-virginia-united-states",
     "description": "Manages federal/state/local grant funding (including CDBG) and provides project management for affordable-housing development projects, including budgets, contracts and stakeholder engagement.",
@@ -232,11 +78,36 @@
       "eliminated": true,
       "eliminatedReason": "Requires specialized municipal planning/zoning/affordable-housing regulatory knowledge and ArcGIS Pro — a domain and toolset not on your resume, despite strong transferable communication and project-management skills.",
       "requirements": [
-        { "text": "Any combination of education and experience equivalent to a bachelor's degree with major course work in planning, real estate, public or business administration, or related field; AICP and/or considerable experience in property acquisition, community development, and management are preferred.", "matched": true, "hard": false, "note": "Business-administration coursework covered by MBA; AICP/community-development experience is only \"preferred,\" not required, so this isn't disqualifying." },
-        { "text": "Knowledge of County and departmental goals and policy as well as federal, state, and local laws, rules and regulations governing affordable housing; community development; real estate law and practice; construction methods, procurement; federal labor standards; zoning; planning and code enforcement; principles and practices of administrative management; fiscal and budgetary principles; and leadership techniques.", "matched": false, "hard": false, "note": "Extensive municipal-regulatory domain knowledge not on resume." },
-        { "text": "Skill in use of computer software including Microsoft Office Suite and ArcGIS Pro.", "matched": false, "hard": false, "note": "Office tools yes; ArcGIS Pro (GIS mapping software) not on resume." },
-        { "text": "Ability to work with citizen groups to explain complicated projects, obtain useful feedback, develop consensus, and obtain commitments for participation; negotiate fair and favorable property acquisition contracts; communicate effectively orally and in writing; establish and maintain professional working relationships.", "matched": true, "hard": false, "note": "Communication/negotiation transfer well; property-acquisition specifics do not." },
-        { "text": "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.", "matched": true, "hard": false, "note": "Standard driver's license, not commercial." }
+        {
+          "text": "Any combination of education and experience equivalent to a bachelor's degree with major course work in planning, real estate, public or business administration, or related field; AICP and/or considerable experience in property acquisition, community development, and management are preferred.",
+          "matched": true,
+          "hard": false,
+          "note": "Business-administration coursework covered by MBA; AICP/community-development experience is only \"preferred,\" not required, so this isn't disqualifying."
+        },
+        {
+          "text": "Knowledge of County and departmental goals and policy as well as federal, state, and local laws, rules and regulations governing affordable housing; community development; real estate law and practice; construction methods, procurement; federal labor standards; zoning; planning and code enforcement; principles and practices of administrative management; fiscal and budgetary principles; and leadership techniques.",
+          "matched": false,
+          "hard": false,
+          "note": "Extensive municipal-regulatory domain knowledge not on resume."
+        },
+        {
+          "text": "Skill in use of computer software including Microsoft Office Suite and ArcGIS Pro.",
+          "matched": false,
+          "hard": false,
+          "note": "Office tools yes; ArcGIS Pro (GIS mapping software) not on resume."
+        },
+        {
+          "text": "Ability to work with citizen groups to explain complicated projects, obtain useful feedback, develop consensus, and obtain commitments for participation; negotiate fair and favorable property acquisition contracts; communicate effectively orally and in writing; establish and maintain professional working relationships.",
+          "matched": true,
+          "hard": false,
+          "note": "Communication/negotiation transfer well; property-acquisition specifics do not."
+        },
+        {
+          "text": "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.",
+          "matched": true,
+          "hard": false,
+          "note": "Standard driver's license, not commercial."
+        }
       ]
     }
   },
@@ -245,6 +116,8 @@
     "employer": "Williamsburg Area Transit Authority",
     "location": "Williamsburg, VA",
     "employerLocation": "Williamsburg, VA",
+    "remote": false,
+    "remoteTiedTo": null,
     "estDriveMinutesFrom23185": 7,
     "url": "https://careers.jamescitycountyva.gov/jobs/wata-grants-reporting-manager-williamsburg-virginia-united-states",
     "description": "Manages WATA's operating/capital budgets, grant applications and financial reporting, supervises a Budget & Reporting Analyst, and serves as the transit authority's Disadvantaged Business Enterprise Program Officer.",
@@ -266,298 +139,311 @@
       "eliminated": false,
       "eliminatedReason": null,
       "requirements": [
-        { "text": "Bachelor's degree in Accounting, Finance, or a related field and eight years of experience using complex financial systems.", "matched": false, "hard": false, "note": "MBA satisfies the degree; the accounting/finance specialization does not." },
-        { "text": "Two years of experience managing staff or leading teams; Master's degree and experience with federal, state and local grant writing and administration preferred.", "matched": true, "hard": false, "note": "MBA plus leadership experience covers the base requirement; grant writing is only \"preferred.\"" },
-        { "text": "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.", "matched": true, "hard": false, "note": "Standard driver's license, not commercial." },
-        { "text": "Expert knowledge of principles, methods and practices of budget, accounting, ledger recording, balancing and financial reporting; processes for providing customer service including setting and meeting quality standards for services, and evaluation of customer satisfaction; and considerable knowledge of Generally Accepted Accounting Principles (GAAP); Governmental Accounting Standards Board (GASB) statements.", "matched": false, "hard": false, "note": "GAAP/GASB accounting expertise not on resume." },
-        { "text": "Skill in organization to manage multiple tasks; paying close attention to detail; time management to meet deadlines in a fast-paced, deadline-oriented environment.", "matched": true, "hard": false, "note": null },
-        { "text": "Skill in use of computer software including Microsoft Office Suite. Proficiency in Excel and financial/reporting systems.", "matched": true, "hard": false, "note": "Excel and PowerBI reporting experience." },
-        { "text": "Ability to plan, organize, coordinate, evaluate, inform, and motivate staff in a positive and effective manner.", "matched": true, "hard": false, "note": null },
-        { "text": "Strong leadership techniques, principles and procedures to assign work, schedule, supervise, train, and evaluate the work of assigned staff.", "matched": true, "hard": false, "note": null },
-        { "text": "Strong ability to communicate effectively, both orally and in writing.", "matched": true, "hard": false, "note": null },
-        { "text": "Strong application in technical and statistical knowledge in developing and interpreting financial models.", "matched": false, "hard": false, "note": "Financial-modeling depth not evidenced on resume." }
+        {
+          "text": "Bachelor's degree in Accounting, Finance, or a related field and eight years of experience using complex financial systems.",
+          "matched": false,
+          "hard": false,
+          "note": "MBA satisfies the degree; the accounting/finance specialization does not."
+        },
+        {
+          "text": "Two years of experience managing staff or leading teams; Master's degree and experience with federal, state and local grant writing and administration preferred.",
+          "matched": true,
+          "hard": false,
+          "note": "MBA plus leadership experience covers the base requirement; grant writing is only \"preferred.\""
+        },
+        {
+          "text": "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.",
+          "matched": true,
+          "hard": false,
+          "note": "Standard driver's license, not commercial."
+        },
+        {
+          "text": "Expert knowledge of principles, methods and practices of budget, accounting, ledger recording, balancing and financial reporting; processes for providing customer service including setting and meeting quality standards for services, and evaluation of customer satisfaction; and considerable knowledge of Generally Accepted Accounting Principles (GAAP); Governmental Accounting Standards Board (GASB) statements.",
+          "matched": false,
+          "hard": false,
+          "note": "GAAP/GASB accounting expertise not on resume."
+        },
+        {
+          "text": "Skill in organization to manage multiple tasks; paying close attention to detail; time management to meet deadlines in a fast-paced, deadline-oriented environment.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Skill in use of computer software including Microsoft Office Suite. Proficiency in Excel and financial/reporting systems.",
+          "matched": true,
+          "hard": false,
+          "note": "Excel and PowerBI reporting experience."
+        },
+        {
+          "text": "Ability to plan, organize, coordinate, evaluate, inform, and motivate staff in a positive and effective manner.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Strong leadership techniques, principles and procedures to assign work, schedule, supervise, train, and evaluate the work of assigned staff.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Strong ability to communicate effectively, both orally and in writing.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Strong application in technical and statistical knowledge in developing and interpreting financial models.",
+          "matched": false,
+          "hard": false,
+          "note": "Financial-modeling depth not evidenced on resume."
+        }
       ]
     }
   },
   {
-    "title": "Vice President, Club at Kingsmill",
-    "employer": "Kingsmill Resort",
-    "location": "1010 Kingsmill Road, Williamsburg, VA 23185",
-    "employerLocation": "Williamsburg, VA",
-    "estDriveMinutesFrom23185": 10,
-    "url": "https://kingsmill.com/careers/#op-699146-vice-president-club-at-kingsmill-11000000-11500000",
-    "description": "Executive-team leadership role owning membership revenue, sales-team management, retention, and member engagement strategy for the private Club at Kingsmill Resort. Posted salary is below your $170K comp target.",
-    "postedDate": null,
-    "salary": "$110K-$115K",
-    "requirements": [
-      "Proven experience in Membership sales, hospitality, private club management, or relationship-based sales leadership.",
-      "Strong financial acumen with experience forecasting revenue and analyzing performance metrics.",
-      "Demonstrated leadership and team management skills with a focus on accountability and performance coaching.",
-      "Exceptional interpersonal, communication, and relationship-building abilities.",
-      "Passion for delivering outstanding Member experiences and creating a strong community culture.",
-      "Ability to work collaboratively with Executive Leadership, Home Office, Resort Staff, and external community partners.",
-      "Highly organized, proactive, and results-oriented."
-    ],
-    "ai": {
-      "score": 84,
-      "eliminated": false,
-      "eliminatedReason": null,
-      "requirements": [
-        { "text": "Proven experience in Membership sales, hospitality, private club management, or relationship-based sales leadership.", "matched": true, "hard": false, "note": "Relationship-based sales/partner leadership is a core strength (SAP Alliance, VistaPrint)." },
-        { "text": "Strong financial acumen with experience forecasting revenue and analyzing performance metrics.", "matched": true, "hard": false, "note": "Revenue-attainment responsibility across SAP/Microsoft joint selling." },
-        { "text": "Demonstrated leadership and team management skills with a focus on accountability and performance coaching.", "matched": true, "hard": false, "note": "Sales-ops training/recognition leadership on resume." },
-        { "text": "Exceptional interpersonal, communication, and relationship-building abilities.", "matched": true, "hard": false, "note": null },
-        { "text": "Passion for delivering outstanding Member experiences and creating a strong community culture.", "matched": true, "hard": false, "note": "Subjective/cultural fit — assumed satisfiable, not resume-verifiable." },
-        { "text": "Ability to work collaboratively with Executive Leadership, Home Office, Resort Staff, and external community partners.", "matched": true, "hard": false, "note": null },
-        { "text": "Highly organized, proactive, and results-oriented.", "matched": true, "hard": false, "note": null }
-      ]
-    }
-  },
-  {
-    "title": "Manager, Finance",
-    "employer": "Busch Gardens Williamsburg (United Parks & Resorts)",
-    "location": "Busch Gardens Williamsburg, Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "estDriveMinutesFrom23185": 12,
-    "url": "https://seaworldentertainment.wd1.myworkdayjobs.com/en-US/SEA/job/Manager--Finance_JR134430",
-    "description": "Leads the park's Labor & Business Analysis team, partnering with finance and park leadership on labor/opex budgeting, forecasting, and executive reporting for Busch Gardens Williamsburg. Posted salary is well below your $170K comp target.",
-    "postedDate": "2026-08-10",
-    "salary": "$65K-$75K",
-    "requirements": [
-      "Must possess a Bachelor's degree in Business or a related field",
-      "Must possess strong leadership, motivational and organizational skills",
-      "Must be able to build relationships and influence leaders",
-      "Must have a proactive and service-oriented approach to problem solving",
-      "Must have excellent written and verbal communication skills",
-      "Must have experience managing labor on a daily, weekly or monthly basis",
-      "Must have the ability to multi-task in a fast paced environment and prioritize effectively",
-      "Must have strong problem solving skills and attention to detail",
-      "Must be comfortable working with all levels of leadership and able to translate data into clear, actionable business insights",
-      "Must have strong proficiency with Microsoft Office applications, especially Excel, including the ability to analyze, organize and present financial and operational data",
-      "Must have experience using timekeeping, business intelligence, reporting and database tools to support labor management, forecasting and performance analysis"
-    ],
-    "ai": {
-      "score": 73,
-      "eliminated": false,
-      "eliminatedReason": null,
-      "requirements": [
-        { "text": "Must possess a Bachelor's degree in Business or a related field", "matched": true, "hard": false, "note": "MBA." },
-        { "text": "Must possess strong leadership, motivational and organizational skills", "matched": true, "hard": false, "note": null },
-        { "text": "Must be able to build relationships and influence leaders", "matched": true, "hard": false, "note": null },
-        { "text": "Must have a proactive and service-oriented approach to problem solving", "matched": true, "hard": false, "note": null },
-        { "text": "Must have excellent written and verbal communication skills", "matched": true, "hard": false, "note": null },
-        { "text": "Must have experience managing labor on a daily, weekly or monthly basis", "matched": false, "hard": false, "note": "Hourly/shift labor-cost management is not on resume." },
-        { "text": "Must have the ability to multi-task in a fast paced environment and prioritize effectively", "matched": true, "hard": false, "note": null },
-        { "text": "Must have strong problem solving skills and attention to detail", "matched": true, "hard": false, "note": null },
-        { "text": "Must be comfortable working with all levels of leadership and able to translate data into clear, actionable business insights", "matched": true, "hard": false, "note": "PowerBI/data-driven GTM reporting." },
-        { "text": "Must have strong proficiency with Microsoft Office applications, especially Excel, including the ability to analyze, organize and present financial and operational data", "matched": true, "hard": false, "note": null },
-        { "text": "Must have experience using timekeeping, business intelligence, reporting and database tools to support labor management, forecasting and performance analysis", "matched": false, "hard": false, "note": "BI/reporting tools are a match; timekeeping/labor-management systems specifically are not." }
-      ]
-    }
-  },
-  {
-    "title": "Director, Park Media",
-    "employer": "Busch Gardens Williamsburg / Water Country USA (United Parks & Resorts)",
+    "title": "Program Manager, Events",
+    "employer": "Snow Companies",
     "location": "Williamsburg, VA",
     "employerLocation": "Williamsburg, VA",
-    "estDriveMinutesFrom23185": 12,
-    "url": "https://seaworldentertainment.wd1.myworkdayjobs.com/en-US/SEA/job/Director--Park-Media_JR134566",
-    "description": "Owns paid-media strategy, budget and measurement plus a marketing execution team (content, promotions, creative) for Busch Gardens Williamsburg and Water Country USA; reports to VP of Marketing & Sales. Posted salary is below your $170K comp target.",
-    "postedDate": "2026-08-03",
-    "salary": "$90K-$105K",
+    "remote": false,
+    "remoteTiedTo": null,
+    "estDriveMinutesFrom23185": 5,
+    "url": "https://www.linkedin.com/jobs/view/program-manager-at-snow-companies-4453068252",
+    "description": "Plans and executes patient-education programs (virtual and live) for Snow Companies' pharmaceutical/biotech clients out of the Williamsburg HQ, handling program promotion, logistics, vendor/venue coordination and attendance tracking.",
+    "postedDate": "2026-08-17",
     "requirements": [
-      "Bachelor's degree in Marketing, Advertising, Communications, Business Administration, or related field.",
-      "MBA or Master's degree preferred.",
-      "7-10+ years of progressive experience in integrated media and performance marketing.",
-      "5+ years managing and developing high-performing marketing teams.",
-      "Proven success managing multi-million-dollar budgets and delivering measurable growth.",
-      "Experience with marketing analytics, attribution, forecasting, and measurement frameworks.",
-      "Theme park, attraction, hospitality, or entertainment industry experience preferred.",
-      "Deep knowledge of the omnichannel media ecosystem alongside a strong understanding of content, social, and partnership marketing.",
-      "Financial acumen managing large budgets and optimizing ROI.",
-      "Strategic thinker balancing brand building with short-term performance.",
-      "Strong analytical, decision-making, and communication skills, with the ability to translate data into business recommendations."
+      "Bachelor's degree from a four-year college or university.",
+      "Three to five years of related experience and/or training preferred.",
+      "Valid driver's license required; passport may be necessary in some instances.",
+      "Proficient with Microsoft Windows environment (Word, Excel, PowerPoint, Outlook); Salesforce and Zoom preferred.",
+      "Event planning and coordination experience.",
+      "Basic mathematics and business statistics.",
+      "Public speaking, teamwork, organization/file management, multitasking and attention to detail.",
+      "Flexibility in job roles/hours, including willingness to work beyond standard 9 a.m.-6 p.m. hours and weekends; ability to travel up to 25%.",
+      "Comprehension of pharmaceutical/biotechnology industry documents.",
+      "Critical thinking and problem-solving; comfort making outreach/cold calls."
     ],
     "ai": {
-      "score": 74,
+      "score": 47,
       "eliminated": false,
       "eliminatedReason": null,
       "requirements": [
-        { "text": "Bachelor's degree in Marketing, Advertising, Communications, Business Administration, or related field.", "matched": true, "hard": false, "note": "MBA in International Marketing." },
-        { "text": "MBA or Master's degree preferred.", "matched": true, "hard": false, "note": "Directly satisfied." },
-        { "text": "7-10+ years of progressive experience in integrated media and performance marketing.", "matched": false, "hard": false, "note": "Marketing leadership yes; digital/performance-media buying specifically is not evidenced on resume." },
-        { "text": "5+ years managing and developing high-performing marketing teams.", "matched": true, "hard": false, "note": "GTM and global marketing leadership roles." },
-        { "text": "Proven success managing multi-million-dollar budgets and delivering measurable growth.", "matched": false, "hard": false, "note": "No explicit budget-ownership figures on resume." },
-        { "text": "Experience with marketing analytics, attribution, forecasting, and measurement frameworks.", "matched": true, "hard": false, "note": "PowerBI and revenue-attainment analytics." },
-        { "text": "Theme park, attraction, hospitality, or entertainment industry experience preferred.", "matched": true, "hard": false, "note": "Only \"preferred,\" not required — not disqualifying." },
-        { "text": "Deep knowledge of the omnichannel media ecosystem alongside a strong understanding of content, social, and partnership marketing.", "matched": true, "hard": false, "note": "Partner/alliance marketing is a direct specialty." },
-        { "text": "Financial acumen managing large budgets and optimizing ROI.", "matched": true, "hard": false, "note": "Revenue attainment and rebate/incentive program management." },
-        { "text": "Strategic thinker balancing brand building with short-term performance.", "matched": true, "hard": false, "note": null },
-        { "text": "Strong analytical, decision-making, and communication skills, with the ability to translate data into business recommendations.", "matched": true, "hard": false, "note": null }
+        {
+          "text": "Bachelor's degree from a four-year college or university.",
+          "matched": true,
+          "hard": false,
+          "note": "MBA exceeds this."
+        },
+        {
+          "text": "Three to five years of related experience and/or training preferred.",
+          "matched": true,
+          "hard": false,
+          "note": "Extensive program/project management experience well exceeds this."
+        },
+        {
+          "text": "Valid driver's license required; passport may be necessary in some instances.",
+          "matched": true,
+          "hard": false,
+          "note": "Standard requirement, assumed held."
+        },
+        {
+          "text": "Proficient with Microsoft Windows environment (Word, Excel, PowerPoint, Outlook); Salesforce and Zoom preferred.",
+          "matched": true,
+          "hard": false,
+          "note": "Office and Salesforce both on resume."
+        },
+        {
+          "text": "Event planning and coordination experience.",
+          "matched": false,
+          "hard": false,
+          "note": "Program/project management background is adjacent but not specifically event logistics."
+        },
+        {
+          "text": "Basic mathematics and business statistics.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Public speaking, teamwork, organization/file management, multitasking and attention to detail.",
+          "matched": true,
+          "hard": false,
+          "note": "Executive presentation and cross-functional coordination experience covers this."
+        },
+        {
+          "text": "Flexibility in job roles/hours, including willingness to work beyond standard 9 a.m.-6 p.m. hours and weekends; ability to travel up to 25%.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Comprehension of pharmaceutical/biotechnology industry documents.",
+          "matched": false,
+          "hard": false,
+          "note": "Resume shows general healthcare-IT/health-division exposure, not pharma/biotech specifically."
+        },
+        {
+          "text": "Critical thinking and problem-solving; comfort making outreach/cold calls.",
+          "matched": false,
+          "hard": false,
+          "note": "Problem-solving matches; direct cold-calling isn't evidenced on resume (BD/partner work is more relationship-led)."
+        }
       ]
     }
   },
   {
-    "title": "Giving Society Manager",
-    "employer": "Jamestown-Yorktown Foundation (Jamestown Settlement)",
-    "location": "Jamestown Settlement, Williamsburg, VA",
+    "title": "Senior Project Manager - Land Development",
+    "employer": "Kimley-Horn",
+    "location": "Williamsburg, VA",
     "employerLocation": "Williamsburg, VA",
-    "estDriveMinutesFrom23185": 10,
-    "url": "https://www.jobs.virginia.gov/jobs/giving-society-manager-williamsburg-virginia-united-states-703e6203-d2a1-4218-8157-f8bf5cf35140",
-    "description": "Manages a portfolio of mid-level donors and the corporate membership program (identification through renewal) for the state-run Jamestown Settlement/American Revolution Museum, tracking pipeline and revenue in Raiser's Edge. Posted salary is well below your $170K comp target.",
-    "postedDate": null,
-    "salary": "$45K-$55K",
+    "remote": false,
+    "remoteTiedTo": null,
+    "estDriveMinutesFrom23185": 5,
+    "url": "https://www.linkedin.com/jobs/view/senior-project-manager-land-development-at-kimley-horn-4439111016",
+    "description": "Leads land-development engineering projects out of Kimley-Horn's Williamsburg office, managing client relationships with architects, developers and land-use attorneys and directing project teams and proposals.",
+    "postedDate": "2026-08-24",
     "requirements": [
-      "Fundraising experience and knowledge of fundraising practices",
-      "Demonstrated skills relating to donor recruitment and stewardship",
-      "Demonstrated knowledge of fundraising database usage",
-      "Demonstrated oral and written communication skills",
-      "Excellent interpersonal skills",
-      "Either possess or rapidly acquire knowledge of the Jamestown-Yorktown Foundation and its programs",
-      "Demonstrated ability to work with all levels of staff and management",
-      "Demonstrated attention to detail and organizational skills",
-      "Demonstrated ability to manage multiple projects simultaneously",
-      "Bachelor's degree preferred or equivalent experience",
-      "Previous experience in a museum or higher education fundraising environment preferred",
-      "Experience with a fundraising database preferred"
+      "12+ years of relevant experience managing land development projects.",
+      "Registered Professional Engineer (P.E.) license.",
+      "Extensive client contacts and relationships with local architects, developers, land use attorneys, planners and/or land owners.",
+      "Strong technical skills with AutoCAD Civil3D.",
+      "Business development and marketing experience including writing proposals, scopes of work, and budgeting for projected work.",
+      "Ability to effectively communicate positively at all levels of the organization.",
+      "Ability to manage & mentor staff, and direct resources effectively in a positive manner.",
+      "Demonstrated ability to manage land development projects profitably."
     ],
     "ai": {
-      "score": 33,
+      "score": 16,
       "eliminated": true,
-      "eliminatedReason": "Core function is fundraising/donor development — not on your resume despite strong transferable communication and project-management skills. Also well below your $170K compensation target.",
+      "eliminatedReason": "Requires a Registered Professional Engineer (P.E.) license and hands-on AutoCAD Civil3D land-development engineering experience -- core technical/licensure requirements this profile doesn't have, despite matching BD/proposal-writing experience.",
       "requirements": [
-        { "text": "Fundraising experience and knowledge of fundraising practices", "matched": false, "hard": false, "note": "The role's primary function; not on resume." },
-        { "text": "Demonstrated skills relating to donor recruitment and stewardship", "matched": false, "hard": false, "note": null },
-        { "text": "Demonstrated knowledge of fundraising database usage", "matched": false, "hard": false, "note": "General CRM familiarity (Salesforce/Dynamics) is adjacent but Raiser's Edge specifically is not on resume." },
-        { "text": "Demonstrated oral and written communication skills", "matched": true, "hard": false, "note": null },
-        { "text": "Excellent interpersonal skills", "matched": true, "hard": false, "note": null },
-        { "text": "Either possess or rapidly acquire knowledge of the Jamestown-Yorktown Foundation and its programs", "matched": true, "hard": false, "note": "Learnable on the job, not a resume gap." },
-        { "text": "Demonstrated ability to work with all levels of staff and management", "matched": true, "hard": false, "note": null },
-        { "text": "Demonstrated attention to detail and organizational skills", "matched": true, "hard": false, "note": null },
-        { "text": "Demonstrated ability to manage multiple projects simultaneously", "matched": true, "hard": false, "note": "Strong PM background." },
-        { "text": "Bachelor's degree preferred or equivalent experience", "matched": true, "hard": false, "note": "MBA exceeds this." },
-        { "text": "Previous experience in a museum or higher education fundraising environment preferred", "matched": false, "hard": false, "note": "Only \"preferred,\" not required." },
-        { "text": "Experience with a fundraising database preferred", "matched": false, "hard": false, "note": "Only \"preferred,\" not required." }
+        {
+          "text": "12+ years of relevant experience managing land development projects.",
+          "matched": false,
+          "hard": false,
+          "note": "No land-development project experience on resume."
+        },
+        {
+          "text": "Registered Professional Engineer (P.E.) license.",
+          "matched": false,
+          "hard": true,
+          "note": "Engineering licensure not held and not obtainable without an engineering degree/exam pathway."
+        },
+        {
+          "text": "Extensive client contacts and relationships with local architects, developers, land use attorneys, planners and/or land owners.",
+          "matched": false,
+          "hard": false,
+          "note": "No land-development industry network on resume."
+        },
+        {
+          "text": "Strong technical skills with AutoCAD Civil3D.",
+          "matched": false,
+          "hard": true,
+          "note": "Civil engineering CAD software not on resume."
+        },
+        {
+          "text": "Business development and marketing experience including writing proposals, scopes of work, and budgeting for projected work.",
+          "matched": true,
+          "hard": false,
+          "note": "Strong BD, marketing and proposal experience."
+        },
+        {
+          "text": "Ability to effectively communicate positively at all levels of the organization.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Ability to manage & mentor staff, and direct resources effectively in a positive manner.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Demonstrated ability to manage land development projects profitably.",
+          "matched": false,
+          "hard": false,
+          "note": "No land-development P&L experience."
+        }
       ]
     }
   },
   {
-    "title": "Principal Solutions Consultant",
-    "employer": "Genesys",
-    "location": "Virginia, United States",
-    "employerLocation": "Remote (VA)",
+    "title": "Manager, Client Development Ad Sales, Capital One Ad Solutions (Remote)",
+    "employer": "Capital One",
+    "location": "Richmond, VA (Remote)",
+    "employerLocation": "Richmond, VA",
     "remote": true,
     "remoteTiedTo": "VA",
     "estDriveMinutesFrom23185": null,
-    "url": "https://www.linkedin.com/jobs/view/principal-solutions-consultant-at-genesys-4448577810",
-    "description": "Enterprise pre-sales/solutions consulting role partnering with large customers on discovery workshops, AI proof-of-concept engagements, and solution demos for Genesys Cloud, acting as a trusted advisor throughout the sales cycle.",
-    "postedDate": "2026-08-07",
-    "salary": "$123.1K-$216.5K",
+    "url": "https://www.linkedin.com/jobs/view/manager-client-development-ad-sales-capital-one-ad-solutions-remote-at-capital-one-4457396736",
+    "description": "Manages and grows relationships with strategic merchant partners on Capital One Shopping's ad platform, reviewing performance data and driving revenue growth for Capital One Ad Solutions; remote role tied to Capital One's Richmond, VA operations.",
+    "postedDate": "2026-08-22",
     "requirements": [
-      "Passion for technology, innovation, and helping customers solve complex business problems",
-      "Strong interpersonal, presentation, verbal, and written communication skills, with the ability to engage audiences ranging from technical practitioners to executive leadership",
-      "Experience facilitating workshops, discovery sessions, design-thinking engagements, or customer strategy discussions",
-      "Familiarity with AI, automation, conversational technologies, or customer experience platforms, with the ability to guide customers through evaluations, trials, and proof-of-concept initiatives",
-      "Ability to work effectively in a fast-paced, cross-functional environment while managing multiple priorities and deadlines",
-      "Strong problem-solving skills and an ability to think creatively when addressing customer challenges",
-      "Understanding of enterprise IT concepts, cloud technologies, networking, security, databases, and software architecture",
-      "Experience maintaining accurate CRM records, opportunity updates, and customer engagement documentation",
-      "Must be based in the Eastern US Region"
+      "At least 6 years of experience in a client facing sales or account management role.",
+      "At least 5 years of experience reviewing or analyzing data.",
+      "Bachelor's Degree.",
+      "6+ years of enterprise sales or performance marketing experience.",
+      "Proven track record of managing, selling, and developing relationships with Strategic Merchants.",
+      "Experience managing technical sales and integrations.",
+      "Demonstrated success selling and managing merchants on sophisticated ad platforms.",
+      "Strong data, analytical and communication skills."
     ],
     "ai": {
-      "score": 67,
+      "score": 57,
       "eliminated": false,
       "eliminatedReason": null,
       "requirements": [
-        { "text": "Passion for technology, innovation, and helping customers solve complex business problems", "matched": true, "hard": false, "note": "Subjective/cultural fit, not resume-verifiable but consistent with 14 years at Microsoft." },
-        { "text": "Strong interpersonal, presentation, verbal, and written communication skills, with the ability to engage audiences ranging from technical practitioners to executive leadership", "matched": true, "hard": false, "note": "Executive presentation training and cross-functional Microsoft/SAP engagement experience." },
-        { "text": "Experience facilitating workshops, discovery sessions, design-thinking engagements, or customer strategy discussions", "matched": true, "hard": false, "note": "GTM design/launch and partner engagement work." },
-        { "text": "Familiarity with AI, automation, conversational technologies, or customer experience platforms, with the ability to guide customers through evaluations, trials, and proof-of-concept initiatives", "matched": false, "hard": false, "note": "No AI/automation/CX-platform (Genesys Cloud is contact-center software) experience on resume — this is the core product category of the role." },
-        { "text": "Ability to work effectively in a fast-paced, cross-functional environment while managing multiple priorities and deadlines", "matched": true, "hard": false, "note": null },
-        { "text": "Strong problem-solving skills and an ability to think creatively when addressing customer challenges", "matched": true, "hard": false, "note": null },
-        { "text": "Understanding of enterprise IT concepts, cloud technologies, networking, security, databases, and software architecture", "matched": true, "hard": false, "note": "Azure Fundamentals certification plus SAP/Salesforce integration experience; likely lighter on networking/security depth than a career technical consultant." },
-        { "text": "Experience maintaining accurate CRM records, opportunity updates, and customer engagement documentation", "matched": true, "hard": false, "note": "Dynamics CRM experience." },
-        { "text": "Must be based in the Eastern US Region", "matched": true, "hard": false, "note": "Virginia is Eastern US." }
-      ]
-    }
-  },
-  {
-    "title": "Customer Success Manager",
-    "employer": "EasyLlama",
-    "location": "Virginia, United States",
-    "employerLocation": "Remote (VA)",
-    "remote": true,
-    "remoteTiedTo": "VA",
-    "estDriveMinutesFrom23185": null,
-    "url": "https://www.linkedin.com/jobs/view/customer-success-manager-at-easyllama-4452463155",
-    "description": "Owns a portfolio of larger compliance-training SaaS accounts, driving renewals, upgrade/expansion opportunities, and product adoption for this bootstrapped, profitable HR-tech company; fully remote with VA on the approved-states hiring list. Posted salary is below your $170K comp target.",
-    "postedDate": "2026-08-10",
-    "salary": "$75K-$85K base / $110K-$120K OTE",
-    "requirements": [
-      "4-6 years in Customer Success, Account Management, or another customer-facing role",
-      "Strong written and verbal communication skills",
-      "A proactive mindset, someone who thinks beyond the playbook and brings fresh ideas and strategies to their book of business",
-      "Comfortable managing renewal, upsell and forecasting processes",
-      "Consultative approach, able to understand customer goals and connect them to product value",
-      "Highly organized with strong attention to detail",
-      "Resourceful and proactive, looking for opportunities and solving problems before they're asked of you"
-    ],
-    "ai": {
-      "score": 90,
-      "eliminated": false,
-      "eliminatedReason": null,
-      "requirements": [
-        { "text": "4-6 years in Customer Success, Account Management, or another customer-facing role", "matched": true, "hard": false, "note": "Extensive partner/customer-facing roles: Pre-Sales Manager, Partner Alliance Manager, consulting." },
-        { "text": "Strong written and verbal communication skills", "matched": true, "hard": false, "note": null },
-        { "text": "A proactive mindset, someone who thinks beyond the playbook and brings fresh ideas and strategies to their book of business", "matched": true, "hard": false, "note": null },
-        { "text": "Comfortable managing renewal, upsell and forecasting processes", "matched": true, "hard": false, "note": "Rebate/incentive program and revenue-attainment management is directly adjacent." },
-        { "text": "Consultative approach, able to understand customer goals and connect them to product value", "matched": true, "hard": false, "note": "Engagement Manager / consulting background." },
-        { "text": "Highly organized with strong attention to detail", "matched": true, "hard": false, "note": null },
-        { "text": "Resourceful and proactive, looking for opportunities and solving problems before they're asked of you", "matched": true, "hard": false, "note": null }
-      ]
-    }
-  },
-  {
-    "title": "Project Solutions Manager (Remote/Field Based)",
-    "employer": "Stanley Black & Decker, Inc.",
-    "location": "Virginia, United States",
-    "employerLocation": "Remote (VA)",
-    "remote": true,
-    "remoteTiedTo": "VA",
-    "estDriveMinutesFrom23185": null,
-    "url": "https://www.linkedin.com/jobs/view/project-solutions-manager-at-stanley-black-decker-inc-4424737970",
-    "description": "Owns SBD's engagement strategy and stakeholder relationships (owners, contractors, subcontractors) across major North American construction projects, coordinating internal teams and managing a regional budget; field-based with heavy travel to job sites.",
-    "postedDate": "2026-08-10",
-    "salary": "$105K-$169.1K",
-    "requirements": [
-      "Bachelor's Degree preferred (Business Management or Engineering preferred)",
-      "10+ years of in sales, marketing or related field.",
-      "OSHA10 & OSHA30 certifications preferred.",
-      "Proven Construction project management experience preferred.",
-      "Must have the ability to build relationships and work effectively with all levels of an organization to drive strategy, influence owners and create procedures and protocols.",
-      "Skilled at building and aligning a team to the overall strategic plan of the group and holding yourself accountable for the failures while giving credit to your team for the successes.",
-      "Ability to collaborate with the appropriate internal team members to resolve problems that arise with the end users in your region",
-      "Ideal candidate is experienced in planning and executing meetings and events of varying sizes and scope.",
-      "Exhibit a thorough knowledge of managing and executing a budget for your region to stay within the developed forecast and allocation.",
-      "Travel 60% of the time to construction job sites",
-      "Proficient computer skills including MS Office Suite, SAP and use of a smartphone"
-    ],
-    "ai": {
-      "score": 58,
-      "eliminated": true,
-      "eliminatedReason": "This is a field-based role requiring 60% travel to active construction job sites — despite strong sales/leadership skill overlap, that conflicts with your desk/office-only physical constraint, not just a resume-skills gap.",
-      "requirements": [
-        { "text": "Bachelor's Degree preferred (Business Management or Engineering preferred)", "matched": true, "hard": false, "note": "MBA; only \"preferred,\" not required." },
-        { "text": "10+ years of in sales, marketing or related field.", "matched": true, "hard": false, "note": "20+ years in sales enablement, GTM, and marketing." },
-        { "text": "OSHA10 & OSHA30 certifications preferred.", "matched": false, "hard": false, "note": "Not on resume, but only \"preferred.\"" },
-        { "text": "Proven Construction project management experience preferred.", "matched": false, "hard": false, "note": "General PM experience, not construction-specific; only \"preferred.\"" },
-        { "text": "Must have the ability to build relationships and work effectively with all levels of an organization to drive strategy, influence owners and create procedures and protocols.", "matched": true, "hard": false, "note": "Core partner/alliance strength." },
-        { "text": "Skilled at building and aligning a team to the overall strategic plan of the group and holding yourself accountable for the failures while giving credit to your team for the successes.", "matched": true, "hard": false, "note": null },
-        { "text": "Ability to collaborate with the appropriate internal team members to resolve problems that arise with the end users in your region", "matched": true, "hard": false, "note": null },
-        { "text": "Ideal candidate is experienced in planning and executing meetings and events of varying sizes and scope.", "matched": true, "hard": false, "note": "GTM launch and sales-enablement event experience." },
-        { "text": "Exhibit a thorough knowledge of managing and executing a budget for your region to stay within the developed forecast and allocation.", "matched": false, "hard": false, "note": "No explicit budget-ownership evidence on resume." },
-        { "text": "Travel 60% of the time to construction job sites", "matched": false, "hard": true, "note": "Field-based construction-site travel conflicts with your documented desk/office-only physical constraint (no standing for long periods, no repetitive lifting/bending)." },
-        { "text": "Proficient computer skills including MS Office Suite, SAP and use of a smartphone", "matched": true, "hard": false, "note": "Office and SAP integration experience." }
+        {
+          "text": "At least 6 years of experience in a client facing sales or account management role.",
+          "matched": true,
+          "hard": false,
+          "note": "Partner/alliance and BD relationship management experience covers this."
+        },
+        {
+          "text": "At least 5 years of experience reviewing or analyzing data.",
+          "matched": true,
+          "hard": false,
+          "note": "Power BI and GTM/revenue-attainment reporting experience."
+        },
+        {
+          "text": "Bachelor's Degree.",
+          "matched": true,
+          "hard": false,
+          "note": "MBA exceeds this."
+        },
+        {
+          "text": "6+ years of enterprise sales or performance marketing experience.",
+          "matched": true,
+          "hard": false,
+          "note": "Sales enablement/GTM background covers this."
+        },
+        {
+          "text": "Proven track record of managing, selling, and developing relationships with Strategic Merchants.",
+          "matched": true,
+          "hard": false,
+          "note": "Analogous to strategic partner/alliance relationship management, though not merchant/retail-specific."
+        },
+        {
+          "text": "Experience managing technical sales and integrations.",
+          "matched": false,
+          "hard": false,
+          "note": "No technical sales/integration experience on resume."
+        },
+        {
+          "text": "Demonstrated success selling and managing merchants on sophisticated ad platforms.",
+          "matched": false,
+          "hard": false,
+          "note": "No ad-tech platform sales experience."
+        },
+        {
+          "text": "Strong data, analytical and communication skills.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        }
       ]
     }
   }
