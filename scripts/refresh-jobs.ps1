@@ -26,6 +26,51 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
       some job boards (state/county sites, ATS platforms) filter by
       city/county name rather than ZIP radius, and postings there can be
       missed by a ZIP-only search.
+
+      Also check each of these employers' own career pages directly, not
+      just general search -- open-ended search reliably finds the obvious
+      big names but under-surfaces smaller, real white-collar employers
+      (confirmed 2026-08-24: Snow Companies, a ~375-employee healthcare
+      marketing agency headquartered at 133 Waller Mill Rd, Williamsburg VA
+      23185, didn't turn up via general search or the city/county "Major
+      Employers" pages, which skew toward largest-by-headcount industrial/
+      retail/warehouse employers rather than office/professional-services
+      firms). This roster was built 2026-08-24 from the city/county/York
+      County "Major Employers" pages plus the Greater Williamsburg Chamber
+      of Commerce directory (Business & Professional Services, Advertising
+      & Media, Consultants, Computers & Telecommunications, and Finance &
+      Insurance categories) -- the Chamber directory itself is far larger
+      but overwhelmingly solo consultants and one-person LLCs with no real
+      hiring function, so it's been pre-filtered down to organizations with
+      an actual multi-employee footprint:
+
+      Government / education / nonprofit: City of Williamsburg government,
+      James City County government, York County government,
+      Williamsburg-James City County School Board, York County School
+      Division, National Center for State Courts, William & Mary, William
+      & Mary Alumni Association, Colonial Williamsburg Foundation,
+      Jamestown-Yorktown Foundation, Goodwill of Central and Coastal
+      Virginia, Williamsburg-James City County Community Action Agency.
+
+      Healthcare: Sentara Healthcare (Williamsburg Regional Medical
+      Center), Riverside Regional Medical Center, Williamsburg Landing.
+
+      Hospitality / tourism: Kingsmill Resort, SeaWorld Parks &
+      Entertainment (Busch Gardens Williamsburg / Water Country USA).
+
+      Professional services / finance: Snow Companies, Kimley-Horn,
+      Davenport & Company LLC, Brown Edwards & Company LLP, PBMares LLP,
+      Gordon & Rees, C&F Bank, Chesapeake Bank, Old Point National Bank,
+      TowneBank, Atlantic Union Bank, SouthState Bank, 1st Advantage
+      Federal Credit Union, BayPort Credit Union, Langley Federal Credit
+      Union, Wells Fargo Advisors.
+
+      Media / tech / telecom: WHRO Public Media, Cox Communications, Glo
+      Fiber, Pavion Inc.
+
+      This roster isn't exhaustive -- if a refresh keeps missing postings
+      from a real local employer, add it here rather than assuming general
+      search will eventually catch it.
    b. REMOTE (VA) -- fully-remote roles explicitly tied to Virginia. On
       LinkedIn and similar boards this means the posting's location is
       "Remote, Virginia" (or similar state-scoped remote), NOT the
