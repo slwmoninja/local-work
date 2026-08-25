@@ -2,13 +2,8 @@
 // confirmed against what was actually deployed (Settings > About shows this).
 // Distinct from STORE_KEY's "_v1" suffix, which is the localStorage data-shape
 // version -- don't conflate the two.
-const APP_VERSION = '1.2.3';
+const APP_VERSION = '1.2.4';
 const STORE_KEY = 'localwork_v1';
-// Deep link straight to the "LocalWork: Refresh Job Data" cloud routine's own
-// page -- one tap there hits Run. Cuts the phone refresh flow down to two
-// taps total (this link, then Run) instead of hunting through the claude.ai
-// app's Routines list by name every time.
-const REFRESH_ROUTINE_URL = 'https://claude.ai/code/routines/trig_016pHzoLEppzMKVZzDKEhXZw';
 
 let RESUME = null;
 let JOBS = [];        // raw jobs from data/jobs.json, scored + id'd
@@ -271,13 +266,10 @@ async function handleRefreshJobsClick(){
   if(!start.reachable){
     await pullLatestSnapshot(true);
     openPopup('Get more roles', `
-      <div style="margin-bottom:12px">Pulled the latest published snapshot -- no new postings there yet. Tapping this button again won't find more by itself; it only pulls what's already published. To actually have Claude go find brand-new postings, run a real refresh:</div>
-      <div style="background:rgba(18,184,134,0.1);border:1px solid var(--accent-dim);border-radius:12px;padding:12px;margin-bottom:10px">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:6px">From your phone -- no desktop needed</div>
-        <div style="font-size:13.5px;line-height:1.5;margin-bottom:10px">Takes a few minutes -- it re-scrapes, re-scores, and pushes a new snapshot straight to this site. Come back and reopen this page once it's done.</div>
-        <a class="btn btn-primary small" href="${REFRESH_ROUTINE_URL}" target="_blank" rel="noopener">Open refresh routine &rarr; tap Run</a>
-      </div>
-      <div style="font-size:11.5px;color:var(--muted);line-height:1.5">Or from your desktop: <code>powershell -File scripts\\refresh-jobs.ps1</code>. Serving the app locally with <code>scripts\\serve.ps1</code> instead of a plain static server makes this same button run that scrape directly.</div>
+      <div style="margin-bottom:12px">Pulled the latest published snapshot -- no new postings there yet. Tapping this button again won't find more by itself; it only pulls what's already published. To actually have Claude go find brand-new postings, run a real refresh from your desktop:</div>
+      <pre style="white-space:pre-wrap;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:12px">powershell -File scripts\\refresh-jobs.ps1</pre>
+      <div style="font-size:11.5px;color:var(--muted);line-height:1.5;margin-bottom:10px">Or serve the app locally with <code>scripts\\serve.ps1</code> instead of a plain static server -- then this same button runs the scrape for you.</div>
+      <div style="font-size:11px;color:var(--muted);line-height:1.5">The phone-only cloud refresh is disabled for now -- Anthropic's cloud sandbox blocks the web access it needs to actually read postings (confirmed 2026-08-25, tested on two separate environments). Desktop is the only reliable path until that changes.</div>
     `);
     return;
   }
@@ -1136,13 +1128,13 @@ function settingsModalHtml(){
       </div>
     </div>
     <div class="section-label" style="margin-top:16px">Job data refresh</div>
-    <div class="card-actions" style="margin-bottom:10px">
+    <div class="card-actions" style="margin-bottom:6px">
       <button class="btn btn-primary small" id="btnRefreshJobs">Refresh job data</button>
       <button class="btn btn-ghost small" id="btnShowSources">Sites checked last refresh</button>
     </div>
-    <div class="card-actions" style="margin-bottom:14px">
-      <a class="btn btn-primary small" href="${REFRESH_ROUTINE_URL}" target="_blank" rel="noopener">Open refresh routine &rarr; tap Run</a>
-    </div>
+    <p style="font-size:11px;color:var(--muted);line-height:1.5;margin:0 0 14px">
+      Phone-only cloud refresh is disabled for now -- Anthropic's cloud sandbox blocks the web access it needs (confirmed 2026-08-25). Use <code>scripts\\refresh-jobs.ps1</code> from your desktop for real new postings.
+    </p>
     <div class="section-label">Backup your job status</div>
     <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px">
       Your Saved / Eliminated / Applied &amp; Track status lives only in this browser's storage. Back it up to a file so you can restore it if this device's data is ever lost — job listings themselves aren't included since they're re-fetched from the live snapshot.

@@ -4,7 +4,7 @@
 // a stale cached manifest. data/*.json is ALSO network-first (not precached) —
 // job data changes independently of app-shell deploys and must never be served
 // stale from a months-old cache.
-const CACHE_NAME = 'localwork-shell-6cbb17bd51f2';
+const CACHE_NAME = 'localwork-shell-04831c03b97c';
 const PRECACHE_URLS = [
   './index.html', './app.js', './manifest.json',
   './icon-192.png', './icon-512.png'
