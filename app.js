@@ -2,7 +2,7 @@
 // confirmed against what was actually deployed (Settings > About shows this).
 // Distinct from STORE_KEY's "_v1" suffix, which is the localStorage data-shape
 // version -- don't conflate the two.
-const APP_VERSION = '1.2.1';
+const APP_VERSION = '1.2.2';
 const STORE_KEY = 'localwork_v1';
 
 let RESUME = null;
@@ -268,11 +268,12 @@ async function handleRefreshJobsClick(){
   if(!start.reachable){
     await pullLatestSnapshot(true);
     openPopup('Get more roles', `
-      <div style="margin-bottom:10px">Pulled the latest published snapshot. To have Claude go find brand-new postings:</div>
-      <div style="margin-bottom:10px"><strong>From your phone:</strong> open the claude.ai app &rarr; Routines &rarr; "LocalWork: Refresh Job Data" &rarr; Run. It re-scrapes, re-scores, and pushes a new snapshot straight to this site (no desktop needed) -- refresh this page in a few minutes once it's done.</div>
-      <div style="margin-bottom:10px"><strong>From your desktop:</strong></div>
-      <pre style="white-space:pre-wrap;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:12px">powershell -File scripts\\refresh-jobs.ps1</pre>
-      <div style="font-size:12px;color:var(--muted)">Or serve the app locally with <code>scripts\\serve.ps1</code> instead of a plain static server -- then this same button runs the scrape for you.</div>
+      <div style="margin-bottom:12px">Pulled the latest published snapshot -- no new postings there yet. Tapping this button again won't find more by itself; it only pulls what's already published. To actually have Claude go find brand-new postings, run a real refresh:</div>
+      <div style="background:rgba(18,184,134,0.1);border:1px solid var(--accent-dim);border-radius:12px;padding:12px;margin-bottom:10px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:6px">From your phone -- no desktop needed</div>
+        <div style="font-size:13.5px;line-height:1.5">Open the <strong>claude.ai</strong> app &rarr; Routines &rarr; <strong>"LocalWork: Refresh Job Data"</strong> &rarr; Run. Takes a few minutes -- it re-scrapes, re-scores, and pushes a new snapshot straight to this site. Come back and reopen this page once it's done.</div>
+      </div>
+      <div style="font-size:11.5px;color:var(--muted);line-height:1.5">Or from your desktop: <code>powershell -File scripts\\refresh-jobs.ps1</code>. Serving the app locally with <code>scripts\\serve.ps1</code> instead of a plain static server makes this same button run that scrape directly.</div>
     `);
     return;
   }
