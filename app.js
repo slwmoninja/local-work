@@ -4,6 +4,11 @@
 // version -- don't conflate the two.
 const APP_VERSION = '1.2.2';
 const STORE_KEY = 'localwork_v1';
+// Deep link straight to the "LocalWork: Refresh Job Data" cloud routine's own
+// page -- one tap there hits Run. Cuts the phone refresh flow down to two
+// taps total (this link, then Run) instead of hunting through the claude.ai
+// app's Routines list by name every time.
+const REFRESH_ROUTINE_URL = 'https://claude.ai/code/routines/trig_016pHzoLEppzMKVZzDKEhXZw';
 
 let RESUME = null;
 let JOBS = [];        // raw jobs from data/jobs.json, scored + id'd
@@ -271,7 +276,8 @@ async function handleRefreshJobsClick(){
       <div style="margin-bottom:12px">Pulled the latest published snapshot -- no new postings there yet. Tapping this button again won't find more by itself; it only pulls what's already published. To actually have Claude go find brand-new postings, run a real refresh:</div>
       <div style="background:rgba(18,184,134,0.1);border:1px solid var(--accent-dim);border-radius:12px;padding:12px;margin-bottom:10px">
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:6px">From your phone -- no desktop needed</div>
-        <div style="font-size:13.5px;line-height:1.5">Open the <strong>claude.ai</strong> app &rarr; Routines &rarr; <strong>"LocalWork: Refresh Job Data"</strong> &rarr; Run. Takes a few minutes -- it re-scrapes, re-scores, and pushes a new snapshot straight to this site. Come back and reopen this page once it's done.</div>
+        <div style="font-size:13.5px;line-height:1.5;margin-bottom:10px">Takes a few minutes -- it re-scrapes, re-scores, and pushes a new snapshot straight to this site. Come back and reopen this page once it's done.</div>
+        <a class="btn btn-primary small" href="${REFRESH_ROUTINE_URL}" target="_blank" rel="noopener">Open refresh routine &rarr; tap Run</a>
       </div>
       <div style="font-size:11.5px;color:var(--muted);line-height:1.5">Or from your desktop: <code>powershell -File scripts\\refresh-jobs.ps1</code>. Serving the app locally with <code>scripts\\serve.ps1</code> instead of a plain static server makes this same button run that scrape directly.</div>
     `);
@@ -1133,11 +1139,17 @@ function settingsModalHtml(){
     </div>
     <div class="section-label" style="margin-top:16px">Job data refresh</div>
     <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px">
-      Pull a fresh batch of postings. When you're running the app locally via <code>scripts\\serve.ps1</code>, this kicks off a real re-scrape (a few minutes, runs in the background); otherwise it just pulls whatever snapshot is already published. To trigger a real refresh from your phone with no desktop, use the "LocalWork: Refresh Job Data" routine in the claude.ai app (Routines &rarr; Run) -- it pushes a new snapshot straight to this site.
+      Pull a fresh batch of postings. When you're running the app locally via <code>scripts\\serve.ps1</code>, this kicks off a real re-scrape (a few minutes, runs in the background); otherwise it just pulls whatever snapshot is already published.
     </p>
-    <div class="card-actions" style="margin-bottom:14px">
+    <div class="card-actions" style="margin-bottom:10px">
       <button class="btn btn-primary small" id="btnRefreshJobs">Refresh job data</button>
       <button class="btn btn-ghost small" id="btnShowSources">Sites checked last refresh</button>
+    </div>
+    <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 6px">
+      To have Claude actually go find brand-new postings from your phone, no desktop needed:
+    </p>
+    <div class="card-actions" style="margin-bottom:14px">
+      <a class="btn btn-primary small" href="${REFRESH_ROUTINE_URL}" target="_blank" rel="noopener">Open refresh routine &rarr; tap Run</a>
     </div>
     <div class="section-label">Backup your job status</div>
     <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px">
