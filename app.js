@@ -2,7 +2,7 @@
 // confirmed against what was actually deployed (Settings > About shows this).
 // Distinct from STORE_KEY's "_v1" suffix, which is the localStorage data-shape
 // version -- don't conflate the two.
-const APP_VERSION = '1.2.0';
+const APP_VERSION = '1.2.1';
 const STORE_KEY = 'localwork_v1';
 
 let RESUME = null;
@@ -1019,6 +1019,12 @@ let deferredInstallPrompt = null;
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredInstallPrompt = e;
+  // Chrome only fires this when it believes the app is NOT currently
+  // installed for this origin -- if our own flag says otherwise, the flag
+  // is stale (e.g. the app was uninstalled from the Home Screen, which
+  // does not clear site storage), so drop it and let the real Install
+  // button/flow take over instead of staying stuck showing "Installed".
+  if(localStorage.getItem(INSTALL_ACCEPTED_KEY) === '1') localStorage.removeItem(INSTALL_ACCEPTED_KEY);
   renderInstallUI();
 });
 window.addEventListener('appinstalled', () => {
@@ -1051,6 +1057,15 @@ function installTopbarBtnHtml(keepAfterInstall){
   const installed = isInstalled();
   if(installed && !keepAfterInstall) return '';
   return `<button class="topbar-install-btn${installed?' installed':''}" id="btnInstallPill">${installed?'Installed':'Install'}</button>`;
+}
+// Covers the stuck case where isInstalled() is true only because of the
+// leftover localStorage flag (e.g. uninstalled from the Home Screen, which
+// doesn't clear site storage) rather than an actual standalone session --
+// gives a one-tap way out instead of the user being stuck seeing
+// "Installed" with no way to reinstall until beforeinstallprompt fires again.
+function installTroubleshootHtml(){
+  if(isStandaloneApp() || localStorage.getItem(INSTALL_ACCEPTED_KEY) !== '1') return '';
+  return `<div style="margin-top:6px"><button class="btn btn-ghost small" id="btnResetInstall">Not on your Home Screen? Reset install status</button></div>`;
 }
 function wireInstallBtn(btn){
   if(!btn) return;
@@ -1108,6 +1123,7 @@ function settingsModalHtml(){
       <h2 style="margin:0">Settings</h2>
       ${installTopbarBtnHtml(true)}
     </div>
+    ${installTroubleshootHtml()}
     <div class="section-label" style="margin-top:16px">About</div>
     <div class="track-box">
       <div style="display:flex;justify-content:space-between;font-size:13px">
@@ -1137,6 +1153,12 @@ function renderSettingsModal(){
   els.settingsModal.innerHTML = settingsModalHtml();
   els.settingsModal.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => closeModal(b.dataset.close)));
   wireInstallBtn(document.getElementById('btnInstallPill'));
+  const resetInstallBtn = document.getElementById('btnResetInstall');
+  if(resetInstallBtn) resetInstallBtn.addEventListener('click', () => {
+    localStorage.removeItem(INSTALL_ACCEPTED_KEY);
+    showToast('Install status reset — the Install button is back.');
+    renderInstallUI();
+  });
   document.getElementById('btnBackupNow').addEventListener('click', handleBackupNowClick);
   document.getElementById('btnRestoreBackup').addEventListener('click', () => openRestorePicker());
   document.getElementById('btnRefreshJobs').addEventListener('click', handleRefreshJobsClick);
