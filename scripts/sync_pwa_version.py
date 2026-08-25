@@ -98,7 +98,9 @@ def sync_cache_name():
     if not match:
         sys.exit("Could not find PRECACHE_URLS array in sw.js")
 
-    rel_paths = [p.lstrip("./") for p in re.findall(r'"([^"]+)"', match.group(1)) if p]
+    rel_paths = [p.lstrip("./") for p in re.findall(r'[\'"]([^\'"]+)[\'"]', match.group(1)) if p]
+    if not rel_paths:
+        sys.exit("PRECACHE_URLS parsed to zero files -- regex/quote-style mismatch, cache-name hashing would silently no-op")
 
     hasher = hashlib.sha256()
     for rel_path in rel_paths:
