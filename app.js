@@ -2,7 +2,7 @@
 // confirmed against what was actually deployed (Settings > About shows this).
 // Distinct from STORE_KEY's "_v1" suffix, which is the localStorage data-shape
 // version -- don't conflate the two.
-const APP_VERSION = '1.2.4';
+const APP_VERSION = '1.2.5';
 const STORE_KEY = 'localwork_v1';
 
 let RESUME = null;
@@ -267,8 +267,9 @@ async function handleRefreshJobsClick(){
     await pullLatestSnapshot(true);
     openPopup('Get more roles', `
       <div style="margin-bottom:12px">Pulled the latest published snapshot -- no new postings there yet. Tapping this button again won't find more by itself; it only pulls what's already published. To actually have Claude go find brand-new postings, run a real refresh from your desktop:</div>
+      <div style="font-size:13.5px;line-height:1.5;margin-bottom:10px">Double-click <strong>"Refresh Job Data.bat"</strong> in the app folder -- no terminal needed.</div>
       <pre style="white-space:pre-wrap;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:12px">powershell -File scripts\\refresh-jobs.ps1</pre>
-      <div style="font-size:11.5px;color:var(--muted);line-height:1.5;margin-bottom:10px">Or serve the app locally with <code>scripts\\serve.ps1</code> instead of a plain static server -- then this same button runs the scrape for you.</div>
+      <div style="font-size:11.5px;color:var(--muted);line-height:1.5;margin-bottom:10px">That's what the .bat file runs. Or serve the app locally with <code>scripts\\serve.ps1</code> instead of a plain static server -- then this same button runs the scrape for you.</div>
       <div style="font-size:11px;color:var(--muted);line-height:1.5">The phone-only cloud refresh is disabled for now -- Anthropic's cloud sandbox blocks the web access it needs to actually read postings (confirmed 2026-08-25, tested on two separate environments). Desktop is the only reliable path until that changes.</div>
     `);
     return;
@@ -1133,7 +1134,7 @@ function settingsModalHtml(){
       <button class="btn btn-ghost small" id="btnShowSources">Sites checked last refresh</button>
     </div>
     <p style="font-size:11px;color:var(--muted);line-height:1.5;margin:0 0 14px">
-      Phone-only cloud refresh is disabled for now -- Anthropic's cloud sandbox blocks the web access it needs (confirmed 2026-08-25). Use <code>scripts\\refresh-jobs.ps1</code> from your desktop for real new postings.
+      Phone-only cloud refresh is disabled for now -- Anthropic's cloud sandbox blocks the web access it needs (confirmed 2026-08-25). For real new postings, double-click <strong>"Refresh Job Data.bat"</strong> in the app folder on your desktop.
     </p>
     <div class="section-label">Backup your job status</div>
     <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px">

@@ -15,6 +15,10 @@ A PWA that finds desk-job openings within about a 20-minute drive of ZIP 23185 (
 
 ## Refreshing job data
 
+Simplest: double-click **`Refresh Job Data.bat`** in this folder. It runs the refresh, keeps the window open so you can watch progress/errors, and prints `git status --short` when done so you can see what changed at a glance — it does not commit or push anything on its own.
+
+Equivalent from a terminal:
+
 ```
 powershell -File scripts\refresh-jobs.ps1
 ```
@@ -33,11 +37,12 @@ Then open http://localhost:8791/index.html — the app fetches `data/*.json` ove
 
 This also starts a small `/api/refresh` endpoint (`scripts/local_server.py`) that the app's "Refresh job data" button calls to kick off `refresh-jobs.ps1` in the background — the button shows a toast, keeps the app usable while it runs (a few minutes), and auto-pulls the new snapshot when it's done. Logs from the run land in `data/refresh-log.txt` (gitignored) if you need to see what happened.
 
-On GitHub Pages (or any other static host with no `/api/refresh` to hit), the same button just pulls whatever snapshot is already published and shows instructions for running a real refresh instead -- either from your desktop, or from your phone with no desktop at all via the "LocalWork: Refresh Job Data" routine in the claude.ai app (Routines > Run). That routine runs in Anthropic's cloud (no claude-in-chrome there, so weaker coverage on JS-heavy boards like LinkedIn than a desktop refresh), and pushes straight to `master` with no review step -- as a safety net it first tags the current commit `backup/pre-refresh-<UTC timestamp>` and pushes that tag, so a bad run can be manually reverted from the tag.
+On GitHub Pages (or any other static host with no `/api/refresh` to hit), the same button just pulls whatever snapshot is already published and shows instructions for running a real refresh from your desktop (`Refresh Job Data.bat` / `refresh-jobs.ps1`) instead. A phone-only cloud version was tried (a "LocalWork: Refresh Job Data" routine in the claude.ai app) but is currently disabled -- confirmed 2026-08-25 that this account's Claude Code cloud sandbox blocks all outbound web access at the policy level (tested on two separate environments), so the routine can't actually read postings. Desktop remains the only reliable way to pull new data.
 
 ## Files
 
 - `index.html` / `app.js` / `sw.js` / `manifest.json` — the app shell
+- `Refresh Job Data.bat` — double-click to run a refresh, no terminal needed
 - `data/resume-profile.json` — your skills/tools/disqualifiers used for scoring
 - `data/jobs.json` — the job snapshot (Claude-scored where available)
 - `data/sources.json` — every career page/job board checked during the last refresh
