@@ -203,97 +203,6 @@
     }
   },
   {
-    "title": "Program Manager, Events",
-    "employer": "Snow Companies",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "remote": false,
-    "remoteTiedTo": null,
-    "estDriveMinutesFrom23185": 5,
-    "url": "https://www.linkedin.com/jobs/view/program-manager-at-snow-companies-4453068252",
-    "description": "Plans and executes patient-education programs (virtual and live) for Snow Companies' pharmaceutical/biotech clients out of the Williamsburg HQ, handling program promotion, logistics, vendor/venue coordination and attendance tracking.",
-    "postedDate": "2026-08-17",
-    "requirements": [
-      "Bachelor's degree from a four-year college or university.",
-      "Three to five years of related experience and/or training preferred.",
-      "Valid driver's license required; passport may be necessary in some instances.",
-      "Proficient with Microsoft Windows environment (Word, Excel, PowerPoint, Outlook); Salesforce and Zoom preferred.",
-      "Event planning and coordination experience.",
-      "Basic mathematics and business statistics.",
-      "Public speaking, teamwork, organization/file management, multitasking and attention to detail.",
-      "Flexibility in job roles/hours, including willingness to work beyond standard 9 a.m.-6 p.m. hours and weekends; ability to travel up to 25%.",
-      "Comprehension of pharmaceutical/biotechnology industry documents.",
-      "Critical thinking and problem-solving; comfort making outreach/cold calls."
-    ],
-    "ai": {
-      "score": 47,
-      "eliminated": false,
-      "eliminatedReason": null,
-      "requirements": [
-        {
-          "text": "Bachelor's degree from a four-year college or university.",
-          "matched": true,
-          "hard": false,
-          "note": "MBA exceeds this."
-        },
-        {
-          "text": "Three to five years of related experience and/or training preferred.",
-          "matched": true,
-          "hard": false,
-          "note": "Extensive program/project management experience well exceeds this."
-        },
-        {
-          "text": "Valid driver's license required; passport may be necessary in some instances.",
-          "matched": true,
-          "hard": false,
-          "note": "Standard requirement, assumed held."
-        },
-        {
-          "text": "Proficient with Microsoft Windows environment (Word, Excel, PowerPoint, Outlook); Salesforce and Zoom preferred.",
-          "matched": true,
-          "hard": false,
-          "note": "Office and Salesforce both on resume."
-        },
-        {
-          "text": "Event planning and coordination experience.",
-          "matched": false,
-          "hard": false,
-          "note": "Program/project management background is adjacent but not specifically event logistics."
-        },
-        {
-          "text": "Basic mathematics and business statistics.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Public speaking, teamwork, organization/file management, multitasking and attention to detail.",
-          "matched": true,
-          "hard": false,
-          "note": "Executive presentation and cross-functional coordination experience covers this."
-        },
-        {
-          "text": "Flexibility in job roles/hours, including willingness to work beyond standard 9 a.m.-6 p.m. hours and weekends; ability to travel up to 25%.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Comprehension of pharmaceutical/biotechnology industry documents.",
-          "matched": false,
-          "hard": false,
-          "note": "Resume shows general healthcare-IT/health-division exposure, not pharma/biotech specifically."
-        },
-        {
-          "text": "Critical thinking and problem-solving; comfort making outreach/cold calls.",
-          "matched": false,
-          "hard": false,
-          "note": "Problem-solving matches; direct cold-calling isn't evidenced on resume (BD/partner work is more relationship-led)."
-        }
-      ]
-    }
-  },
-  {
     "title": "Senior Project Manager - Land Development",
     "employer": "Kimley-Horn",
     "location": "Williamsburg, VA",
@@ -443,6 +352,83 @@
           "matched": true,
           "hard": false,
           "note": null
+        }
+      ]
+    }
+  },
+  {
+    "title": "VP, Client Services",
+    "employer": "Snow Companies",
+    "location": "Williamsburg, VA",
+    "employerLocation": "Williamsburg, VA",
+    "remote": false,
+    "remoteTiedTo": null,
+    "estDriveMinutesFrom23185": 5,
+    "url": "https://www.linkedin.com/jobs/view/vp-client-services-at-snow-companies-4439855445",
+    "description": "Senior agency leadership role at Snow Companies' Williamsburg HQ, acting as the primary client-facing executive across several pharmaceutical/healthcare accounts -- managing account P&L, mentoring account teams, and driving strategic growth. Onsite (Omnicom requires a minimum of 3 days/week in office).",
+    "postedDate": "2026-08-19",
+    "requirements": [
+      "8+ years of pharma or healthcare advertising experience; patient experience preferred.",
+      "Bachelor's degree from an accredited four-year institution; 10+ years of related experience preferred.",
+      "Valid driver's license required; passport may be necessary in some instances.",
+      "Ability to travel up to 30%.",
+      "Strong presentation and communication skills.",
+      "Team leadership and mentoring capabilities.",
+      "Proficiency in PowerPoint, Excel, and Word.",
+      "Entrepreneurial approach to organic business growth."
+    ],
+    "ai": {
+      "score": 30,
+      "eliminated": true,
+      "eliminatedReason": "Requires 8+ years of pharma/healthcare advertising agency experience -- a specific industry background not on your resume, despite strong transferable leadership and client-management skills.",
+      "requirements": [
+        {
+          "text": "8+ years of pharma or healthcare advertising experience; patient experience preferred.",
+          "matched": false,
+          "hard": true,
+          "note": "Deep pharma/healthcare advertising-agency experience required; resume shows general healthcare-IT exposure only, not agency-side patient marketing work."
+        },
+        {
+          "text": "Bachelor's degree from an accredited four-year institution; 10+ years of related experience preferred.",
+          "matched": true,
+          "hard": false,
+          "note": "MBA exceeds the degree requirement; extensive management experience covers the years."
+        },
+        {
+          "text": "Valid driver's license required; passport may be necessary in some instances.",
+          "matched": true,
+          "hard": false,
+          "note": "Standard requirement, assumed held."
+        },
+        {
+          "text": "Ability to travel up to 30%.",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Strong presentation and communication skills.",
+          "matched": true,
+          "hard": false,
+          "note": "Executive presentation and communication experience covers this."
+        },
+        {
+          "text": "Team leadership and mentoring capabilities.",
+          "matched": true,
+          "hard": false,
+          "note": "Leadership development/training and engagement-management experience covers this."
+        },
+        {
+          "text": "Proficiency in PowerPoint, Excel, and Word.",
+          "matched": true,
+          "hard": false,
+          "note": "Microsoft Office tools on resume."
+        },
+        {
+          "text": "Entrepreneurial approach to organic business growth.",
+          "matched": true,
+          "hard": false,
+          "note": "Business development and partner/alliance growth experience is analogous, though not agency-specific."
         }
       ]
     }
