@@ -33,7 +33,7 @@ Then open http://localhost:8791/index.html — the app fetches `data/*.json` ove
 
 This also starts a small `/api/refresh` endpoint (`scripts/local_server.py`) that the app's "Refresh job data" button calls to kick off `refresh-jobs.ps1` in the background — the button shows a toast, keeps the app usable while it runs (a few minutes), and auto-pulls the new snapshot when it's done. Logs from the run land in `data/refresh-log.txt` (gitignored) if you need to see what happened.
 
-On GitHub Pages (or any other static host with no `/api/refresh` to hit), the same button just pulls whatever snapshot is already published and shows instructions for running a real refresh from your desktop instead.
+On GitHub Pages (or any other static host with no `/api/refresh` to hit), the same button just pulls whatever snapshot is already published and shows instructions for running a real refresh instead -- either from your desktop, or from your phone with no desktop at all via the "LocalWork: Refresh Job Data" routine in the claude.ai app (Routines > Run). That routine runs in Anthropic's cloud (no claude-in-chrome there, so weaker coverage on JS-heavy boards like LinkedIn than a desktop refresh), and pushes straight to `master` with no review step -- as a safety net it first tags the current commit `backup/pre-refresh-<UTC timestamp>` and pushes that tag, so a bad run can be manually reverted from the tag.
 
 ## Files
 

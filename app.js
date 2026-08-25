@@ -268,7 +268,9 @@ async function handleRefreshJobsClick(){
   if(!start.reachable){
     await pullLatestSnapshot(true);
     openPopup('Get more roles', `
-      <div style="margin-bottom:10px">Pulled the latest published snapshot. To have Claude go find brand-new postings, run this on your desktop:</div>
+      <div style="margin-bottom:10px">Pulled the latest published snapshot. To have Claude go find brand-new postings:</div>
+      <div style="margin-bottom:10px"><strong>From your phone:</strong> open the claude.ai app &rarr; Routines &rarr; "LocalWork: Refresh Job Data" &rarr; Run. It re-scrapes, re-scores, and pushes a new snapshot straight to this site (no desktop needed) -- refresh this page in a few minutes once it's done.</div>
+      <div style="margin-bottom:10px"><strong>From your desktop:</strong></div>
       <pre style="white-space:pre-wrap;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:12px">powershell -File scripts\\refresh-jobs.ps1</pre>
       <div style="font-size:12px;color:var(--muted)">Or serve the app locally with <code>scripts\\serve.ps1</code> instead of a plain static server -- then this same button runs the scrape for you.</div>
     `);
@@ -1114,7 +1116,7 @@ function settingsModalHtml(){
     </div>
     <div class="section-label" style="margin-top:16px">Job data refresh</div>
     <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px">
-      Pull a fresh batch of postings. When you're running the app locally via <code>scripts\\serve.ps1</code>, this kicks off a real re-scrape (a few minutes, runs in the background); otherwise it just pulls whatever snapshot is already published.
+      Pull a fresh batch of postings. When you're running the app locally via <code>scripts\\serve.ps1</code>, this kicks off a real re-scrape (a few minutes, runs in the background); otherwise it just pulls whatever snapshot is already published. To trigger a real refresh from your phone with no desktop, use the "LocalWork: Refresh Job Data" routine in the claude.ai app (Routines &rarr; Run) -- it pushes a new snapshot straight to this site.
     </p>
     <div class="card-actions" style="margin-bottom:14px">
       <button class="btn btn-primary small" id="btnRefreshJobs">Refresh job data</button>
