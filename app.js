@@ -2,7 +2,7 @@
 // confirmed against what was actually deployed (Settings > About shows this).
 // Distinct from STORE_KEY's "_v1" suffix, which is the localStorage data-shape
 // version -- don't conflate the two.
-const APP_VERSION = '1.2.2';
+const APP_VERSION = '1.2.3';
 const STORE_KEY = 'localwork_v1';
 // Deep link straight to the "LocalWork: Refresh Job Data" cloud routine's own
 // page -- one tap there hits Run. Cuts the phone refresh flow down to two
@@ -27,8 +27,6 @@ const els = {
   showRemote: document.getElementById('showRemote'),
   jobModalBackdrop: document.getElementById('jobModalBackdrop'),
   jobModal: document.getElementById('jobModal'),
-  infoModalBackdrop: document.getElementById('infoModalBackdrop'),
-  btnInfo: document.getElementById('btnInfo'),
   btnSettings: document.getElementById('btnSettings'),
   settingsModalBackdrop: document.getElementById('settingsModalBackdrop'),
   settingsModal: document.getElementById('settingsModal'),
@@ -1138,16 +1136,10 @@ function settingsModalHtml(){
       </div>
     </div>
     <div class="section-label" style="margin-top:16px">Job data refresh</div>
-    <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px">
-      Pull a fresh batch of postings. When you're running the app locally via <code>scripts\\serve.ps1</code>, this kicks off a real re-scrape (a few minutes, runs in the background); otherwise it just pulls whatever snapshot is already published.
-    </p>
     <div class="card-actions" style="margin-bottom:10px">
       <button class="btn btn-primary small" id="btnRefreshJobs">Refresh job data</button>
       <button class="btn btn-ghost small" id="btnShowSources">Sites checked last refresh</button>
     </div>
-    <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 6px">
-      To have Claude actually go find brand-new postings from your phone, no desktop needed:
-    </p>
     <div class="card-actions" style="margin-bottom:14px">
       <a class="btn btn-primary small" href="${REFRESH_ROUTINE_URL}" target="_blank" rel="noopener">Open refresh routine &rarr; tap Run</a>
     </div>
@@ -1332,7 +1324,6 @@ history.replaceState({ tab: activeTab }, ''); // baseline entry so the first tab
 els.strongOnly.addEventListener('change', () => { strongOnly = els.strongOnly.checked; render(); });
 els.showLocal.addEventListener('change', () => { showLocal = els.showLocal.checked; render(); });
 els.showRemote.addEventListener('change', () => { showRemote = els.showRemote.checked; render(); });
-els.btnInfo.addEventListener('click', () => els.infoModalBackdrop.classList.add('open'));
 els.btnSettings.addEventListener('click', () => { renderSettingsModal(); els.settingsModalBackdrop.classList.add('open'); });
 // Bottom nav lives in the static page shell (not inside a subtree render() rebuilds),
 // so it's wired once here at bootstrap, same as btnSettings above -- not from inside
@@ -1342,7 +1333,6 @@ document.getElementById('navBackup').addEventListener('click', handleBackupNowCl
 els.restoreFileInput.addEventListener('change', (e) => { importLatestBackupFromFiles(e.target.files); e.target.value = ''; });
 document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => closeModal(b.dataset.close)));
 els.jobModalBackdrop.addEventListener('click', (e) => { if(e.target === els.jobModalBackdrop) closeModal('jobModalBackdrop'); });
-els.infoModalBackdrop.addEventListener('click', (e) => { if(e.target === els.infoModalBackdrop) closeModal('infoModalBackdrop'); });
 els.settingsModalBackdrop.addEventListener('click', (e) => { if(e.target === els.settingsModalBackdrop) closeModal('settingsModalBackdrop'); });
 renderInstallUI();
 initExitBackup(); // Step 6b -- wired exactly once here, never from inside render()

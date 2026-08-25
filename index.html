@@ -131,7 +131,6 @@
     <div class="topbar-actions">
       <span id="installPillSlot"></span>
       <button class="icon-btn" id="btnSettings" title="Settings" aria-label="Settings">⚙</button>
-      <button class="icon-btn" id="btnInfo" title="About / how scoring works" aria-label="About">ⓘ</button>
     </div>
   </div>
   <div class="tabs" id="tabs"></div>
@@ -150,7 +149,7 @@
 </main>
 
 <footer class="hint">
-  Data is a static snapshot, not a live feed — see the ⓘ button above or README.md for how to refresh it.
+  Data is a static snapshot, not a live feed — see Settings for how to refresh it.
 </footer>
 
 <nav class="bottom-nav">
@@ -164,38 +163,6 @@
 
 <div class="modal-backdrop" id="jobModalBackdrop">
   <div class="modal" id="jobModal"></div>
-</div>
-
-<div class="modal-backdrop" id="infoModalBackdrop">
-  <div class="modal">
-    <button class="close-x" data-close="infoModalBackdrop">✕</button>
-    <h2>How this works</h2>
-    <p style="font-size:13.5px;color:#c6d8d0;line-height:1.5">
-      LocalWork pulls job postings from employers within about a 20-minute drive of ZIP 23185 (Williamsburg, VA),
-      plus fully-remote roles explicitly tied to Virginia (not nationwide "Remote, US" postings), then compares
-      each posting's stated requirements against your resume's skills and tools. Use the Local/Remote checkboxes
-      above the list to filter either category out.
-    </p>
-    <p style="font-size:13.5px;color:#c6d8d0;line-height:1.5">
-      <strong>Score</strong> = the percentage of a job's listed requirements that match something on your resume.
-      Roles are automatically moved to <strong>Not a Fit</strong> when a requirement clearly isn't on your resume at all
-      (a clinical license, a commercial driver's license, a physical-labor demand, a required unrelated technical skill, etc.)
-      or when fewer than 40% of requirements match — or when the posting is more than 7 days old. Postings from the
-      last business day get a small score boost (🔥 in the list, noted in the detail view) since a fresher posting
-      is worth applying to sooner.
-    </p>
-    <p style="font-size:13.5px;color:#c6d8d0;line-height:1.5">
-      Most postings are scored by Claude actually reading the full listing and separating real qualifications from
-      job duties/perks — done once when the job data is refreshed, not live in your browser, so there's no API
-      metering or rate limit involved. Postings without that read-through yet fall back to instant on-device
-      keyword/phrase matching (each job's detail view says which method scored it). Neither is a guarantee — always
-      sanity-check a role yourself before applying, and use <strong>Save</strong> or the tabs above to override
-      anything the scorer got wrong.
-    </p>
-    <p style="font-size:12px;color:var(--muted);line-height:1.5">
-      Job data is a static snapshot refreshed manually — see <code>README.md</code> / <code>scripts/refresh-jobs.md</code> in the app folder for how to pull a new batch.
-    </p>
-  </div>
 </div>
 
 <div class="modal-backdrop" id="settingsModalBackdrop">
