@@ -432,5 +432,110 @@
         }
       ]
     }
+  },
+  {
+    "title": "Employee Relations and Compliance Manager",
+    "employer": "James City County, Virginia (Human Resources Department)",
+    "location": "Williamsburg, VA",
+    "employerLocation": "Williamsburg, VA",
+    "remote": false,
+    "remoteTiedTo": null,
+    "estDriveMinutesFrom23185": 7,
+    "url": "https://careers.jamescitycountyva.gov/jobs/employee-relations-and-compliance-manager-williamsburg-virginia-united-states",
+    "description": "Provides leadership and oversight for employee relations, workplace investigations, employee conduct, corrective/disciplinary processes, grievance administration, leave administration, workplace accommodations, unemployment claims, and HR compliance activities for the County.",
+    "postedDate": null,
+    "requirements": [
+      "Bachelor's degree in Human Resources, Public Administration, Labor Relation or related field and seven years of relevant experience",
+      "Two years of supervisor and team development experience",
+      "Expert knowledge of employee relations and workplace investigations principles and practices",
+      "Strong knowledge of employment laws, FMLA requirements, leave administration, ADA employment requirements, and unemployment claims administration",
+      "Maintains confidentiality of sensitive employee relations information consistent with applicable law, policy, and legitimate business requirements",
+      "Ability to conduct fair, thorough, and appropriately documented workplace investigations",
+      "Demonstrated experience coordinating cases involving overlap of ADA, FMLA, and workers' compensation",
+      "Communicate effectively with employees, supervisors, department directors, and executive teams",
+      "Strong interpersonal, communication, and conflict-resolution skills",
+      "Proficiency with Microsoft Office (Word, Excel, Outlook)",
+      "Customer-service mindset with the ability to work with employees at all levels",
+      "Strong organizational skills with the ability to manage multiple priorities and deadlines"
+    ],
+    "ai": {
+      "score": 35,
+      "eliminated": true,
+      "eliminatedReason": "Core requirements are deep employee-relations, employment-law (FMLA/ADA), and workplace-investigations expertise -- none of which are on your resume, despite matching general leadership, communication, and Office-tool skills.",
+      "requirements": [
+        {
+          "text": "Bachelor's degree in Human Resources, Public Administration, Labor Relation or related field and seven years of relevant experience",
+          "matched": false,
+          "hard": false,
+          "note": "MBA covers the degree loosely via \"related field,\" but seven years of HR/employee-relations-specific experience isn't on resume."
+        },
+        {
+          "text": "Two years of supervisor and team development experience",
+          "matched": true,
+          "hard": false,
+          "note": "Leadership development and team management experience covers this."
+        },
+        {
+          "text": "Expert knowledge of employee relations and workplace investigations principles and practices",
+          "matched": false,
+          "hard": false,
+          "note": "No employee-relations or workplace-investigations experience on resume."
+        },
+        {
+          "text": "Strong knowledge of employment laws, FMLA requirements, leave administration, ADA employment requirements, and unemployment claims administration",
+          "matched": false,
+          "hard": false,
+          "note": "Employment-law/FMLA/ADA specifics not on resume."
+        },
+        {
+          "text": "Maintains confidentiality of sensitive employee relations information consistent with applicable law, policy, and legitimate business requirements",
+          "matched": true,
+          "hard": false,
+          "note": "General professional confidentiality practice, consistent with consulting/engagement-management background."
+        },
+        {
+          "text": "Ability to conduct fair, thorough, and appropriately documented workplace investigations",
+          "matched": false,
+          "hard": false,
+          "note": "No workplace-investigations experience on resume."
+        },
+        {
+          "text": "Demonstrated experience coordinating cases involving overlap of ADA, FMLA, and workers' compensation",
+          "matched": false,
+          "hard": false,
+          "note": "No ADA/FMLA/workers'-compensation case coordination experience on resume."
+        },
+        {
+          "text": "Communicate effectively with employees, supervisors, department directors, and executive teams",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication experience covers this."
+        },
+        {
+          "text": "Strong interpersonal, communication, and conflict-resolution skills",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Proficiency with Microsoft Office (Word, Excel, Outlook)",
+          "matched": true,
+          "hard": false,
+          "note": null
+        },
+        {
+          "text": "Customer-service mindset with the ability to work with employees at all levels",
+          "matched": true,
+          "hard": false,
+          "note": "Client/engagement-management experience is analogous."
+        },
+        {
+          "text": "Strong organizational skills with the ability to manage multiple priorities and deadlines",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project-management experience covers this."
+        }
+      ]
+    }
   }
 ]
