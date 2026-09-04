@@ -7,6 +7,16 @@
 # runs when you choose to run it, same pattern as WheelsAndDeals's
 # refresh-snapshots.ps1.
 #
+# Runs on Haiku 4.5 (see --model below), not the default Sonnet model -- this
+# is page-reading + structured extraction + bullet-by-bullet matching against
+# a resume, not a task that needs frontier reasoning, and a full 25-30-site
+# sweep on Sonnet burns a meaningful chunk of a daily usage limit. If match
+# quality ever seems to degrade, switch --model back to "sonnet" -- but try
+# Haiku first.
+#
+# Run this at most once a day -- job postings don't turn over fast enough to
+# justify re-running the full sweep more often than that.
+#
 # Usage: powershell -File scripts\refresh-jobs.ps1
 
 $ErrorActionPreference = "Stop"
@@ -71,14 +81,16 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
       This roster isn't exhaustive -- if a refresh keeps missing postings
       from a real local employer, add it here rather than assuming general
       search will eventually catch it.
-   b. REMOTE (VA) -- fully-remote roles explicitly tied to Virginia. On
-      LinkedIn and similar boards this means the posting's location is
-      "Remote, Virginia" (or similar state-scoped remote), NOT the
-      nationwide "Remote, United States" -- exclude postings that are remote
-      with no state tie, since those aren't meaningfully filtered by
-      geography at all. Search LinkedIn's public job listings plus other
-      boards (Indeed, ZipRecruiter, Built In, USAJobs telework/VA,
-      LinkedIn/other boards filtered to Virginia).
+   b. REMOTE -- fully-remote roles, either state-scoped to Virginia
+      ("Remote, Virginia") or fully nationwide ("Remote, United States" /
+      "Remote - Anywhere in the US" / "Remote (US)"). Include both kinds --
+      nationwide-remote is no longer excluded. A nationwide-remote posting
+      must still be a real US-based employer/role (not offshore/
+      international, not requiring relocation) and must clear the same
+      skill/comp bar as any other listing. Search LinkedIn's public job
+      listings plus other boards (Indeed, ZipRecruiter, Built In, USAJobs
+      telework, LinkedIn/other boards filtered to Virginia and separately
+      to nationwide remote).
    Both categories: desk/office professional roles only (program/project/
    product management, partner/alliance management, business development,
    GTM/sales enablement, marketing, operations, consulting). Use
@@ -142,9 +154,10 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
      "ai": { "score": 0, "eliminated": false, "eliminatedReason": null,
              "requirements": [ { "text": "", "matched": true, "hard": false, "note": "" } ] } }
    For a LOCAL entry: "remote": false, "remoteTiedTo": null,
-   "estDriveMinutesFrom23185" set to your best estimate. For a REMOTE (VA)
-   entry: "remote": true, "remoteTiedTo": "VA" (or the specific tie if not
-   simply Virginia), "estDriveMinutesFrom23185": null.
+   "estDriveMinutesFrom23185" set to your best estimate. For a REMOTE
+   entry: "remote": true, "estDriveMinutesFrom23185": null, and
+   "remoteTiedTo" set to "VA" for a state-scoped posting or "US" for a
+   nationwide-remote posting with no state tie.
    requirements and ai.requirements must be the same bullets in the same
    order. If an existing entry's posting URL still returns a real, current
    listing within the freshness window and you don't have time to
@@ -168,4 +181,4 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
     say so in your final summary rather than fabricating rows.
 '@
 
-claude -p $prompt
+$prompt | claude -p --model claude-haiku-4-5-20251001 --allowedTools "WebSearch,WebFetch"

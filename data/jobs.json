@@ -1,539 +1,693 @@
 [
   {
-    "title": "Director Real Estate Assessments Division",
-    "employer": "James City County, Virginia (Financial and Management Services Department)",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "remote": false,
-    "remoteTiedTo": null,
-    "estDriveMinutesFrom23185": 7,
-    "url": "https://careers.jamescitycountyva.gov/jobs/director-real-estate-assessments-division-williamsburg-virginia-united-states",
-    "description": "Directs and supervises the County's real property appraisal and mapping operations, leading Real Estate Appraisers and support staff through the biennial reassessment cycle.",
-    "postedDate": null,
-    "requirements": [
-      "Any combination of education and experience equivalent to a Bachelor's degree in real estate, business management, public administration, or related field, supplemented by International Association of Assessing Officers (IAAO) courses 101, 102, 112, 300, 311, 400; extensive experience in property appraisal, Geographic Information System (GIS), and mapping, including considerable supervisory or lead experience; designation as an assessor from a recognized organization.",
-      "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.",
-      "Knowledge of leadership techniques, principles and procedures to assign work, schedule, supervise, train, and evaluate the work of assigned staff; purchasing practices.",
-      "Skill in use of computer software including Microsoft Office Suite.",
-      "Ability to communicate effectively both orally and in writing; establish and maintain effective working relationships."
-    ],
-    "ai": {
-      "score": 38,
-      "eliminated": true,
-      "eliminatedReason": "Requires IAAO assessor coursework/certification and property-appraisal/GIS experience — a specific licensed profession not on your resume.",
-      "requirements": [
-        {
-          "text": "Any combination of education and experience equivalent to a Bachelor's degree in real estate, business management, public administration, or related field, supplemented by International Association of Assessing Officers (IAAO) courses 101, 102, 112, 300, 311, 400; extensive experience in property appraisal, Geographic Information System (GIS), and mapping, including considerable supervisory or lead experience; designation as an assessor from a recognized organization.",
-          "matched": false,
-          "hard": true,
-          "note": "IAAO assessor certification/designation is a licensed-profession requirement, not on resume."
-        },
-        {
-          "text": "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.",
-          "matched": true,
-          "hard": false,
-          "note": "Standard driver's license, not commercial — assumed held."
-        },
-        {
-          "text": "Knowledge of leadership techniques, principles and procedures to assign work, schedule, supervise, train, and evaluate the work of assigned staff; purchasing practices.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Skill in use of computer software including Microsoft Office Suite.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Ability to communicate effectively both orally and in writing; establish and maintain effective working relationships.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        }
-      ]
-    }
-  },
-  {
-    "title": "Neighborhood Development Planner",
-    "employer": "James City County, Virginia (Community Development Department)",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "remote": false,
-    "remoteTiedTo": null,
-    "estDriveMinutesFrom23185": 7,
-    "url": "https://careers.jamescitycountyva.gov/jobs/neighborhood-development-planner-williamsburg-virginia-united-states",
-    "description": "Manages federal/state/local grant funding (including CDBG) and provides project management for affordable-housing development projects, including budgets, contracts and stakeholder engagement.",
-    "postedDate": null,
-    "requirements": [
-      "Any combination of education and experience equivalent to a bachelor's degree with major course work in planning, real estate, public or business administration, or related field; AICP and/or considerable experience in property acquisition, community development, and management are preferred.",
-      "Knowledge of County and departmental goals and policy as well as federal, state, and local laws, rules and regulations governing affordable housing; community development; real estate law and practice; construction methods, procurement; federal labor standards; zoning; planning and code enforcement; principles and practices of administrative management; fiscal and budgetary principles; and leadership techniques.",
-      "Skill in use of computer software including Microsoft Office Suite and ArcGIS Pro.",
-      "Ability to work with citizen groups to explain complicated projects, obtain useful feedback, develop consensus, and obtain commitments for participation; negotiate fair and favorable property acquisition contracts; communicate effectively orally and in writing; establish and maintain professional working relationships.",
-      "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria."
-    ],
-    "ai": {
-      "score": 34,
-      "eliminated": true,
-      "eliminatedReason": "Requires specialized municipal planning/zoning/affordable-housing regulatory knowledge and ArcGIS Pro — a domain and toolset not on your resume, despite strong transferable communication and project-management skills.",
-      "requirements": [
-        {
-          "text": "Any combination of education and experience equivalent to a bachelor's degree with major course work in planning, real estate, public or business administration, or related field; AICP and/or considerable experience in property acquisition, community development, and management are preferred.",
-          "matched": true,
-          "hard": false,
-          "note": "Business-administration coursework covered by MBA; AICP/community-development experience is only \"preferred,\" not required, so this isn't disqualifying."
-        },
-        {
-          "text": "Knowledge of County and departmental goals and policy as well as federal, state, and local laws, rules and regulations governing affordable housing; community development; real estate law and practice; construction methods, procurement; federal labor standards; zoning; planning and code enforcement; principles and practices of administrative management; fiscal and budgetary principles; and leadership techniques.",
-          "matched": false,
-          "hard": false,
-          "note": "Extensive municipal-regulatory domain knowledge not on resume."
-        },
-        {
-          "text": "Skill in use of computer software including Microsoft Office Suite and ArcGIS Pro.",
-          "matched": false,
-          "hard": false,
-          "note": "Office tools yes; ArcGIS Pro (GIS mapping software) not on resume."
-        },
-        {
-          "text": "Ability to work with citizen groups to explain complicated projects, obtain useful feedback, develop consensus, and obtain commitments for participation; negotiate fair and favorable property acquisition contracts; communicate effectively orally and in writing; establish and maintain professional working relationships.",
-          "matched": true,
-          "hard": false,
-          "note": "Communication/negotiation transfer well; property-acquisition specifics do not."
-        },
-        {
-          "text": "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.",
-          "matched": true,
-          "hard": false,
-          "note": "Standard driver's license, not commercial."
-        }
-      ]
-    }
-  },
-  {
-    "title": "WATA Grants & Reporting Manager",
-    "employer": "Williamsburg Area Transit Authority",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "remote": false,
-    "remoteTiedTo": null,
-    "estDriveMinutesFrom23185": 7,
-    "url": "https://careers.jamescitycountyva.gov/jobs/wata-grants-reporting-manager-williamsburg-virginia-united-states",
-    "description": "Manages WATA's operating/capital budgets, grant applications and financial reporting, supervises a Budget & Reporting Analyst, and serves as the transit authority's Disadvantaged Business Enterprise Program Officer.",
-    "postedDate": null,
-    "requirements": [
-      "Bachelor's degree in Accounting, Finance, or a related field and eight years of experience using complex financial systems.",
-      "Two years of experience managing staff or leading teams; Master's degree and experience with federal, state and local grant writing and administration preferred.",
-      "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.",
-      "Expert knowledge of principles, methods and practices of budget, accounting, ledger recording, balancing and financial reporting; processes for providing customer service including setting and meeting quality standards for services, and evaluation of customer satisfaction; and considerable knowledge of Generally Accepted Accounting Principles (GAAP); Governmental Accounting Standards Board (GASB) statements.",
-      "Skill in organization to manage multiple tasks; paying close attention to detail; time management to meet deadlines in a fast-paced, deadline-oriented environment.",
-      "Skill in use of computer software including Microsoft Office Suite. Proficiency in Excel and financial/reporting systems.",
-      "Ability to plan, organize, coordinate, evaluate, inform, and motivate staff in a positive and effective manner.",
-      "Strong leadership techniques, principles and procedures to assign work, schedule, supervise, train, and evaluate the work of assigned staff.",
-      "Strong ability to communicate effectively, both orally and in writing.",
-      "Strong application in technical and statistical knowledge in developing and interpreting financial models."
-    ],
-    "ai": {
-      "score": 52,
-      "eliminated": false,
-      "eliminatedReason": null,
-      "requirements": [
-        {
-          "text": "Bachelor's degree in Accounting, Finance, or a related field and eight years of experience using complex financial systems.",
-          "matched": false,
-          "hard": false,
-          "note": "MBA satisfies the degree; the accounting/finance specialization does not."
-        },
-        {
-          "text": "Two years of experience managing staff or leading teams; Master's degree and experience with federal, state and local grant writing and administration preferred.",
-          "matched": true,
-          "hard": false,
-          "note": "MBA plus leadership experience covers the base requirement; grant writing is only \"preferred.\""
-        },
-        {
-          "text": "Must possess, or be able to obtain within 30 days of hire, a valid Virginia driver's license and have an acceptable driving record based on James City County's criteria.",
-          "matched": true,
-          "hard": false,
-          "note": "Standard driver's license, not commercial."
-        },
-        {
-          "text": "Expert knowledge of principles, methods and practices of budget, accounting, ledger recording, balancing and financial reporting; processes for providing customer service including setting and meeting quality standards for services, and evaluation of customer satisfaction; and considerable knowledge of Generally Accepted Accounting Principles (GAAP); Governmental Accounting Standards Board (GASB) statements.",
-          "matched": false,
-          "hard": false,
-          "note": "GAAP/GASB accounting expertise not on resume."
-        },
-        {
-          "text": "Skill in organization to manage multiple tasks; paying close attention to detail; time management to meet deadlines in a fast-paced, deadline-oriented environment.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Skill in use of computer software including Microsoft Office Suite. Proficiency in Excel and financial/reporting systems.",
-          "matched": true,
-          "hard": false,
-          "note": "Excel and PowerBI reporting experience."
-        },
-        {
-          "text": "Ability to plan, organize, coordinate, evaluate, inform, and motivate staff in a positive and effective manner.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Strong leadership techniques, principles and procedures to assign work, schedule, supervise, train, and evaluate the work of assigned staff.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Strong ability to communicate effectively, both orally and in writing.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Strong application in technical and statistical knowledge in developing and interpreting financial models.",
-          "matched": false,
-          "hard": false,
-          "note": "Financial-modeling depth not evidenced on resume."
-        }
-      ]
-    }
-  },
-  {
-    "title": "Senior Project Manager - Land Development",
-    "employer": "Kimley-Horn",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "remote": false,
-    "remoteTiedTo": null,
-    "estDriveMinutesFrom23185": 5,
-    "url": "https://www.linkedin.com/jobs/view/senior-project-manager-land-development-at-kimley-horn-4439111016",
-    "description": "Leads land-development engineering projects out of Kimley-Horn's Williamsburg office, managing client relationships with architects, developers and land-use attorneys and directing project teams and proposals.",
-    "postedDate": "2026-08-24",
-    "requirements": [
-      "12+ years of relevant experience managing land development projects.",
-      "Registered Professional Engineer (P.E.) license.",
-      "Extensive client contacts and relationships with local architects, developers, land use attorneys, planners and/or land owners.",
-      "Strong technical skills with AutoCAD Civil3D.",
-      "Business development and marketing experience including writing proposals, scopes of work, and budgeting for projected work.",
-      "Ability to effectively communicate positively at all levels of the organization.",
-      "Ability to manage & mentor staff, and direct resources effectively in a positive manner.",
-      "Demonstrated ability to manage land development projects profitably."
-    ],
-    "ai": {
-      "score": 16,
-      "eliminated": true,
-      "eliminatedReason": "Requires a Registered Professional Engineer (P.E.) license and hands-on AutoCAD Civil3D land-development engineering experience -- core technical/licensure requirements this profile doesn't have, despite matching BD/proposal-writing experience.",
-      "requirements": [
-        {
-          "text": "12+ years of relevant experience managing land development projects.",
-          "matched": false,
-          "hard": false,
-          "note": "No land-development project experience on resume."
-        },
-        {
-          "text": "Registered Professional Engineer (P.E.) license.",
-          "matched": false,
-          "hard": true,
-          "note": "Engineering licensure not held and not obtainable without an engineering degree/exam pathway."
-        },
-        {
-          "text": "Extensive client contacts and relationships with local architects, developers, land use attorneys, planners and/or land owners.",
-          "matched": false,
-          "hard": false,
-          "note": "No land-development industry network on resume."
-        },
-        {
-          "text": "Strong technical skills with AutoCAD Civil3D.",
-          "matched": false,
-          "hard": true,
-          "note": "Civil engineering CAD software not on resume."
-        },
-        {
-          "text": "Business development and marketing experience including writing proposals, scopes of work, and budgeting for projected work.",
-          "matched": true,
-          "hard": false,
-          "note": "Strong BD, marketing and proposal experience."
-        },
-        {
-          "text": "Ability to effectively communicate positively at all levels of the organization.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Ability to manage & mentor staff, and direct resources effectively in a positive manner.",
-          "matched": true,
-          "hard": false,
-          "note": null
-        },
-        {
-          "text": "Demonstrated ability to manage land development projects profitably.",
-          "matched": false,
-          "hard": false,
-          "note": "No land-development P&L experience."
-        }
-      ]
-    }
-  },
-  {
-    "title": "Manager, Client Development Ad Sales, Capital One Ad Solutions (Remote)",
-    "employer": "Capital One",
-    "location": "Richmond, VA (Remote)",
-    "employerLocation": "Richmond, VA",
+    "title": "Global Enablement Program Manager",
+    "employer": "Afterpay (Block, Inc.)",
+    "location": "Remote",
+    "employerLocation": "Multiple (North America, UK, APAC)",
     "remote": true,
-    "remoteTiedTo": "VA",
+    "remoteTiedTo": "US",
     "estDriveMinutesFrom23185": null,
-    "url": "https://www.linkedin.com/jobs/view/manager-client-development-ad-sales-capital-one-ad-solutions-remote-at-capital-one-4457396736",
-    "description": "Manages and grows relationships with strategic merchant partners on Capital One Shopping's ad platform, reviewing performance data and driving revenue growth for Capital One Ad Solutions; remote role tied to Capital One's Richmond, VA operations.",
-    "postedDate": "2026-08-22",
+    "url": "https://builtin.com/job/global-enablement-program-manager/11017535",
+    "description": "Build and manage global sales enablement and training strategy across North America, UK, and APAC. Own internal content platform, facilitate learning programs, communicate product updates, collaborate with revenue leaders, leverage AI to scale enablement, and measure program impact on sales performance.",
+    "postedDate": "2026-09-04",
     "requirements": [
-      "At least 6 years of experience in a client facing sales or account management role.",
-      "At least 5 years of experience reviewing or analyzing data.",
-      "Bachelor's Degree.",
-      "6+ years of enterprise sales or performance marketing experience.",
-      "Proven track record of managing, selling, and developing relationships with Strategic Merchants.",
-      "Experience managing technical sales and integrations.",
-      "Demonstrated success selling and managing merchants on sophisticated ad platforms.",
-      "Strong data, analytical and communication skills."
+      "5+ years in sales, sales training, enablement, L&D, or related field",
+      "Expertise in learning methodologies and facilitation techniques for sales teams",
+      "AI fluency with proven track record scaling programs using AI tools",
+      "Direct sales organization experience",
+      "Project management skills from inception to completion",
+      "Ability to measure L&D impact on sales performance",
+      "Experience facilitating learning across multiple platforms (in-person, virtual, experiential, asynchronous, on-demand)",
+      "Stakeholder engagement and influence experience in global sales contexts",
+      "Swift deadline execution in fast-paced environments"
     ],
     "ai": {
-      "score": 57,
+      "score": 82,
       "eliminated": false,
       "eliminatedReason": null,
       "requirements": [
         {
-          "text": "At least 6 years of experience in a client facing sales or account management role.",
+          "text": "5+ years in sales, sales training, enablement, L&D, or related field",
           "matched": true,
           "hard": false,
-          "note": "Partner/alliance and BD relationship management experience covers this."
+          "note": "Sales enablement and GTM expertise directly match profile weight-3 skill."
         },
         {
-          "text": "At least 5 years of experience reviewing or analyzing data.",
+          "text": "Expertise in learning methodologies and facilitation techniques for sales teams",
           "matched": true,
           "hard": false,
-          "note": "Power BI and GTM/revenue-attainment reporting experience."
+          "note": "Leadership development and training design experience on profile."
         },
         {
-          "text": "Bachelor's Degree.",
-          "matched": true,
-          "hard": false,
-          "note": "MBA exceeds this."
-        },
-        {
-          "text": "6+ years of enterprise sales or performance marketing experience.",
-          "matched": true,
-          "hard": false,
-          "note": "Sales enablement/GTM background covers this."
-        },
-        {
-          "text": "Proven track record of managing, selling, and developing relationships with Strategic Merchants.",
-          "matched": true,
-          "hard": false,
-          "note": "Analogous to strategic partner/alliance relationship management, though not merchant/retail-specific."
-        },
-        {
-          "text": "Experience managing technical sales and integrations.",
+          "text": "AI fluency with proven track record scaling programs using AI tools",
           "matched": false,
           "hard": false,
-          "note": "No technical sales/integration experience on resume."
+          "note": "No AI tools experience explicitly on resume, but emerging skill area."
         },
         {
-          "text": "Demonstrated success selling and managing merchants on sophisticated ad platforms.",
-          "matched": false,
-          "hard": false,
-          "note": "No ad-tech platform sales experience."
-        },
-        {
-          "text": "Strong data, analytical and communication skills.",
+          "text": "Direct sales organization experience",
           "matched": true,
           "hard": false,
-          "note": null
+          "note": "Sales enablement background covers this."
+        },
+        {
+          "text": "Project management skills from inception to completion",
+          "matched": true,
+          "hard": false,
+          "note": "Program & project management is weight-3 skill."
+        },
+        {
+          "text": "Ability to measure L&D impact on sales performance",
+          "matched": true,
+          "hard": false,
+          "note": "Analytics and performance measurement covered in operations management background."
+        },
+        {
+          "text": "Experience facilitating learning across multiple platforms (in-person, virtual, experiential, asynchronous, on-demand)",
+          "matched": true,
+          "hard": false,
+          "note": "Multi-channel facilitation aligns with distributed team and communication skills."
+        },
+        {
+          "text": "Stakeholder engagement and influence experience in global sales contexts",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication and stakeholder management are core competencies."
+        },
+        {
+          "text": "Swift deadline execution in fast-paced environments",
+          "matched": true,
+          "hard": false,
+          "note": "Program management and consulting background demonstrate this."
         }
       ]
     }
   },
   {
-    "title": "VP, Client Services",
-    "employer": "Snow Companies",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "remote": false,
-    "remoteTiedTo": null,
-    "estDriveMinutesFrom23185": 5,
-    "url": "https://www.linkedin.com/jobs/view/vp-client-services-at-snow-companies-4439855445",
-    "description": "Senior agency leadership role at Snow Companies' Williamsburg HQ, acting as the primary client-facing executive across several pharmaceutical/healthcare accounts -- managing account P&L, mentoring account teams, and driving strategic growth. Onsite (Omnicom requires a minimum of 3 days/week in office).",
-    "postedDate": "2026-08-19",
+    "title": "Program Manager, Solution Innovation",
+    "employer": "Cencora",
+    "location": "Remote, Pennsylvania",
+    "employerLocation": "Remote",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://builtin.com/job/program-manager-solution-innovation/10991184",
+    "description": "Manage solution innovation pathways, governance processes, stage-gate reviews, and cross-functional workstreams. Coordinate stakeholders to advance ideas from intake through discovery, pilots, validation, and roadmap transition while maintaining documentation, decision logs, and executive reporting.",
+    "postedDate": "2026-09-02",
     "requirements": [
-      "8+ years of pharma or healthcare advertising experience; patient experience preferred.",
-      "Bachelor's degree from an accredited four-year institution; 10+ years of related experience preferred.",
-      "Valid driver's license required; passport may be necessary in some instances.",
-      "Ability to travel up to 30%.",
-      "Strong presentation and communication skills.",
-      "Team leadership and mentoring capabilities.",
-      "Proficiency in PowerPoint, Excel, and Word.",
-      "Entrepreneurial approach to organic business growth."
+      "Bachelor's degree in business administration, marketing, product management, project/program management, healthcare administration, information systems, engineering, or related field",
+      "6+ years in product management, product strategy, program management, project management, business operations, or innovation operations",
+      "Cross-functional workstream and governance process management experience",
+      "Healthcare, pharmacy services, or product development background preferred",
+      "Agile, scrum, product management, or project management certification preferred",
+      "Advanced program and project management capabilities",
+      "Multiple workstream management with reporting reliability",
+      "Product management expertise (strategy, roadmaps, requirements, business cases, lifecycle planning)",
+      "Stakeholder facilitation and alignment-building abilities",
+      "Exceptional organizational skills and documentation management",
+      "Technical and non-technical communication proficiency",
+      "Strong analytical and problem-solving capabilities",
+      "Executive summary and dashboard creation abilities",
+      "Proficiency with Microsoft Office, Jira, Confluence, Microsoft Project, Smartsheet, or similar tools",
+      "Independent work capability with sound judgment"
     ],
     "ai": {
-      "score": 30,
-      "eliminated": true,
-      "eliminatedReason": "Requires 8+ years of pharma/healthcare advertising agency experience -- a specific industry background not on your resume, despite strong transferable leadership and client-management skills.",
+      "score": 75,
+      "eliminated": false,
+      "eliminatedReason": null,
       "requirements": [
         {
-          "text": "8+ years of pharma or healthcare advertising experience; patient experience preferred.",
+          "text": "Bachelor's degree in business administration, marketing, product management, project/program management, healthcare administration, information systems, engineering, or related field",
+          "matched": true,
+          "hard": false,
+          "note": "MBA satisfies this requirement."
+        },
+        {
+          "text": "6+ years in product management, product strategy, program management, project management, business operations, or innovation operations",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management (weight 3) and product management (weight 2) skills on resume."
+        },
+        {
+          "text": "Cross-functional workstream and governance process management experience",
+          "matched": true,
+          "hard": false,
+          "note": "Cross-functional leadership and program management cover this."
+        },
+        {
+          "text": "Healthcare, pharmacy services, or product development background preferred",
           "matched": false,
-          "hard": true,
-          "note": "Deep pharma/healthcare advertising-agency experience required; resume shows general healthcare-IT exposure only, not agency-side patient marketing work."
+          "hard": false,
+          "note": "Not required, only preferred; healthcare IT is secondary skill on resume."
         },
         {
-          "text": "Bachelor's degree from an accredited four-year institution; 10+ years of related experience preferred.",
-          "matched": true,
+          "text": "Agile, scrum, product management, or project management certification preferred",
+          "matched": false,
           "hard": false,
-          "note": "MBA exceeds the degree requirement; extensive management experience covers the years."
+          "note": "Not required, only preferred; certifications not listed, but methodologies understood from program management background."
         },
         {
-          "text": "Valid driver's license required; passport may be necessary in some instances.",
+          "text": "Advanced program and project management capabilities",
           "matched": true,
           "hard": false,
-          "note": "Standard requirement, assumed held."
+          "note": "Core competency."
         },
         {
-          "text": "Ability to travel up to 30%.",
+          "text": "Multiple workstream management with reporting reliability",
           "matched": true,
           "hard": false,
-          "note": null
+          "note": "Program management includes managing multiple workstreams."
         },
         {
-          "text": "Strong presentation and communication skills.",
+          "text": "Product management expertise (strategy, roadmaps, requirements, business cases, lifecycle planning)",
           "matched": true,
           "hard": false,
-          "note": "Executive presentation and communication experience covers this."
+          "note": "Product management is weight-2 skill on resume."
         },
         {
-          "text": "Team leadership and mentoring capabilities.",
+          "text": "Stakeholder facilitation and alignment-building abilities",
           "matched": true,
           "hard": false,
-          "note": "Leadership development/training and engagement-management experience covers this."
+          "note": "Executive communication and stakeholder management are core skills."
         },
         {
-          "text": "Proficiency in PowerPoint, Excel, and Word.",
+          "text": "Exceptional organizational skills and documentation management",
           "matched": true,
           "hard": false,
-          "note": "Microsoft Office tools on resume."
+          "note": "Program management discipline."
         },
         {
-          "text": "Entrepreneurial approach to organic business growth.",
+          "text": "Technical and non-technical communication proficiency",
           "matched": true,
           "hard": false,
-          "note": "Business development and partner/alliance growth experience is analogous, though not agency-specific."
+          "note": "Executive communication & presentation is weight-1 skill."
+        },
+        {
+          "text": "Strong analytical and problem-solving capabilities",
+          "matched": true,
+          "hard": false,
+          "note": "Consulting and program management background demonstrate this."
+        },
+        {
+          "text": "Executive summary and dashboard creation abilities",
+          "matched": true,
+          "hard": false,
+          "note": "Power BI and executive communication skills cover this."
+        },
+        {
+          "text": "Proficiency with Microsoft Office, Jira, Confluence, Microsoft Project, Smartsheet, or similar tools",
+          "matched": true,
+          "hard": false,
+          "note": "Microsoft Office (weight 1) and Jira/Trello/SharePoint (weight 1) on resume."
+        },
+        {
+          "text": "Independent work capability with sound judgment",
+          "matched": true,
+          "hard": false,
+          "note": "Demonstrated by operations management and consulting background."
         }
       ]
     }
   },
   {
-    "title": "Employee Relations and Compliance Manager",
-    "employer": "James City County, Virginia (Human Resources Department)",
-    "location": "Williamsburg, VA",
-    "employerLocation": "Williamsburg, VA",
-    "remote": false,
-    "remoteTiedTo": null,
-    "estDriveMinutesFrom23185": 7,
-    "url": "https://careers.jamescitycountyva.gov/jobs/employee-relations-and-compliance-manager-williamsburg-virginia-united-states",
-    "description": "Provides leadership and oversight for employee relations, workplace investigations, employee conduct, corrective/disciplinary processes, grievance administration, leave administration, workplace accommodations, unemployment claims, and HR compliance activities for the County.",
-    "postedDate": null,
+    "title": "Program Manager, Customers",
+    "employer": "Dropbox",
+    "location": "Remote, United States",
+    "employerLocation": "Remote",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://builtin.com/job/program-manager-customers/11021117",
+    "description": "Establish connections between product development and go-to-market teams. Coordinate cross-functional stakeholders to test pre-PMF products with managed customers, operate a Customer Advisory Board, and embed customer insights into launch processes while maintaining clear readiness standards.",
+    "postedDate": "2026-09-04",
     "requirements": [
-      "Bachelor's degree in Human Resources, Public Administration, Labor Relation or related field and seven years of relevant experience",
-      "Two years of supervisor and team development experience",
-      "Expert knowledge of employee relations and workplace investigations principles and practices",
-      "Strong knowledge of employment laws, FMLA requirements, leave administration, ADA employment requirements, and unemployment claims administration",
-      "Maintains confidentiality of sensitive employee relations information consistent with applicable law, policy, and legitimate business requirements",
-      "Ability to conduct fair, thorough, and appropriately documented workplace investigations",
-      "Demonstrated experience coordinating cases involving overlap of ADA, FMLA, and workers' compensation",
-      "Communicate effectively with employees, supervisors, department directors, and executive teams",
-      "Strong interpersonal, communication, and conflict-resolution skills",
-      "Proficiency with Microsoft Office (Word, Excel, Outlook)",
-      "Customer-service mindset with the ability to work with employees at all levels",
-      "Strong organizational skills with the ability to manage multiple priorities and deadlines"
+      "5+ years in program management, operations, customer research operations, product operations, or go-to-market operations",
+      "Demonstrated ability managing ambiguous customer-facing initiatives from conception through execution, measurement, and handoff",
+      "Experience coordinating multiple teams with competing goals and decision rights",
+      "Strong operating discipline with ability to create processes, readiness criteria, documentation, and repeatable playbooks",
+      "Direct customer-facing experience including recruitment, engagement management, and feedback gathering",
+      "Excellent written and verbal communication",
+      "Ability synthesizing qualitative and quantitative data into actionable recommendations",
+      "Sound judgment regarding product readiness, confidentiality, and learning quality",
+      "Experience with pre-PMF testing, beta programs, Customer Advisory Boards, or user research operations (preferred)",
+      "Background embedding customer feedback into launch or product-operations processes (preferred)",
+      "Experience scaling programs across products or customer segments (preferred)",
+      "SaaS, collaboration, productivity, or enterprise software background (preferred)",
+      "Familiarity with customer insight systems, feedback taxonomies, or participant-tracking tools (preferred)"
     ],
     "ai": {
-      "score": 35,
-      "eliminated": true,
-      "eliminatedReason": "Core requirements are deep employee-relations, employment-law (FMLA/ADA), and workplace-investigations expertise -- none of which are on your resume, despite matching general leadership, communication, and Office-tool skills.",
+      "score": 78,
+      "eliminated": false,
+      "eliminatedReason": null,
       "requirements": [
         {
-          "text": "Bachelor's degree in Human Resources, Public Administration, Labor Relation or related field and seven years of relevant experience",
+          "text": "5+ years in program management, operations, customer research operations, product operations, or go-to-market operations",
+          "matched": true,
+          "hard": false,
+          "note": "Program management (weight 3) and sales enablement/GTM (weight 3) match directly."
+        },
+        {
+          "text": "Demonstrated ability managing ambiguous customer-facing initiatives from conception through execution, measurement, and handoff",
+          "matched": true,
+          "hard": false,
+          "note": "Engagement management (weight 2) and consulting background demonstrate this."
+        },
+        {
+          "text": "Experience coordinating multiple teams with competing goals and decision rights",
+          "matched": true,
+          "hard": false,
+          "note": "Cross-functional leadership and stakeholder management are core competencies."
+        },
+        {
+          "text": "Strong operating discipline with ability to create processes, readiness criteria, documentation, and repeatable playbooks",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management background."
+        },
+        {
+          "text": "Direct customer-facing experience including recruitment, engagement management, and feedback gathering",
+          "matched": true,
+          "hard": false,
+          "note": "Engagement management and GTM experience cover this."
+        },
+        {
+          "text": "Excellent written and verbal communication",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication is weight-1 skill."
+        },
+        {
+          "text": "Ability synthesizing qualitative and quantitative data into actionable recommendations",
+          "matched": true,
+          "hard": false,
+          "note": "Consulting and analytics background (Power BI on resume)."
+        },
+        {
+          "text": "Sound judgment regarding product readiness, confidentiality, and learning quality",
+          "matched": true,
+          "hard": false,
+          "note": "Demonstrated by senior consulting roles."
+        },
+        {
+          "text": "Experience with pre-PMF testing, beta programs, Customer Advisory Boards, or user research operations (preferred)",
           "matched": false,
           "hard": false,
-          "note": "MBA covers the degree loosely via \"related field,\" but seven years of HR/employee-relations-specific experience isn't on resume."
+          "note": "Preferred, not required; no specific beta/advisory board experience documented."
         },
         {
-          "text": "Two years of supervisor and team development experience",
-          "matched": true,
-          "hard": false,
-          "note": "Leadership development and team management experience covers this."
-        },
-        {
-          "text": "Expert knowledge of employee relations and workplace investigations principles and practices",
+          "text": "Background embedding customer feedback into launch or product-operations processes (preferred)",
           "matched": false,
           "hard": false,
-          "note": "No employee-relations or workplace-investigations experience on resume."
+          "note": "Preferred, not required; product management background is tangential."
         },
         {
-          "text": "Strong knowledge of employment laws, FMLA requirements, leave administration, ADA employment requirements, and unemployment claims administration",
+          "text": "Experience scaling programs across products or customer segments (preferred)",
+          "matched": true,
+          "hard": false,
+          "note": "Preferred; program management and global team experience suggests this capability."
+        },
+        {
+          "text": "SaaS, collaboration, productivity, or enterprise software background (preferred)",
           "matched": false,
           "hard": false,
-          "note": "Employment-law/FMLA/ADA specifics not on resume."
+          "note": "Preferred, not required; no explicit SaaS industry experience on resume."
         },
         {
-          "text": "Maintains confidentiality of sensitive employee relations information consistent with applicable law, policy, and legitimate business requirements",
-          "matched": true,
-          "hard": false,
-          "note": "General professional confidentiality practice, consistent with consulting/engagement-management background."
-        },
-        {
-          "text": "Ability to conduct fair, thorough, and appropriately documented workplace investigations",
+          "text": "Familiarity with customer insight systems, feedback taxonomies, or participant-tracking tools (preferred)",
           "matched": false,
           "hard": false,
-          "note": "No workplace-investigations experience on resume."
+          "note": "Preferred, not required; specific tool familiarity not documented."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Senior Program Manager PMO, Enterprise",
+    "employer": "Google Fiber",
+    "location": "Remote, United States",
+    "employerLocation": "Remote",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://builtin.com/job/senior-program-manager-pmo-enterprise/10964701",
+    "description": "Oversee complex, interdependent enterprise programs across cross-functional teams. Guide initiatives from conception through market launch, handling planning, executive communication, delivery oversight, consensus building, and obstacle resolution. Support efforts to expand internet access across the organization.",
+    "postedDate": "2026-09-01",
+    "requirements": [
+      "Bachelor's degree or equivalent professional experience",
+      "10 years in project management, product management, operations, or consulting",
+      "Demonstrated ability presenting to executives while managing detailed workflows with specialists",
+      "Proven experience simultaneously managing multiple program plans with active tracking of risks, actions, issues, dependencies, and decisions",
+      "5+ years telecommunications industry experience (preferred)",
+      "MBA, bachelor's degree, or PMP certification (preferred)",
+      "Background deploying data/communications products to commercial or consumer markets (preferred)",
+      "Experience identifying current process states and facilitating cross-functional redesign sessions (preferred)"
+    ],
+    "ai": {
+      "score": 79,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "Bachelor's degree or equivalent professional experience",
+          "matched": true,
+          "hard": false,
+          "note": "MBA satisfies this requirement."
         },
         {
-          "text": "Demonstrated experience coordinating cases involving overlap of ADA, FMLA, and workers' compensation",
+          "text": "10 years in project management, product management, operations, or consulting",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management (weight 3), product management (weight 2), operations (weight 2), and consulting/engagement management (weight 2) all on resume."
+        },
+        {
+          "text": "Demonstrated ability presenting to executives while managing detailed workflows with specialists",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication (weight 1) and program management experience."
+        },
+        {
+          "text": "Proven experience simultaneously managing multiple program plans with active tracking of risks, actions, issues, dependencies, and decisions",
+          "matched": true,
+          "hard": false,
+          "note": "Core program management competency."
+        },
+        {
+          "text": "5+ years telecommunications industry experience (preferred)",
           "matched": false,
           "hard": false,
-          "note": "No ADA/FMLA/workers'-compensation case coordination experience on resume."
+          "note": "Preferred, not required; no telecom-specific industry experience on resume."
         },
         {
-          "text": "Communicate effectively with employees, supervisors, department directors, and executive teams",
+          "text": "MBA, bachelor's degree, or PMP certification (preferred)",
           "matched": true,
           "hard": false,
-          "note": "Executive communication experience covers this."
+          "note": "MBA on resume satisfies this preferred requirement."
         },
         {
-          "text": "Strong interpersonal, communication, and conflict-resolution skills",
-          "matched": true,
+          "text": "Background deploying data/communications products to commercial or consumer markets (preferred)",
+          "matched": false,
           "hard": false,
-          "note": null
+          "note": "Preferred, not required; no explicit product deployment/GTM launch experience detailed."
         },
         {
-          "text": "Proficiency with Microsoft Office (Word, Excel, Outlook)",
+          "text": "Experience identifying current process states and facilitating cross-functional redesign sessions (preferred)",
           "matched": true,
           "hard": false,
-          "note": null
+          "note": "Preferred; operations management and process improvement background."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Operations Manager",
+    "employer": "Kobie Marketing",
+    "location": "Multiple Locations (Remote/Flexible)",
+    "employerLocation": "St. Petersburg, FL (headquarters)",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://builtin.com/job/operations-manager/10961197",
+    "description": "Oversee client-aligned technical operations and organizational logistics. Establish processes, identify automation opportunities, coordinate internal teams and external partners, and support loyalty rewards program execution. Monitor KPIs, resolve operational issues, facilitate strategic discussions, and develop initiatives to enhance program performance and revenue impact.",
+    "postedDate": "2026-09-01",
+    "requirements": [
+      "Strong organizational and management skills",
+      "Excellent written and verbal communication abilities",
+      "Problem-solving expertise",
+      "High level of curiosity and strategic thinking",
+      "Ability to prioritize and manage work in dynamic environments",
+      "Intra-team coordination and leadership capabilities",
+      "Commitment to Kobie values and client objectives",
+      "Operations experience (preferred)",
+      "Workflow management tools or project tracking software experience",
+      "Microsoft Office Suite proficiency",
+      "Enterprise application management experience"
+    ],
+    "ai": {
+      "score": 72,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "Strong organizational and management skills",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management and operations management core skills."
         },
         {
-          "text": "Customer-service mindset with the ability to work with employees at all levels",
+          "text": "Excellent written and verbal communication abilities",
           "matched": true,
           "hard": false,
-          "note": "Client/engagement-management experience is analogous."
+          "note": "Executive communication weight-1 skill."
         },
         {
-          "text": "Strong organizational skills with the ability to manage multiple priorities and deadlines",
+          "text": "Problem-solving expertise",
           "matched": true,
           "hard": false,
-          "note": "Program/project-management experience covers this."
+          "note": "Consulting and operations management background."
+        },
+        {
+          "text": "High level of curiosity and strategic thinking",
+          "matched": true,
+          "hard": false,
+          "note": "Demonstrated by product management and GTM strategic skills."
+        },
+        {
+          "text": "Ability to prioritize and manage work in dynamic environments",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management discipline."
+        },
+        {
+          "text": "Intra-team coordination and leadership capabilities",
+          "matched": true,
+          "hard": false,
+          "note": "Cross-functional leadership is core competency."
+        },
+        {
+          "text": "Commitment to Kobie values and client objectives",
+          "matched": true,
+          "hard": false,
+          "note": "Engagement management and consulting background demonstrate client focus."
+        },
+        {
+          "text": "Operations experience (preferred)",
+          "matched": true,
+          "hard": false,
+          "note": "Preferred; operations management is weight-2 skill."
+        },
+        {
+          "text": "Workflow management tools or project tracking software experience",
+          "matched": true,
+          "hard": false,
+          "note": "Jira/Trello/SharePoint weight-1 skill on resume."
+        },
+        {
+          "text": "Microsoft Office Suite proficiency",
+          "matched": true,
+          "hard": false,
+          "note": "Microsoft Office weight-1 skill on resume."
+        },
+        {
+          "text": "Enterprise application management experience",
+          "matched": false,
+          "hard": false,
+          "note": "No specific enterprise application management expertise documented on resume."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Project Manager, Operations",
+    "employer": "Motorola Solutions, Inc. (Silvus Technologies subsidiary)",
+    "location": "Remote/Hybrid - West Los Angeles, CA",
+    "employerLocation": "West Los Angeles, CA",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://builtin.com/job/project-manager-operations/10945223",
+    "description": "Manage cross-functional operational projects including manufacturing expansion, enterprise technology implementations, supply chain optimization, and strategic initiatives. Translate executive objectives into structured project plans, maintain dashboards and risk logs, facilitate working groups, and remove operational bottlenecks while coordinating Operations, Engineering, Finance, Sales, and IT stakeholders.",
+    "postedDate": "2026-09-01",
+    "requirements": [
+      "Bachelor's degree in Business Administration, Operations Management, Supply Chain, Information Systems, or related field (or equivalent experience)",
+      "3–5 years progressive project management experience within operations, manufacturing, or supply chain",
+      "Hands-on experience coordinating enterprise technology, business systems, or process-driven software rollouts",
+      "Proven track record managing cross-functional project plans using structured PM methodologies",
+      "Proficiency with modern project management software (Jira, Asana, MS Project, SmartSheet)",
+      "Excellent oral and written communication skills",
+      "Must be U.S. Person (citizen or permanent resident)",
+      "Successful background check and drug test clearance",
+      "Direct experience managing full-lifecycle ERP, CRM, or MES implementations (preferred)",
+      "CAPM, PMP, or Lean Six Sigma certification (preferred)",
+      "Experience with high-growth, scaling companies in regulated or complex assembly environments (preferred)"
+    ],
+    "ai": {
+      "score": 68,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "Bachelor's degree in Business Administration, Operations Management, Supply Chain, Information Systems, or related field (or equivalent experience)",
+          "matched": true,
+          "hard": false,
+          "note": "MBA satisfies this requirement."
+        },
+        {
+          "text": "3–5 years progressive project management experience within operations, manufacturing, or supply chain",
+          "matched": false,
+          "hard": false,
+          "note": "Program/project management on resume, but manufacturing/supply-chain operations specific experience not documented."
+        },
+        {
+          "text": "Hands-on experience coordinating enterprise technology, business systems, or process-driven software rollouts",
+          "matched": false,
+          "hard": false,
+          "note": "Technology coordination not primary background; focus is business-side GTM/enablement."
+        },
+        {
+          "text": "Proven track record managing cross-functional project plans using structured PM methodologies",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management core skill."
+        },
+        {
+          "text": "Proficiency with modern project management software (Jira, Asana, MS Project, SmartSheet)",
+          "matched": true,
+          "hard": false,
+          "note": "Jira/Trello/SharePoint weight-1 skill."
+        },
+        {
+          "text": "Excellent oral and written communication skills",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication weight-1 skill."
+        },
+        {
+          "text": "Must be U.S. Person (citizen or permanent resident)",
+          "matched": true,
+          "hard": false,
+          "note": "Assumed satisfied."
+        },
+        {
+          "text": "Successful background check and drug test clearance",
+          "matched": true,
+          "hard": false,
+          "note": "Standard requirement, assumed satisfied."
+        },
+        {
+          "text": "Direct experience managing full-lifecycle ERP, CRM, or MES implementations (preferred)",
+          "matched": false,
+          "hard": false,
+          "note": "Preferred, not required; Salesforce/Dynamics CRM on resume, but not implementation-focused."
+        },
+        {
+          "text": "CAPM, PMP, or Lean Six Sigma certification (preferred)",
+          "matched": false,
+          "hard": false,
+          "note": "Preferred, not required; no certifications documented."
+        },
+        {
+          "text": "Experience with high-growth, scaling companies in regulated or complex assembly environments (preferred)",
+          "matched": false,
+          "hard": false,
+          "note": "Preferred, not required; no manufacturing/assembly sector experience documented."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Marketing Operations & Program Manager",
+    "employer": "Syndio",
+    "location": "Remote (East Coast preferred), KS USA",
+    "employerLocation": "Home, KS",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://builtin.com/job/marketing-operations-program-manager/10875802",
+    "description": "Oversee the marketing organization's high-volume initiatives, combining systems administration with cross-functional coordination. Manage project portfolios across product launches, campaigns, events, and strategic initiatives while administering marketing systems and processes. Operate as the connective tissue across the marketing org without direct authority.",
+    "postedDate": "2026-08-27",
+    "requirements": [
+      "4–7 years in marketing operations, project/program management, or hybrid role (preferably B2B SaaS)",
+      "Demonstrated ownership of project management tools (Monday.com, Notion, Asana, or similar)",
+      "Experience running cross-functional standups with Brand, Content, Product Marketing, and Revenue Marketing teams",
+      "Ability to build project plans for ambiguous multi-stakeholder initiatives and drive completion independently",
+      "Budget tracking, vendor management, process design, and reporting infrastructure experience",
+      "Systems-thinking mindset focused on scalable processes",
+      "Strong written and verbal communication skills translating status and risk for all levels",
+      "Structured approach to creating order in ambiguous environments",
+      "PMP, Agile/Scrum, or similar project management certification (nice-to-have)",
+      "Experience supporting executive-level events or major launches (nice-to-have)",
+      "Familiarity with Marketo, HubSpot, or Salesforce from operations/admin perspective (nice-to-have)"
+    ],
+    "ai": {
+      "score": 70,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "4–7 years in marketing operations, project/program management, or hybrid role (preferably B2B SaaS)",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management (weight 3) and marketing management (weight 2) on resume; B2B SaaS experience not specified."
+        },
+        {
+          "text": "Demonstrated ownership of project management tools (Monday.com, Notion, Asana, or similar)",
+          "matched": true,
+          "hard": false,
+          "note": "Jira/Trello/SharePoint weight-1 skill; Asana/Notion familiarity assumed with project management background."
+        },
+        {
+          "text": "Experience running cross-functional standups with Brand, Content, Product Marketing, and Revenue Marketing teams",
+          "matched": true,
+          "hard": false,
+          "note": "Cross-functional leadership and sales enablement/GTM background cover this."
+        },
+        {
+          "text": "Ability to build project plans for ambiguous multi-stakeholder initiatives and drive completion independently",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management and consulting demonstrate this."
+        },
+        {
+          "text": "Budget tracking, vendor management, process design, and reporting infrastructure experience",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management and finance-related skills cover budgeting and process design."
+        },
+        {
+          "text": "Systems-thinking mindset focused on scalable processes",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management background emphasizes systems thinking."
+        },
+        {
+          "text": "Strong written and verbal communication skills translating status and risk for all levels",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication weight-1 skill."
+        },
+        {
+          "text": "Structured approach to creating order in ambiguous environments",
+          "matched": true,
+          "hard": false,
+          "note": "Consulting and program management background."
+        },
+        {
+          "text": "PMP, Agile/Scrum, or similar project management certification (nice-to-have)",
+          "matched": false,
+          "hard": false,
+          "note": "Nice-to-have; no certifications documented."
+        },
+        {
+          "text": "Experience supporting executive-level events or major launches (nice-to-have)",
+          "matched": true,
+          "hard": false,
+          "note": "Nice-to-have; GTM launch experience covers this."
+        },
+        {
+          "text": "Familiarity with Marketo, HubSpot, or Salesforce from operations/admin perspective (nice-to-have)",
+          "matched": true,
+          "hard": false,
+          "note": "Salesforce weight-1 skill on resume."
         }
       ]
     }

@@ -1,33 +1,105 @@
 {
-  "refreshedAt": "2026-08-26T14:30:06Z",
+  "refreshedAt": "2026-09-04T12:55:54Z",
   "sites": [
-    { "employer": "James City County careers portal (full search list -- Employee Relations and Compliance Manager confirmed still listed; Director Real Estate Assessments Division, Neighborhood Development Planner, WATA Grants & Reporting Manager no longer in the general listing but each individually re-verified live below)", "url": "https://careers.jamescitycountyva.gov/jobs/search", "type": "career-page" },
-    { "employer": "James City County (Director Real Estate Assessments Division posting -- re-verified live, \"Accepting applications until position is filled\")", "url": "https://careers.jamescitycountyva.gov/jobs/director-real-estate-assessments-division-williamsburg-virginia-united-states", "type": "career-page" },
-    { "employer": "James City County (Neighborhood Development Planner posting -- re-verified live, \"Accepting applications until position is filled\")", "url": "https://careers.jamescitycountyva.gov/jobs/neighborhood-development-planner-williamsburg-virginia-united-states", "type": "career-page" },
-    { "employer": "James City County / WATA (Grants & Reporting Manager posting -- re-verified live, \"Accepting applications until position is filled\")", "url": "https://careers.jamescitycountyva.gov/jobs/wata-grants-reporting-manager-williamsburg-virginia-united-states", "type": "career-page" },
-    { "employer": "James City County (Employee Relations and Compliance Manager posting -- re-verified live)", "url": "https://careers.jamescitycountyva.gov/jobs/employee-relations-and-compliance-manager-williamsburg-virginia-united-states", "type": "career-page" },
-    { "employer": "James City County (Economic Development Specialist posting -- unverifiable again, empty/JS-rendered to WebFetch)", "url": "https://careers.jamescitycountyva.gov/jobs/economic-development-specialist-williamsburg-virginia-united-states", "type": "career-page" },
-    { "employer": "James City County (Assistant Library Director, Public Services posting -- unverifiable again, empty/JS-rendered to WebFetch)", "url": "https://careers.jamescitycountyva.gov/jobs/assistant-library-director-public-services-williamsburg-virginia-united-states", "type": "career-page" },
-    { "employer": "James City County (Accounts Payable Specialist, Payroll Specialist postings -- checked, finance-clerical roles not matching skill profile, skipped)", "url": "https://careers.jamescitycountyva.gov/jobs/accounts-payable-specialist-williamsburg-virginia-united-states", "type": "career-page" },
-    { "employer": "William & Mary / jobs.virginia.gov (Project Manager, Office of the University Architect, JR101658 -- checked, posted May 2026 (outside 7-day freshness window) and requires engineering/architecture/construction background, skipped)", "url": "https://www.jobs.virginia.gov/jobs/project-manager-williamsburg-virginia-united-states", "type": "job-board" },
-    { "employer": "William & Mary Senior Project Manager posting -- checked, 404/removed", "url": "https://www.jobs.virginia.gov/jobs/senior-project-manager-williamsburg-virginia-united-states", "type": "job-board" },
-    { "employer": "Snow Companies (VP, Client Services posting -- re-verified live, posted 2026-08-19, edge of freshness window)", "url": "https://www.linkedin.com/jobs/view/vp-client-services-at-snow-companies-4439855445", "type": "job-board" },
-    { "employer": "Snow Companies (Indeed/ZipRecruiter jobs search -- other openings are Advocacy/Recruitment Specialist, Health Educator, Relationship Manager; none match skill profile)", "url": "https://www.indeed.com/q-Snow-Companies-l-Williamsburg,-VA-jobs.html", "type": "job-board" },
-    { "employer": "Kimley-Horn (Senior Project Manager, Land Development posting -- re-verified live, posted 2026-08-24)", "url": "https://www.linkedin.com/jobs/view/senior-project-manager-land-development-at-kimley-horn-4439111016", "type": "job-board" },
-    { "employer": "Kimley-Horn (Williamsburg office jobs search -- Civil Engineer/Transit PM openings, engineering-licensed roles not matching skill profile, skipped)", "url": "https://www.kimley-horn.com/location/williamsburg-va/", "type": "career-page" },
-    { "employer": "Riverside Health System (careers/jobs search -- no program/project/BD management openings surfaced)", "url": "https://www.indeed.com/q-Riverside-Health-System-l-Williamsburg,-VA-jobs.html", "type": "job-board" },
-    { "employer": "Colonial Williamsburg Foundation (careers search -- Guest Services Manager, Conference Group Sales Manager, Sr. Digital Brand Manager surfaced by snippets only, no verifiable direct fresh posting found)", "url": "https://www.colonialwilliamsburg.org/about/careers/", "type": "career-page" },
-    { "employer": "National Center for State Courts (careers portal -- 0 open postings)", "url": "https://www.governmentjobs.com/careers/ncsc", "type": "career-page" },
-    { "employer": "National Center for State Courts (Administrative Manager, Court Consulting Services -- checked, closed since 2024)", "url": "https://www.governmentjobs.com/careers/ncsc/jobs/newprint/4572751", "type": "career-page" },
-    { "employer": "National Center for State Courts (Program Specialist, Institute for Court Management -- checked, closed since 2023)", "url": "https://www.governmentjobs.com/careers/ncsc/jobs/newprint/3915345", "type": "career-page" },
-    { "employer": "TowneBank / Old Point National Bank / Chesapeake Bank / C&F Bank (careers search -- no program/BD/operations manager openings surfaced)", "url": "https://www.indeed.com/q-townebank-l-williamsburg,-va-jobs.html", "type": "job-board" },
-    { "employer": "Cox Communications / Glo Fiber / Pavion (Williamsburg VA jobs search -- no program/project/BD roles surfaced)", "url": "https://www.indeed.com/q-cox-communications-l-williamsburg,-va-jobs.html", "type": "job-board" },
-    { "employer": "Capital One (capitalonecareers.com search -- Director Partner Marketing Manager, Sr Manager Travel Partnerships, Manager Client Dev Affiliate Marketing, Sr Manager Technical Program Management all checked individually, all 404/removed)", "url": "https://www.capitalonecareers.com/job/richmond/director-partner-marketing-manager-capital-one-software-remote/1732/91625132048", "type": "career-page" },
-    { "employer": "Capital One (Manager, Client Development Ad Sales posting -- re-verified live, posted 2026-08-22)", "url": "https://www.linkedin.com/jobs/view/manager-client-development-ad-sales-capital-one-ad-solutions-remote-at-capital-one-4457396736", "type": "job-board" },
-    { "employer": "Dominion Energy / CarMax / Booz Allen (\"Remote, Virginia\" program/partner manager search -- no state-scoped fresh postings surfaced)", "url": "https://dominionenergy.dejobs.org/locations/virginia/jobs/", "type": "job-board" },
-    { "employer": "LinkedIn (\"Williamsburg, VA\" program manager / business development / partner manager search -- Marathon TS Program Manager surfaced, posted April 2026, outside freshness window, skipped)", "url": "https://www.linkedin.com/jobs/view/program-manager-at-marathon-ts-4395317886", "type": "job-board" },
-    { "employer": "USAJobs (telework Virginia program/project manager GS-13/14 search -- no eligible remote-VA-tied openings matching skill profile)", "url": "https://www.usajobs.gov/Search/?k=Telework", "type": "job-board" },
-    { "employer": "Kingsmill Resort / Busch Gardens Williamsburg (sales/marketing/BD search -- National Sales Manager surfaced, posted April 2026, outside freshness window, skipped)", "url": "https://www.ziprecruiter.com/co/Kingsmill-Resort/Jobs/-in-Williamsburg,VA", "type": "job-board" },
-    { "employer": "LinkedIn/Indeed/ZipRecruiter (\"Remote, Virginia\" / \"Remote - Virginia\" partner/alliance/GTM/sales-enablement search, multiple queries -- no genuinely state-scoped-remote fresh postings found; results were either nationwide remote with no VA tie or outside Virginia)", "url": "https://www.linkedin.com/jobs/search/?keywords=partner%20manager&location=Virginia", "type": "job-board" }
+    {
+      "employer": "Built In Remote Jobs Board",
+      "url": "https://builtin.com/jobs/remote/project-management/search/program-manager",
+      "type": "job-board"
+    },
+    {
+      "employer": "Built In Remote Jobs Board - Operations Manager",
+      "url": "https://builtin.com/jobs/remote/operations/operations-management",
+      "type": "job-board"
+    },
+    {
+      "employer": "Built In Remote Jobs Board - Sales Enablement",
+      "url": "https://builtin.com/jobs/remote/sales/search/sales-enablement-manager",
+      "type": "job-board"
+    },
+    {
+      "employer": "LinkedIn Jobs - Program Manager Virginia",
+      "url": "https://www.linkedin.com/jobs/program-manager-jobs-virginia",
+      "type": "job-board"
+    },
+    {
+      "employer": "LinkedIn Jobs - Remote Program Manager",
+      "url": "https://www.linkedin.com/jobs/remote-program-manager-jobs",
+      "type": "job-board"
+    },
+    {
+      "employer": "Indeed - Program Manager Williamsburg, VA",
+      "url": "https://www.indeed.com/q-project-manager-l-williamsburg,-va-jobs.html",
+      "type": "job-board"
+    },
+    {
+      "employer": "Indeed - Operations Manager Williamsburg, VA",
+      "url": "https://www.indeed.com/q-Operations-Manager-l-Williamsburg,-VA-jobs.html",
+      "type": "job-board"
+    },
+    {
+      "employer": "Indeed - Remote Program Manager Virginia",
+      "url": "https://www.indeed.com/q-remote-program-manager-l-virginia-jobs.html",
+      "type": "job-board"
+    },
+    {
+      "employer": "ZipRecruiter - Remote Program Manager Virginia",
+      "url": "https://www.ziprecruiter.com/Jobs/Remote-Program-Manager/--in-Virginia",
+      "type": "job-board"
+    },
+    {
+      "employer": "ZipRecruiter - Program Manager Williamsburg, VA",
+      "url": "https://www.ziprecruiter.com/Jobs/Program-Manager/-in-Williamsburg,VA",
+      "type": "job-board"
+    },
+    {
+      "employer": "Kimley-Horn Careers Center",
+      "url": "https://careers-kimley-horn.icims.com/",
+      "type": "career-page"
+    },
+    {
+      "employer": "Davenport & Company Careers",
+      "url": "https://www.investdavenport.com/careers/",
+      "type": "career-page"
+    },
+    {
+      "employer": "Colonial Williamsburg Foundation Careers",
+      "url": "https://www.colonialwilliamsburg.org/about/careers/",
+      "type": "career-page"
+    },
+    {
+      "employer": "William & Mary Jobs Portal",
+      "url": "https://jobs.wm.edu/",
+      "type": "career-page"
+    },
+    {
+      "employer": "Snow Companies - ZipRecruiter Listings",
+      "url": "https://www.ziprecruiter.com/co/Snow/Jobs/-in-Williamsburg,VA",
+      "type": "job-board"
+    },
+    {
+      "employer": "Sentara Healthcare Williamsburg - Indeed",
+      "url": "https://www.indeed.com/q-sentara-healthcare-l-williamsburg,-va-jobs.html",
+      "type": "job-board"
+    },
+    {
+      "employer": "Riverside Regional Medical Center - Indeed",
+      "url": "https://www.indeed.com/q-Riverside-Health-System-l-Williamsburg,-VA-jobs.html",
+      "type": "job-board"
+    },
+    {
+      "employer": "James City County Careers Portal",
+      "url": "https://careers.jamescitycountyva.gov/jobs/search",
+      "type": "career-page"
+    },
+    {
+      "employer": "City of Williamsburg Government Jobs",
+      "url": "https://www.williamsburgva.gov/Jobs.aspx",
+      "type": "career-page"
+    },
+    {
+      "employer": "Greater Williamsburg Chamber of Commerce Member Directory",
+      "url": "https://connect.williamsburgchamber.com/directory",
+      "type": "career-page"
+    }
   ]
 }
