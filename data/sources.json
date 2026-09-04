@@ -1,105 +1,85 @@
 {
-  "refreshedAt": "2026-09-04T12:55:54Z",
+  "refreshedAt": "2026-09-04T00:00:00Z",
   "sites": [
     {
-      "employer": "Built In Remote Jobs Board",
-      "url": "https://builtin.com/jobs/remote/project-management/search/program-manager",
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search?keywords=program%20manager%20OR%20product%20manager%20OR%20operations&location=Williamsburg%2C%20Virginia&distance=20",
       "type": "job-board"
     },
     {
-      "employer": "Built In Remote Jobs Board - Operations Manager",
-      "url": "https://builtin.com/jobs/remote/operations/operations-management",
+      "employer": "Indeed",
+      "url": "https://www.indeed.com/jobs?q=program+manager+OR+project+manager+OR+operations+manager&l=Williamsburg%2C+VA&radius=20",
       "type": "job-board"
     },
     {
-      "employer": "Built In Remote Jobs Board - Sales Enablement",
-      "url": "https://builtin.com/jobs/remote/sales/search/sales-enablement-manager",
+      "employer": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/Jobs/program%20manager%20operations/in/Williamsburg,VA",
       "type": "job-board"
     },
     {
-      "employer": "LinkedIn Jobs - Program Manager Virginia",
-      "url": "https://www.linkedin.com/jobs/program-manager-jobs-virginia",
+      "employer": "Built In (Remote - Virginia)",
+      "url": "https://builtin.com/jobs/remote/virginia",
       "type": "job-board"
     },
     {
-      "employer": "LinkedIn Jobs - Remote Program Manager",
-      "url": "https://www.linkedin.com/jobs/remote-program-manager-jobs",
+      "employer": "Built In (Remote - All US)",
+      "url": "https://builtin.com/jobs/remote",
       "type": "job-board"
     },
     {
-      "employer": "Indeed - Program Manager Williamsburg, VA",
-      "url": "https://www.indeed.com/q-project-manager-l-williamsburg,-va-jobs.html",
+      "employer": "USAJobs",
+      "url": "https://www.usajobs.gov/Search/Results?k=program%20manager%20telework&p=1",
       "type": "job-board"
     },
     {
-      "employer": "Indeed - Operations Manager Williamsburg, VA",
-      "url": "https://www.indeed.com/q-Operations-Manager-l-Williamsburg,-VA-jobs.html",
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search?keywords=Snow%20Companies&location=Williamsburg",
       "type": "job-board"
     },
     {
-      "employer": "Indeed - Remote Program Manager Virginia",
-      "url": "https://www.indeed.com/q-remote-program-manager-l-virginia-jobs.html",
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search?keywords=program%20manager%20OR%20product%20manager%20OR%20operations%20OR%20%22project%20manager%22&location=James%20City%20County&distance=5",
       "type": "job-board"
     },
     {
-      "employer": "ZipRecruiter - Remote Program Manager Virginia",
-      "url": "https://www.ziprecruiter.com/Jobs/Remote-Program-Manager/--in-Virginia",
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search?keywords=remote%20AND%20%28program%20manager%20OR%20product%20manager%20OR%20operations%20OR%20%22project%20manager%22%29&location=Virginia&distance=50",
       "type": "job-board"
     },
     {
-      "employer": "ZipRecruiter - Program Manager Williamsburg, VA",
-      "url": "https://www.ziprecruiter.com/Jobs/Program-Manager/-in-Williamsburg,VA",
-      "type": "job-board"
-    },
-    {
-      "employer": "Kimley-Horn Careers Center",
-      "url": "https://careers-kimley-horn.icims.com/",
+      "employer": "William & Mary",
+      "url": "https://careers.wm.edu/",
       "type": "career-page"
     },
     {
-      "employer": "Davenport & Company Careers",
-      "url": "https://www.investdavenport.com/careers/",
+      "employer": "Sentara Healthcare",
+      "url": "https://www.sentarahealthcareers.com",
       "type": "career-page"
     },
     {
-      "employer": "Colonial Williamsburg Foundation Careers",
-      "url": "https://www.colonialwilliamsburg.org/about/careers/",
-      "type": "career-page"
-    },
-    {
-      "employer": "William & Mary Jobs Portal",
-      "url": "https://jobs.wm.edu/",
-      "type": "career-page"
-    },
-    {
-      "employer": "Snow Companies - ZipRecruiter Listings",
-      "url": "https://www.ziprecruiter.com/co/Snow/Jobs/-in-Williamsburg,VA",
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search?keywords=program%20manager%20OR%20product%20manager%20OR%20operations%20manager&location=York%20County%20Virginia&distance=10",
       "type": "job-board"
     },
     {
-      "employer": "Sentara Healthcare Williamsburg - Indeed",
-      "url": "https://www.indeed.com/q-sentara-healthcare-l-williamsburg,-va-jobs.html",
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search?keywords=remote%20%22program%20manager%22%20OR%20%22product%20manager%22%20OR%20%22operations%20manager%22&location=United%20States&distance=999",
       "type": "job-board"
     },
     {
-      "employer": "Riverside Regional Medical Center - Indeed",
-      "url": "https://www.indeed.com/q-Riverside-Health-System-l-Williamsburg,-VA-jobs.html",
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search?keywords=partnership%20OR%20%22sales%20enablement%22%20OR%20gtm&location=Remote%20United%20States&distance=999",
       "type": "job-board"
     },
     {
-      "employer": "James City County Careers Portal",
-      "url": "https://careers.jamescitycountyva.gov/jobs/search",
-      "type": "career-page"
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search?keywords=%22Williamsburg%22%20%22James%20City%20County%22%20OR%20%2223185%22&keywords_options=is_boolean_search=true",
+      "type": "job-board"
     },
     {
-      "employer": "City of Williamsburg Government Jobs",
-      "url": "https://www.williamsburgva.gov/Jobs.aspx",
-      "type": "career-page"
-    },
-    {
-      "employer": "Greater Williamsburg Chamber of Commerce Member Directory",
-      "url": "https://connect.williamsburgchamber.com/directory",
-      "type": "career-page"
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search?keywords=partner%20OR%20alliance%20OR%20enablement&location=Williamsburg%20Virginia&distance=20",
+      "type": "job-board"
     }
   ]
 }

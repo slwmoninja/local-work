@@ -138,13 +138,13 @@
           "text": "Healthcare, pharmacy services, or product development background preferred",
           "matched": false,
           "hard": false,
-          "note": "Not required, only preferred; healthcare IT is secondary skill on resume."
+          "note": "Preferred, not required; healthcare IT is secondary skill on resume."
         },
         {
           "text": "Agile, scrum, product management, or project management certification preferred",
           "matched": false,
           "hard": false,
-          "note": "Not required, only preferred; certifications not listed, but methodologies understood from program management background."
+          "note": "Preferred, not required; certifications not listed, but methodologies understood."
         },
         {
           "text": "Advanced program and project management capabilities",
@@ -595,28 +595,30 @@
     }
   },
   {
-    "title": "Marketing Operations & Program Manager",
-    "employer": "Syndio",
-    "location": "Remote (East Coast preferred), KS USA",
-    "employerLocation": "Home, KS",
-    "remote": true,
-    "remoteTiedTo": "US",
-    "estDriveMinutesFrom23185": null,
-    "url": "https://builtin.com/job/marketing-operations-program-manager/10875802",
-    "description": "Oversee the marketing organization's high-volume initiatives, combining systems administration with cross-functional coordination. Manage project portfolios across product launches, campaigns, events, and strategic initiatives while administering marketing systems and processes. Operate as the connective tissue across the marketing org without direct authority.",
-    "postedDate": "2026-08-27",
+    "title": "Manager, Employee Engagement",
+    "employer": "Colonial Williamsburg Foundation",
+    "location": "Williamsburg, VA",
+    "employerLocation": "Williamsburg, VA",
+    "remote": false,
+    "remoteTiedTo": null,
+    "estDriveMinutesFrom23185": 5,
+    "url": "https://www.linkedin.com/jobs/view/manager-employee-engagement-at-colonial-williamsburg-foundation-4458263743",
+    "description": "Partner with VP of HR to lead enterprise-wide employee appreciation and recognition strategies. Create meaningful acknowledgment of employee contributions, service milestones, and retirements across all employment categories. Operate through local recognition (service delivery quality) and global recognition (enterprise-wide tenure and retirement programs), ensuring accessibility across diverse roles, schedules, and locations.",
+    "postedDate": "2026-08-28",
     "requirements": [
-      "4–7 years in marketing operations, project/program management, or hybrid role (preferably B2B SaaS)",
-      "Demonstrated ownership of project management tools (Monday.com, Notion, Asana, or similar)",
-      "Experience running cross-functional standups with Brand, Content, Product Marketing, and Revenue Marketing teams",
-      "Ability to build project plans for ambiguous multi-stakeholder initiatives and drive completion independently",
-      "Budget tracking, vendor management, process design, and reporting infrastructure experience",
-      "Systems-thinking mindset focused on scalable processes",
-      "Strong written and verbal communication skills translating status and risk for all levels",
-      "Structured approach to creating order in ambiguous environments",
-      "PMP, Agile/Scrum, or similar project management certification (nice-to-have)",
-      "Experience supporting executive-level events or major launches (nice-to-have)",
-      "Familiarity with Marketo, HubSpot, or Salesforce from operations/admin perspective (nice-to-have)"
+      "University degree in HR, Organizational Development, Business Administration, Leadership, Communication, Hospitality Management, Event Management, or related field preferred; equivalent professional experience acceptable",
+      "Minimum seven years progressive experience in employee recognition, engagement, experience, HR, organizational culture, or hospitality",
+      "Demonstrated expertise designing and managing enterprise-wide employee recognition and appreciation programs",
+      "Experience administering years-of-service, retirement, awards, and peer recognition initiatives preferred",
+      "Proven ability creating programs reaching employees across multiple categories, roles, environments, schedules, and locations",
+      "Strong understanding of recognition practices, service excellence, and workplace culture connections",
+      "Experience coordinating recognition events, nomination processes, communications, budgets, and logistics",
+      "Proficiency with recognition platforms, participation data, reporting, and program evaluation",
+      "Ability collaborating effectively with executives, managers, HR partners, communications teams, and volunteer leaders",
+      "Experience supporting employee resource groups or comparable engagement initiatives preferred",
+      "Background in complex service, hospitality, cultural, museum, education, nonprofit, or mission-driven organizations preferred",
+      "Exceptional communication, writing, project management, and advisory capabilities",
+      "Strong judgment and discretion with employee information and budgets"
     ],
     "ai": {
       "score": 70,
@@ -624,70 +626,747 @@
       "eliminatedReason": null,
       "requirements": [
         {
-          "text": "4–7 years in marketing operations, project/program management, or hybrid role (preferably B2B SaaS)",
+          "text": "University degree in HR, Organizational Development, Business Administration, Leadership, Communication, Hospitality Management, Event Management, or related field preferred; equivalent professional experience acceptable",
           "matched": true,
           "hard": false,
-          "note": "Program/project management (weight 3) and marketing management (weight 2) on resume; B2B SaaS experience not specified."
+          "note": "MBA satisfies this preferred requirement."
         },
         {
-          "text": "Demonstrated ownership of project management tools (Monday.com, Notion, Asana, or similar)",
+          "text": "Minimum seven years progressive experience in employee recognition, engagement, experience, HR, organizational culture, or hospitality",
           "matched": true,
           "hard": false,
-          "note": "Jira/Trello/SharePoint weight-1 skill; Asana/Notion familiarity assumed with project management background."
+          "note": "Engagement management (weight 2) and operations management (weight 2) background covers employee/organizational culture."
         },
         {
-          "text": "Experience running cross-functional standups with Brand, Content, Product Marketing, and Revenue Marketing teams",
-          "matched": true,
-          "hard": false,
-          "note": "Cross-functional leadership and sales enablement/GTM background cover this."
-        },
-        {
-          "text": "Ability to build project plans for ambiguous multi-stakeholder initiatives and drive completion independently",
-          "matched": true,
-          "hard": false,
-          "note": "Program/project management and consulting demonstrate this."
-        },
-        {
-          "text": "Budget tracking, vendor management, process design, and reporting infrastructure experience",
-          "matched": true,
-          "hard": false,
-          "note": "Operations management and finance-related skills cover budgeting and process design."
-        },
-        {
-          "text": "Systems-thinking mindset focused on scalable processes",
-          "matched": true,
-          "hard": false,
-          "note": "Operations management background emphasizes systems thinking."
-        },
-        {
-          "text": "Strong written and verbal communication skills translating status and risk for all levels",
-          "matched": true,
-          "hard": false,
-          "note": "Executive communication weight-1 skill."
-        },
-        {
-          "text": "Structured approach to creating order in ambiguous environments",
-          "matched": true,
-          "hard": false,
-          "note": "Consulting and program management background."
-        },
-        {
-          "text": "PMP, Agile/Scrum, or similar project management certification (nice-to-have)",
+          "text": "Demonstrated expertise designing and managing enterprise-wide employee recognition and appreciation programs",
           "matched": false,
           "hard": false,
-          "note": "Nice-to-have; no certifications documented."
+          "note": "No specific employee recognition program design documented; related through program management and operations."
         },
         {
-          "text": "Experience supporting executive-level events or major launches (nice-to-have)",
-          "matched": true,
+          "text": "Experience administering years-of-service, retirement, awards, and peer recognition initiatives preferred",
+          "matched": false,
           "hard": false,
-          "note": "Nice-to-have; GTM launch experience covers this."
+          "note": "Preferred, not required; no specific HR benefits/awards administration experience."
         },
         {
-          "text": "Familiarity with Marketo, HubSpot, or Salesforce from operations/admin perspective (nice-to-have)",
+          "text": "Proven ability creating programs reaching employees across multiple categories, roles, environments, schedules, and locations",
           "matched": true,
           "hard": false,
-          "note": "Salesforce weight-1 skill on resume."
+          "note": "Global/distributed team leadership (weight 1) and operations management cover multi-environment program design."
+        },
+        {
+          "text": "Strong understanding of recognition practices, service excellence, and workplace culture connections",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management and engagement management background."
+        },
+        {
+          "text": "Experience coordinating recognition events, nomination processes, communications, budgets, and logistics",
+          "matched": true,
+          "hard": false,
+          "note": "Program management and operations skills cover event coordination and budget management."
+        },
+        {
+          "text": "Proficiency with recognition platforms, participation data, reporting, and program evaluation",
+          "matched": false,
+          "hard": false,
+          "note": "No specific recognition platform experience documented; analytics and reporting covered by Power BI."
+        },
+        {
+          "text": "Ability collaborating effectively with executives, managers, HR partners, communications teams, and volunteer leaders",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication and cross-functional leadership core competencies."
+        },
+        {
+          "text": "Experience supporting employee resource groups or comparable engagement initiatives preferred",
+          "matched": false,
+          "hard": false,
+          "note": "Preferred, not required; no ERG-specific experience documented."
+        },
+        {
+          "text": "Background in complex service, hospitality, cultural, museum, education, nonprofit, or mission-driven organizations preferred",
+          "matched": true,
+          "hard": false,
+          "note": "Preferred; nonprofit sector experience (weight 1) on resume."
+        },
+        {
+          "text": "Exceptional communication, writing, project management, and advisory capabilities",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication (weight 1), program/project management (weight 3), and consulting background."
+        },
+        {
+          "text": "Strong judgment and discretion with employee information and budgets",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management and consulting background demonstrate this."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Business Development Manager",
+    "employer": "Henderson Inc.",
+    "location": "Williamsburg, VA",
+    "employerLocation": "Williamsburg, VA",
+    "remote": false,
+    "remoteTiedTo": null,
+    "estDriveMinutesFrom23185": 8,
+    "url": "https://www.linkedin.com/jobs/view/business-development-manager-at-henderson-inc-4461779110",
+    "description": "Identify, develop, and secure new construction opportunities with focus on medical, behavioral health, and senior care sectors. Build relationships with owners, developers, and architects while managing project pursuits from concept through contract award. Lead generation and market expansion with strategic execution.",
+    "postedDate": "2026-09-01",
+    "requirements": [
+      "Bachelor's degree in construction management, engineering, business, or related field (preferred)",
+      "5+ years business development/sales experience in construction or related industry",
+      "Strong understanding of construction processes and delivery methods",
+      "Proven networking and relationship-building track record",
+      "3-4 years prior industry-related experience",
+      "Strong communication and interpersonal skills",
+      "Goal-oriented mindset with strategic execution ability"
+    ],
+    "ai": {
+      "score": 62,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "Bachelor's degree in construction management, engineering, business, or related field (preferred)",
+          "matched": true,
+          "hard": false,
+          "note": "MBA satisfies this preferred requirement."
+        },
+        {
+          "text": "5+ years business development/sales experience in construction or related industry",
+          "matched": false,
+          "hard": false,
+          "note": "Business development (weight 2) on resume, but no construction industry-specific experience documented."
+        },
+        {
+          "text": "Strong understanding of construction processes and delivery methods",
+          "matched": false,
+          "hard": false,
+          "note": "No construction/commercial real estate development background on resume."
+        },
+        {
+          "text": "Proven networking and relationship-building track record",
+          "matched": true,
+          "hard": false,
+          "note": "Partner/alliance management (weight 3) and business development (weight 2) cover this."
+        },
+        {
+          "text": "3-4 years prior industry-related experience",
+          "matched": false,
+          "hard": false,
+          "note": "No construction or related industry experience documented."
+        },
+        {
+          "text": "Strong communication and interpersonal skills",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication (weight 1) and engagement management (weight 2)."
+        },
+        {
+          "text": "Goal-oriented mindset with strategic execution ability",
+          "matched": true,
+          "hard": false,
+          "note": "Sales enablement/GTM (weight 3) and business development background."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Account Director",
+    "employer": "Snow Companies",
+    "location": "Williamsburg, VA",
+    "employerLocation": "Williamsburg, VA",
+    "remote": false,
+    "remoteTiedTo": null,
+    "estDriveMinutesFrom23185": 10,
+    "url": "https://www.linkedin.com/jobs/view/account-director-at-snow-companies-4447184978",
+    "description": "Collaborate across brand and market access teams to execute post-prescription patient experience strategy. Partner with patient solutions teams to help patients start and stay on therapy while driving awareness among key stakeholders. Enhance message libraries, manage resources, support field inquiries, establish communication approaches, develop reporting systems, conduct training, and support neuroscience team.",
+    "postedDate": "2026-08-28",
+    "requirements": [
+      "Degree in Administration, Business, Project Management, or related field (preferred)",
+      "2+ years in project coordination, operations, or patient experience within pharmaceutical/biotech/healthcare environments (preferred)",
+      "Neuroscience experience (preferred)",
+      "Must work effectively with cross-functional teams, vendors, and customer support staff",
+      "Proficiency with Microsoft Office (Excel, PowerPoint, Word)",
+      "Experience with Microsoft Teams and SharePoint collaboration tools",
+      "Strong verbal and written communication",
+      "Excellent organizational skills managing multiple priorities",
+      "Analytical mindset with attention to detail",
+      "Problem-solving orientation",
+      "Team player with independent capability",
+      "Self-starter confident presenting to large groups",
+      "Remote or hybrid model; minimum three days/week in-office (per Omnicom policy)",
+      "Availability for ad-hoc support during launches"
+    ],
+    "ai": {
+      "score": 65,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "Degree in Administration, Business, Project Management, or related field (preferred)",
+          "matched": true,
+          "hard": false,
+          "note": "MBA satisfies this preferred requirement."
+        },
+        {
+          "text": "2+ years in project coordination, operations, or patient experience within pharmaceutical/biotech/healthcare environments (preferred)",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management (weight 2) and healthcare IT (weight 1) on resume; preferred, not required."
+        },
+        {
+          "text": "Neuroscience experience (preferred)",
+          "matched": false,
+          "hard": false,
+          "note": "Preferred, not required; no specific neuroscience experience documented."
+        },
+        {
+          "text": "Must work effectively with cross-functional teams, vendors, and customer support staff",
+          "matched": true,
+          "hard": false,
+          "note": "Cross-functional leadership and engagement management core skills."
+        },
+        {
+          "text": "Proficiency with Microsoft Office (Excel, PowerPoint, Word)",
+          "matched": true,
+          "hard": false,
+          "note": "Microsoft Office weight-1 skill on resume."
+        },
+        {
+          "text": "Experience with Microsoft Teams and SharePoint collaboration tools",
+          "matched": true,
+          "hard": false,
+          "note": "Microsoft Office and Jira/Trello/SharePoint (weight 1) skills."
+        },
+        {
+          "text": "Strong verbal and written communication",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication (weight 1) skill."
+        },
+        {
+          "text": "Excellent organizational skills managing multiple priorities",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management core competency."
+        },
+        {
+          "text": "Analytical mindset with attention to detail",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management and consulting background."
+        },
+        {
+          "text": "Problem-solving orientation",
+          "matched": true,
+          "hard": false,
+          "note": "Consulting background."
+        },
+        {
+          "text": "Team player with independent capability",
+          "matched": true,
+          "hard": false,
+          "note": "Cross-functional leadership and operations management."
+        },
+        {
+          "text": "Self-starter confident presenting to large groups",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication and leadership background."
+        },
+        {
+          "text": "Remote or hybrid model; minimum three days/week in-office (per Omnicom policy)",
+          "matched": true,
+          "hard": false,
+          "note": "Hybrid model acceptable; local to Williamsburg area."
+        },
+        {
+          "text": "Availability for ad-hoc support during launches",
+          "matched": true,
+          "hard": false,
+          "note": "GTM/sales enablement experience covers launch support."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Senior Technical Program Manager",
+    "employer": "Affirm",
+    "location": "Remote (Richmond, VA area)",
+    "employerLocation": "San Francisco, CA HQ",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://www.linkedin.com/jobs/view/senior-technical-program-manager-at-affirm-4461327111",
+    "description": "Oversee high-visibility planning programs and streamline processes for building customer and merchant products. Work across engineering, product, analytics, and other teams to align efforts with organizational goals and drive improvement initiatives. The Technical Program Management team operates at the intersection of strategy, product, and engineering execution.",
+    "postedDate": "2026-09-03",
+    "requirements": [
+      "Bachelor's degree in Computer Science, Engineering, or equivalent experience",
+      "8 years managing programs, processes, and change in technology environments",
+      "Strong technical background with deep software development process understanding",
+      "Strategic, organized approach to multi-disciplinary collaboration",
+      "Detail-oriented with sound tradeoff decision-making ability",
+      "Strong stakeholder management across Product, Engineering, Design, Analytics",
+      "Track record scaling frameworks and building remote-culture relationships",
+      "Excellent communication, interpersonal, consulting skills",
+      "Passion for transforming consumer finance",
+      "FinTech, Payments, or Commerce experience preferred"
+    ],
+    "ai": {
+      "score": 76,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "Bachelor's degree in Computer Science, Engineering, or equivalent experience",
+          "matched": true,
+          "hard": false,
+          "note": "MBA and extensive program management experience as equivalent."
+        },
+        {
+          "text": "8 years managing programs, processes, and change in technology environments",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management (weight 3) and operations management (weight 2) core skills."
+        },
+        {
+          "text": "Strong technical background with deep software development process understanding",
+          "matched": true,
+          "hard": false,
+          "note": "While not hands-on developer, program management and consulting background covers process/methodology understanding."
+        },
+        {
+          "text": "Strategic, organized approach to multi-disciplinary collaboration",
+          "matched": true,
+          "hard": false,
+          "note": "Cross-functional leadership and operations management."
+        },
+        {
+          "text": "Detail-oriented with sound tradeoff decision-making ability",
+          "matched": true,
+          "hard": false,
+          "note": "Program management and consulting background."
+        },
+        {
+          "text": "Strong stakeholder management across Product, Engineering, Design, Analytics",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication and cross-functional leadership core competencies."
+        },
+        {
+          "text": "Track record scaling frameworks and building remote-culture relationships",
+          "matched": true,
+          "hard": false,
+          "note": "Global/distributed team leadership (weight 1) and operations management."
+        },
+        {
+          "text": "Excellent communication, interpersonal, consulting skills",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication (weight 1) and engagement/consulting background (weight 2)."
+        },
+        {
+          "text": "Passion for transforming consumer finance",
+          "matched": false,
+          "hard": false,
+          "note": "No specific fintech or financial services passion documented, but open mindset."
+        },
+        {
+          "text": "FinTech, Payments, or Commerce experience preferred",
+          "matched": false,
+          "hard": false,
+          "note": "Preferred, not required; no FinTech/Payments industry experience documented."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Product Manager, Sports, REMOTE",
+    "employer": "The E.W. Scripps Company",
+    "location": "Remote (Richmond, VA)",
+    "employerLocation": "Cincinnati, OH HQ",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://www.linkedin.com/jobs/view/product-manager-sports-remote-at-the-e-w-scripps-company-4460909731",
+    "description": "Translate business needs into actionable product requirements and manage day-to-day execution within a cross-functional team. Focus on products supporting Scripps Sports, emphasizing AI and automation tools supporting the sports division. Serve as connector between business stakeholders, engineering teams, and data resources.",
+    "postedDate": "2026-09-02",
+    "requirements": [
+      "Bachelor's degree preferred; equivalent work experience acceptable",
+      "3+ years in digital/product management or related field",
+      "Product management, software development, or technical project coordination background",
+      "Ability to explain technical tradeoffs to non-technical stakeholders",
+      "Familiarity with agile/scrum methodologies and Jira",
+      "Data analysis and performance metrics interpretation skills",
+      "Cross-functional collaboration experience with engineering, UX, and marketing teams",
+      "Experience building prototypes using tools like Figma",
+      "Identify AI/automation opportunities to improve efficiency and cost"
+    ],
+    "ai": {
+      "score": 72,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "Bachelor's degree preferred; equivalent work experience acceptable",
+          "matched": true,
+          "hard": false,
+          "note": "MBA satisfies this preferred requirement."
+        },
+        {
+          "text": "3+ years in digital/product management or related field",
+          "matched": true,
+          "hard": false,
+          "note": "Product management (weight 2) on resume; Russell likely has 5+ years in related areas."
+        },
+        {
+          "text": "Product management, software development, or technical project coordination background",
+          "matched": true,
+          "hard": false,
+          "note": "Product management (weight 2) and program/project management (weight 3) background."
+        },
+        {
+          "text": "Ability to explain technical tradeoffs to non-technical stakeholders",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication (weight 1) and consulting skills."
+        },
+        {
+          "text": "Familiarity with agile/scrum methodologies and Jira",
+          "matched": true,
+          "hard": false,
+          "note": "Jira/Trello/SharePoint weight-1 skill on resume."
+        },
+        {
+          "text": "Data analysis and performance metrics interpretation skills",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management and Power BI (weight 1) skills."
+        },
+        {
+          "text": "Cross-functional collaboration experience with engineering, UX, and marketing teams",
+          "matched": true,
+          "hard": false,
+          "note": "Cross-functional leadership and program management."
+        },
+        {
+          "text": "Experience building prototypes using tools like Figma",
+          "matched": false,
+          "hard": false,
+          "note": "No specific Figma or prototyping tool experience documented."
+        },
+        {
+          "text": "Identify AI/automation opportunities to improve efficiency and cost",
+          "matched": false,
+          "hard": false,
+          "note": "No specific AI/automation optimization experience, but strategic thinking aligns."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Manager, Corporate Programs",
+    "employer": "Coinbase",
+    "location": "Remote (San Francisco, CA)",
+    "employerLocation": "San Francisco, CA",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://www.linkedin.com/jobs/view/manager-corporate-programs-at-coinbase-4442139828",
+    "description": "Lead two critical cross-functional initiatives within Corporate & Strategic Programs. Focus on overseeing CORA (Change Oversight & Risk Assessment) and Planning functions, with direct exposure to senior leadership. Transform complex organizational challenges into scalable solutions while maintaining high operational standards.",
+    "postedDate": "2026-08-30",
+    "requirements": [
+      "6+ years in product operations or program management for software/product initiatives",
+      "Proven ability to convert ambiguous inputs into clear, executable plans",
+      "Experience collaborating with technical teams on tooling and process solutions",
+      "Proficiency in Atlassian suite (Jira, Confluence)",
+      "Strong written and verbal communication skills for senior stakeholder engagement",
+      "Responsible use of generative AI to enhance workflow efficiency"
+    ],
+    "ai": {
+      "score": 76,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "6+ years in product operations or program management for software/product initiatives",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management (weight 3) and product management (weight 2) on resume."
+        },
+        {
+          "text": "Proven ability to convert ambiguous inputs into clear, executable plans",
+          "matched": true,
+          "hard": false,
+          "note": "Program management and consulting (weight 2) background demonstrate this."
+        },
+        {
+          "text": "Experience collaborating with technical teams on tooling and process solutions",
+          "matched": true,
+          "hard": false,
+          "note": "Cross-functional leadership and operations management."
+        },
+        {
+          "text": "Proficiency in Atlassian suite (Jira, Confluence)",
+          "matched": true,
+          "hard": false,
+          "note": "Jira/Trello/SharePoint weight-1 skill on resume."
+        },
+        {
+          "text": "Strong written and verbal communication skills for senior stakeholder engagement",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication (weight 1) skill."
+        },
+        {
+          "text": "Responsible use of generative AI to enhance workflow efficiency",
+          "matched": false,
+          "hard": false,
+          "note": "No explicit AI tool use documented, but emerging skill area."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Product Marketing Manager",
+    "employer": "Motive",
+    "location": "Remote, United States",
+    "employerLocation": "San Francisco, CA",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://builtin.com/job/product-marketing-manager/11023512",
+    "description": "Lead go-to-market strategy and product-led growth for AI-powered SaaS offerings. Develop launch plans, positioning, messaging, and customer acquisition strategies while collaborating cross-functionally with product, sales, and marketing teams. Translate complex technical capabilities into customer benefits and influence product roadmap decisions based on market insights.",
+    "postedDate": "2026-09-04",
+    "requirements": [
+      "Bachelor's degree in Marketing, Business, or related field",
+      "3+ years of product marketing experience",
+      "Background with AI-powered SaaS, SaaS-enabled hardware, agentic workflows, or fintech preferred",
+      "Ability to translate complex technical features into clear, compelling customer benefits",
+      "Proven track record developing GTM strategies, messaging, and sales enablement for enterprise/mid-market products",
+      "Strong communication, storytelling, and presentation capabilities",
+      "Cross-functional relationship-building skills",
+      "Project and priority management with strategic perspective",
+      "Adaptability to shifting market dynamics and organizational priorities"
+    ],
+    "ai": {
+      "score": 75,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "Bachelor's degree in Marketing, Business, or related field",
+          "matched": true,
+          "hard": false,
+          "note": "MBA satisfies this requirement."
+        },
+        {
+          "text": "3+ years of product marketing experience",
+          "matched": true,
+          "hard": false,
+          "note": "Marketing management (weight 2) and sales enablement/GTM (weight 3) skills on resume."
+        },
+        {
+          "text": "Background with AI-powered SaaS, SaaS-enabled hardware, agentic workflows, or fintech preferred",
+          "matched": false,
+          "hard": false,
+          "note": "Preferred, not required; no specific AI-SaaS or fintech background documented."
+        },
+        {
+          "text": "Ability to translate complex technical features into clear, compelling customer benefits",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication (weight 1) and GTM/sales enablement (weight 3) skills."
+        },
+        {
+          "text": "Proven track record developing GTM strategies, messaging, and sales enablement for enterprise/mid-market products",
+          "matched": true,
+          "hard": false,
+          "note": "Sales enablement & GTM (weight 3) is core strength on resume."
+        },
+        {
+          "text": "Strong communication, storytelling, and presentation capabilities",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication & presentation (weight 1) skill."
+        },
+        {
+          "text": "Cross-functional relationship-building skills",
+          "matched": true,
+          "hard": false,
+          "note": "Partner/alliance management (weight 3) and engagement management (weight 2)."
+        },
+        {
+          "text": "Project and priority management with strategic perspective",
+          "matched": true,
+          "hard": false,
+          "note": "Program/project management (weight 3) and operations management (weight 2)."
+        },
+        {
+          "text": "Adaptability to shifting market dynamics and organizational priorities",
+          "matched": true,
+          "hard": false,
+          "note": "Consulting and GTM background demonstrate adaptability."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Staff Product Manager - Partnership & Shop Network",
+    "employer": "Motive",
+    "location": "Remote, United States",
+    "employerLocation": "San Francisco, CA",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://builtin.com/job/staff-product-manager-partnership-shop-network/11007908",
+    "description": "Oversee merchant partnership and shop network strategy across fuel, maintenance, and fleet spending. Develop technical partner relationships, expand payment integrations, unlock bulk fuel partnerships, and drive international adoption. Lead executive-level partnerships, business reviews, and cross-functional alignment to increase transaction volume and strategic partner engagement.",
+    "postedDate": "2026-09-03",
+    "requirements": [
+      "8+ years of professional experience owning large-scale partnership or platform initiatives",
+      "Demonstrated expertise developing and managing technical partner relationships",
+      "Proven track record delivering commercially successful, integration-heavy products",
+      "Data-driven decision-making with strong customer empathy",
+      "Executive-level communication skills",
+      "Sufficient technical fluency to collaborate effectively with engineering teams",
+      "Experience in payments, fuel/merchant networks, or fintech preferred",
+      "Comfort navigating ambiguity in fast-paced environments"
+    ],
+    "ai": {
+      "score": 79,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "8+ years of professional experience owning large-scale partnership or platform initiatives",
+          "matched": true,
+          "hard": false,
+          "note": "Partner & alliance management (weight 3) and product management (weight 2) on resume."
+        },
+        {
+          "text": "Demonstrated expertise developing and managing technical partner relationships",
+          "matched": true,
+          "hard": false,
+          "note": "Partner/alliance management (weight 3) core skill; technical understanding from program management background."
+        },
+        {
+          "text": "Proven track record delivering commercially successful, integration-heavy products",
+          "matched": true,
+          "hard": false,
+          "note": "Product management (weight 2) and program management (weight 3) demonstrate delivery track record."
+        },
+        {
+          "text": "Data-driven decision-making with strong customer empathy",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management (weight 2) and engagement management (weight 2) background."
+        },
+        {
+          "text": "Executive-level communication skills",
+          "matched": true,
+          "hard": false,
+          "note": "Executive communication & presentation (weight 1) core skill."
+        },
+        {
+          "text": "Sufficient technical fluency to collaborate effectively with engineering teams",
+          "matched": true,
+          "hard": false,
+          "note": "Program management background provides technical process understanding."
+        },
+        {
+          "text": "Experience in payments, fuel/merchant networks, or fintech preferred",
+          "matched": false,
+          "hard": false,
+          "note": "Preferred, not required; no specific payments/fintech industry experience documented."
+        },
+        {
+          "text": "Comfort navigating ambiguity in fast-paced environments",
+          "matched": true,
+          "hard": false,
+          "note": "Consulting (weight 2) and program management background demonstrate this."
+        }
+      ]
+    }
+  },
+  {
+    "title": "Growth Marketing Manager",
+    "employer": "OneImaging",
+    "location": "Remote, United States",
+    "employerLocation": "Remote",
+    "remote": true,
+    "remoteTiedTo": "US",
+    "estDriveMinutesFrom23185": null,
+    "url": "https://builtin.com/job/growth-marketing-manager/11023958",
+    "description": "Lead engagement marketing and operations for radiology network. Build data-driven, multi-channel campaigns and manage marketing technology infrastructure to increase service utilization among members. Collaborate across Product, Engineering, Customer Success, and Member Services teams with continuous optimization of campaign performance.",
+    "postedDate": "2026-09-04",
+    "requirements": [
+      "2+ years of marketing experience focused on engagement and utilization strategies in B2C or B2B2C environments",
+      "Proven ability creating and executing innovative campaigns that drive customer engagement",
+      "Experience setting up and scaling marketing operations, including technology stack management",
+      "Proficiency with Braze marketing platform",
+      "Strong analytical skills leveraging data to optimize campaigns",
+      "Creative development of compelling content and marketing strategies",
+      "Excellent leadership and team-building capabilities",
+      "Strong background in digital health or related industry (preferred)"
+    ],
+    "ai": {
+      "score": 68,
+      "eliminated": false,
+      "eliminatedReason": null,
+      "requirements": [
+        {
+          "text": "2+ years of marketing experience focused on engagement and utilization strategies in B2C or B2B2C environments",
+          "matched": true,
+          "hard": false,
+          "note": "Marketing management (weight 2) and engagement management (weight 2) skills on resume."
+        },
+        {
+          "text": "Proven ability creating and executing innovative campaigns that drive customer engagement",
+          "matched": true,
+          "hard": false,
+          "note": "Marketing management (weight 2) and GTM/sales enablement (weight 3) background."
+        },
+        {
+          "text": "Experience setting up and scaling marketing operations, including technology stack management",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management (weight 2) and program management (weight 3) skills."
+        },
+        {
+          "text": "Proficiency with Braze marketing platform",
+          "matched": false,
+          "hard": false,
+          "note": "No specific Braze platform experience; marketing tech stack experience assumed from marketing operations background."
+        },
+        {
+          "text": "Strong analytical skills leveraging data to optimize campaigns",
+          "matched": true,
+          "hard": false,
+          "note": "Operations management (weight 2) and Power BI (weight 1) skills."
+        },
+        {
+          "text": "Creative development of compelling content and marketing strategies",
+          "matched": true,
+          "hard": false,
+          "note": "Marketing management (weight 2) and executive communication (weight 1) skills."
+        },
+        {
+          "text": "Excellent leadership and team-building capabilities",
+          "matched": true,
+          "hard": false,
+          "note": "Global/distributed team leadership (weight 1) and cross-functional leadership background."
+        },
+        {
+          "text": "Strong background in digital health or related industry (preferred)",
+          "matched": true,
+          "hard": false,
+          "note": "Preferred, not required; healthcare IT (weight 1) on resume; radiology is adjacent."
         }
       ]
     }
