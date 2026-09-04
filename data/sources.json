@@ -2,83 +2,63 @@
   "refreshedAt": "2026-09-04T00:00:00Z",
   "sites": [
     {
-      "employer": "LinkedIn",
-      "url": "https://www.linkedin.com/jobs/search?keywords=program%20manager%20OR%20product%20manager%20OR%20operations&location=Williamsburg%2C%20Virginia&distance=20",
+      "employer": "Built In",
+      "url": "https://builtin.com/jobs/remote/project-management/search/program-manager",
       "type": "job-board"
     },
     {
-      "employer": "Indeed",
-      "url": "https://www.indeed.com/jobs?q=program+manager+OR+project+manager+OR+operations+manager&l=Williamsburg%2C+VA&radius=20",
+      "employer": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=program%20manager&location=Williamsburg%2C%20Virginia",
       "type": "job-board"
     },
     {
       "employer": "ZipRecruiter",
-      "url": "https://www.ziprecruiter.com/Jobs/program%20manager%20operations/in/Williamsburg,VA",
+      "url": "https://www.ziprecruiter.com/Jobs/Program-Manager/--in-Virginia",
       "type": "job-board"
     },
     {
-      "employer": "Built In (Remote - Virginia)",
-      "url": "https://builtin.com/jobs/remote/virginia",
+      "employer": "Indeed",
+      "url": "https://www.indeed.com/jobs?q=Program+Manager&l=Williamsburg,VA&radius=25",
       "type": "job-board"
     },
     {
-      "employer": "Built In (Remote - All US)",
-      "url": "https://builtin.com/jobs/remote",
-      "type": "job-board"
-    },
-    {
-      "employer": "USAJobs",
-      "url": "https://www.usajobs.gov/Search/Results?k=program%20manager%20telework&p=1",
-      "type": "job-board"
-    },
-    {
-      "employer": "LinkedIn",
-      "url": "https://www.linkedin.com/jobs/search?keywords=Snow%20Companies&location=Williamsburg",
-      "type": "job-board"
-    },
-    {
-      "employer": "LinkedIn",
-      "url": "https://www.linkedin.com/jobs/search?keywords=program%20manager%20OR%20product%20manager%20OR%20operations%20OR%20%22project%20manager%22&location=James%20City%20County&distance=5",
-      "type": "job-board"
-    },
-    {
-      "employer": "LinkedIn",
-      "url": "https://www.linkedin.com/jobs/search?keywords=remote%20AND%20%28program%20manager%20OR%20product%20manager%20OR%20operations%20OR%20%22project%20manager%22%29&location=Virginia&distance=50",
+      "employer": "Glassdoor",
+      "url": "https://www.glassdoor.com/Job/williamsburg-program-manager-jobs-SRCH_IL.0,12_IC1130328_KO13,28.htm",
       "type": "job-board"
     },
     {
       "employer": "William & Mary",
-      "url": "https://careers.wm.edu/",
+      "url": "https://williammary.wd12.myworkdayjobs.com/WM",
       "type": "career-page"
     },
     {
-      "employer": "Sentara Healthcare",
-      "url": "https://www.sentarahealthcareers.com",
+      "employer": "Kimley-Horn",
+      "url": "https://www.kimley-horn.com/careers/",
       "type": "career-page"
     },
     {
-      "employer": "LinkedIn",
-      "url": "https://www.linkedin.com/jobs/search?keywords=program%20manager%20OR%20product%20manager%20OR%20operations%20manager&location=York%20County%20Virginia&distance=10",
+      "employer": "Snow Companies",
+      "url": "https://www.indeed.com/cmp/Snow-Companies/jobs",
+      "type": "career-page"
+    },
+    {
+      "employer": "James City County",
+      "url": "https://careers.jamescitycountyva.gov/jobs",
+      "type": "career-page"
+    },
+    {
+      "employer": "Coinbase",
+      "url": "https://www.coinbase.com/careers",
+      "type": "career-page"
+    },
+    {
+      "employer": "Capital One",
+      "url": "https://www.linkedin.com/jobs/view/senior-manager-project-manager-at-capital-one-4463307425",
       "type": "job-board"
     },
     {
-      "employer": "LinkedIn",
-      "url": "https://www.linkedin.com/jobs/search?keywords=remote%20%22program%20manager%22%20OR%20%22product%20manager%22%20OR%20%22operations%20manager%22&location=United%20States&distance=999",
-      "type": "job-board"
-    },
-    {
-      "employer": "LinkedIn",
-      "url": "https://www.linkedin.com/jobs/search?keywords=partnership%20OR%20%22sales%20enablement%22%20OR%20gtm&location=Remote%20United%20States&distance=999",
-      "type": "job-board"
-    },
-    {
-      "employer": "LinkedIn",
-      "url": "https://www.linkedin.com/jobs/search?keywords=%22Williamsburg%22%20%22James%20City%20County%22%20OR%20%2223185%22&keywords_options=is_boolean_search=true",
-      "type": "job-board"
-    },
-    {
-      "employer": "LinkedIn",
-      "url": "https://www.linkedin.com/jobs/search?keywords=partner%20OR%20alliance%20OR%20enablement&location=Williamsburg%20Virginia&distance=20",
+      "employer": "HII / Newport News Shipbuilding",
+      "url": "https://www.linkedin.com/jobs/view/mgr-programs-3-at-hii-4463179940",
       "type": "job-board"
     }
   ]
