@@ -1,29 +1,3 @@
-# Refreshes data/jobs.json by running headless Claude Code (your existing
-# Claude Code login/subscription -- not a separate metered API key and not a
-# rate-limited public NLP service) to re-scrape local employer career pages
-# and have Claude itself re-read and re-score every posting against
-# data/resume-profile.json. This is what keeps requirements-vs-duties
-# classification accurate without hitting any per-call API limit -- it only
-# runs when you choose to run it, same pattern as WheelsAndDeals's
-# refresh-snapshots.ps1.
-#
-# Runs on Haiku 4.5 (see --model below), not the default Sonnet model -- this
-# is page-reading + structured extraction + bullet-by-bullet matching against
-# a resume, not a task that needs frontier reasoning, and a full 25-30-site
-# sweep on Sonnet burns a meaningful chunk of a daily usage limit. If match
-# quality ever seems to degrade, switch --model back to "sonnet" -- but try
-# Haiku first.
-#
-# Run this at most once a day -- job postings don't turn over fast enough to
-# justify re-running the full sweep more often than that.
-#
-# Usage: powershell -File scripts\refresh-jobs.ps1
-
-$ErrorActionPreference = "Stop"
-$root = Split-Path -Parent $PSScriptRoot
-Set-Location $root
-
-$prompt = @'
 You are refreshing the job data snapshot for the LocalWork app in this folder.
 
 1. Read data/resume-profile.json for the candidate's skills, tools, hard
@@ -102,14 +76,12 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
    job content (Indeed, ZipRecruiter, Workday boards, and individual JCC
    posting pages have all done this before), don't skip that source --
    retry that exact URL with the claude-in-chrome browser tools instead:
-   tabs_create_mcp to open a tab, navigate to the URL, get_page_text to
-   read the rendered content (not screenshots -- text is far cheaper), then
-   tabs_close_mcp to close the tab before moving on. Only fall back to the
-   browser for sources WebFetch actually failed on -- don't re-fetch a page
-   through the browser if WebFetch already read it successfully, that just
-   burns extra time/data for no benefit. If Chrome isn't running yet, the
-   first browser-tool call will need it open -- launch it and give it a
-   few seconds before retrying.
+   open a tab, navigate to the URL, read the rendered page text (not
+   screenshots -- text is far cheaper), then close the tab before moving
+   on. Only fall back to the browser for sources WebFetch actually failed
+   on -- don't re-fetch a page through the browser if WebFetch already
+   read it successfully, that just burns extra time/data for no benefit.
+   Open Chrome first if it isn't running.
 
 3. Freshness: only include postings with a visible posted date that is
    within the last `freshness.windowDays` days (currently 7) as of today.
@@ -211,14 +183,3 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
 11. Only include postings you actually found on a real page. Never invent a
     job, employer, or requirement -- if you can't access a site, skip it and
     say so in your final summary rather than fabricating rows.
-'@
-
-if (-not (Get-Process chrome -ErrorAction SilentlyContinue)) {
-    Write-Host "Chrome isn't running -- launching it for the browser-tool fallback..."
-    try { Start-Process "chrome" } catch { Write-Host "Couldn't launch Chrome automatically; browser-tool fallback may fail. ($_)" }
-    Start-Sleep -Seconds 5
-}
-
-$allowedTools = "WebSearch,WebFetch,mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__tabs_close_mcp"
-
-$prompt | claude -p --model claude-haiku-4-5-20251001 --allowedTools $allowedTools

@@ -1,6 +1,6 @@
 {
   "candidate": "Russell Freeman",
-  "targetComp": { "base": 150000, "bonus": 20000, "total": 170000 },
+  "targetComp": { "base": 110000, "bonus": 10000, "total": 120000 },
   "physicalConstraint": "desk/office role only — no standing for long periods, no repetitive lifting/bending/stooping, no lifting medium-heavy objects",
   "skills": [
     { "id": "partner_alliance", "label": "Partner & Alliance Management", "weight": 3,
