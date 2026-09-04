@@ -95,6 +95,24 @@ You are refreshing the job data snapshot for the LocalWork app in this folder.
    product management, partner/alliance management, business development,
    GTM/sales enablement, marketing, operations, consulting).
 
+   Discovery -- use both WebSearch and direct board/career-page fetching,
+   not just one: WebSearch (a real search engine query, e.g. "Associate
+   Project Manager Williamsburg VA" or "program manager jobs James City
+   County VA") reaches postings that direct fetching alone misses --
+   smaller employers not on the roster below, aggregator sites, and boards
+   that block scraping outright (Indeed 403s WebFetch on direct board
+   URLs, but its listings still surface through WebSearch). Directly
+   fetching each job board's own search URL and each roster employer's
+   career page catches the reverse case -- postings that haven't been
+   indexed by search yet, or that a search engine ranks too low to
+   surface. Run several WebSearch queries per category (location terms x
+   role terms) in addition to, not instead of, the direct board/career-page
+   fetches below. Whichever way a posting is discovered, its actual
+   posting page must still be opened and read directly (WebFetch or the
+   browser fallback below) to extract real requirements text and a
+   verified direct URL -- a WebSearch snippet alone is never enough to
+   write a job entry.
+
    Fetching sites -- use both WebFetch and the claude-in-chrome browser
    tools, not just one: for every source, try WebFetch first (it's cheaper
    and faster). If WebFetch on a given URL returns a 403/blocked response,
